@@ -1,0 +1,152 @@
+// @ts-check
+const { test, expect } = require("@playwright/test");
+const { safeGoto } = require("../helpers");
+require("dotenv").config();
+
+const BASE_URL = process.env.BASE_URL;
+
+test("Archive Doc List W L1 - Snapshot", async ({ page }) => {
+  await safeGoto(page, `${BASE_URL}/archive-doc-list-w-l1/`);
+  const content = page.locator("main#content");
+  await expect(content).toBeVisible({ timeout: 10000 });
+  await expect(content).toMatchAriaSnapshot(`
+    - main:
+      - heading "Archive Doc List W L1" [level=1]
+      - list:
+        - listitem:
+          - text: 
+          - link "Apple – A Daily Fruit":
+            - /url: https://betteromation.shahrear.site/docs/apple-a-daily-fruit/
+        - listitem:
+          - text: 
+          - link "Basketball – The Game of Sprit":
+            - /url: https://betteromation.shahrear.site/docs/basketball-the-game-of-sprit/
+        - listitem:
+          - text: 
+          - link "Cricket – The Gentlemen’s Game":
+            - /url: https://betteromation.shahrear.site/docs/cricket-the-gentlemens-game/
+        - listitem:
+          - text: 
+          - link "Developers, QA, Support – the Engines of A Software Team":
+            - /url: https://betteromation.shahrear.site/docs/developers-qa-support-the-engines-of-a-software-team/
+        - listitem:
+          - text: 
+          - link "Fencing – The Beautiful Sport":
+            - /url: https://betteromation.shahrear.site/docs/fencing-the-beautiful-sport/
+        - listitem:
+          - text: 
+          - link "Football World Cup 2014":
+            - /url: https://betteromation.shahrear.site/docs/football-world-cup-2014/
+        - listitem:
+          - text: 
+          - link "Golf – The Game of Patience and Dedication":
+            - /url: https://betteromation.shahrear.site/docs/golf-the-game-of-patience-and-dedication/
+        - listitem:
+          - text: 
+          - link "Hurram – The Co Lead of Security Team":
+            - /url: https://betteromation.shahrear.site/docs/hurram-the-co-lead-of-security-team/
+        - listitem:
+          - text: 
+          - link "Importance of Multi Vitamin in Life":
+            - /url: https://betteromation.shahrear.site/docs/importance-of-multi-vitamin-in-life/
+        - listitem:
+          - text: 
+          - link "Juice vs Direct Fruit":
+            - /url: https://betteromation.shahrear.site/docs/juice-vs-direct-fruit/
+      - list:
+        - listitem:
+          - link "1":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-w-l1/page/1
+        - listitem:
+          - link "2":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-w-l1/page/2
+        - listitem:
+          - link "❯":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-w-l1/page/2
+      - paragraph:
+        - strong: Without Nested & Pagination
+      - list:
+        - listitem:
+          - text: 
+          - link "Apple – A Daily Fruit":
+            - /url: https://betteromation.shahrear.site/docs/apple-a-daily-fruit/
+        - listitem:
+          - text: 
+          - link "Basketball – The Game of Sprit":
+            - /url: https://betteromation.shahrear.site/docs/basketball-the-game-of-sprit/
+        - listitem:
+          - text: 
+          - link "Cricket – The Gentlemen’s Game":
+            - /url: https://betteromation.shahrear.site/docs/cricket-the-gentlemens-game/
+        - listitem:
+          - text: 
+          - link "Developers, QA, Support – the Engines of A Software Team":
+            - /url: https://betteromation.shahrear.site/docs/developers-qa-support-the-engines-of-a-software-team/
+        - listitem:
+          - text: 
+          - link "Fencing – The Beautiful Sport":
+            - /url: https://betteromation.shahrear.site/docs/fencing-the-beautiful-sport/
+      - list:
+        - listitem:
+          - link "1":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-w-l1/page/1
+        - listitem:
+          - link "2":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-w-l1/page/2
+        - listitem:
+          - link "❯":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-w-l1/page/2
+      - heading "BetterDocs Order -" [level=2]
+      - list:
+        - listitem:
+          - text: 
+          - link "Fencing – The Beautiful Sport":
+            - /url: https://betteromation.shahrear.site/docs/fencing-the-beautiful-sport/
+        - listitem:
+          - text: 
+          - link "Basketball – The Game of Sprit":
+            - /url: https://betteromation.shahrear.site/docs/basketball-the-game-of-sprit/
+        - listitem:
+          - text: 
+          - link "Cricket – The Gentlemen’s Game":
+            - /url: https://betteromation.shahrear.site/docs/cricket-the-gentlemens-game/
+        - listitem:
+          - text: 
+          - link "Football World Cup 2014":
+            - /url: https://betteromation.shahrear.site/docs/football-world-cup-2014/
+        - listitem:
+          - text: 
+          - link "Golf – The Game of Patience and Dedication":
+            - /url: https://betteromation.shahrear.site/docs/golf-the-game-of-patience-and-dedication/
+        - listitem:
+          - text: 
+          - link "Watermelon – A Juicy Fruit":
+            - /url: https://betteromation.shahrear.site/docs/watermelon-a-juicy-fruit/
+        - listitem:
+          - text: 
+          - link "Juice vs Direct Fruit":
+            - /url: https://betteromation.shahrear.site/docs/juice-vs-direct-fruit/
+        - listitem:
+          - text: 
+          - link "Apple – A Daily Fruit":
+            - /url: https://betteromation.shahrear.site/docs/apple-a-daily-fruit/
+        - listitem:
+          - text: 
+          - link "Orange – The Source of Vitamin C":
+            - /url: https://betteromation.shahrear.site/docs/orange-the-source-of-vitamin-c/
+        - listitem:
+          - text: 
+          - link "Orange – A Favorite Fruit of Children":
+            - /url: https://betteromation.shahrear.site/docs/orange-a-favorite-fruit-of-children/
+      - list:
+        - listitem:
+          - link "1":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-w-l1/page/1
+        - listitem:
+          - link "2":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-w-l1/page/2
+        - listitem:
+          - link "❯":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-w-l1/page/2
+  `);
+});

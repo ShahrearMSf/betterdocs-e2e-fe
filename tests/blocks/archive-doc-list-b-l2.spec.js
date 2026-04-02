@@ -1,0 +1,233 @@
+// @ts-check
+const { test, expect } = require("@playwright/test");
+const { safeGoto } = require("../helpers");
+require("dotenv").config();
+
+const BASE_URL = process.env.BASE_URL;
+
+test("Archive Doc List B L2 - Snapshot", async ({ page }) => {
+  await safeGoto(page, `${BASE_URL}/archive-doc-list-b-l2/`);
+  const content = page.locator("main#content");
+  await expect(content).toBeVisible({ timeout: 10000 });
+  await expect(content).toMatchAriaSnapshot(`
+    - main:
+      - heading "Archive Doc List B L2" [level=1]
+      - paragraph: Without Nested & Pagination
+      - list:
+        - listitem:
+          - link "Fencing – The Beautiful Sport":
+            - /url: https://betteromation.shahrear.site/docs/fencing-the-beautiful-sport/
+            - paragraph: Fencing – The Beautiful Sport
+          - paragraph: Passion Fencing is more than just a sport; it’s a way of life for many. The passion that drives fencers…
+        - listitem:
+          - link "Basketball – The Game of Sprit":
+            - /url: https://betteromation.shahrear.site/docs/basketball-the-game-of-sprit/
+            - paragraph: Basketball – The Game of Sprit
+          - paragraph: Introduction Basketball is not just a game; it’s a spirit that unites players through teamwork and dedication. It emphasizes the…
+        - listitem:
+          - link "Cricket – The Gentlemen’s Game":
+            - /url: https://betteromation.shahrear.site/docs/cricket-the-gentlemens-game/
+            - paragraph: Cricket – The Gentlemen’s Game
+          - paragraph: Squad The squad refers to the group of players selected to represent a team in a cricket competition. A typical…
+        - listitem:
+          - link "Football World Cup 2014":
+            - /url: https://betteromation.shahrear.site/docs/football-world-cup-2014/
+            - paragraph: Football World Cup 2014
+          - paragraph: Final Match The final match of the 2014 FIFA World Cup took place on July 13, 2014, at the Maracanã…
+        - listitem:
+          - link "Golf – The Game of Patience and Dedication":
+            - /url: https://betteromation.shahrear.site/docs/golf-the-game-of-patience-and-dedication/
+            - paragraph: Golf – The Game of Patience and Dedication
+          - paragraph: Introduction Golf is a sport that emphasizes the importance of patience, focus, and dedication. Unlike many other sports, golf requires…
+        - listitem:
+          - link "Watermelon – A Juicy Fruit":
+            - /url: https://betteromation.shahrear.site/docs/watermelon-a-juicy-fruit/
+            - paragraph: Watermelon – A Juicy Fruit
+          - paragraph: Introduction Watermelon is a refreshing and popular summer fruit known for its sweet flavor and high water content. Scientifically classified…
+        - listitem:
+          - link "Juice vs Direct Fruit":
+            - /url: https://betteromation.shahrear.site/docs/juice-vs-direct-fruit/
+            - paragraph: Juice vs Direct Fruit
+          - paragraph: Introduction The debate between consuming juice and direct fruit often arises in discussions about health and nutrition. Both have their…
+        - listitem:
+          - link "Apple – A Daily Fruit":
+            - /url: https://betteromation.shahrear.site/docs/apple-a-daily-fruit/
+            - paragraph: Apple – A Daily Fruit
+          - paragraph: Introduction Apples are one of the most popular fruits consumed worldwide. Known for their crisp texture and sweet, tart flavor,…
+        - listitem:
+          - link "Orange – The Source of Vitamin C":
+            - /url: https://betteromation.shahrear.site/docs/orange-the-source-of-vitamin-c/
+            - paragraph: Orange – The Source of Vitamin C
+          - paragraph: Introduction Oranges are one of the most popular fruits in the world and are known for their sweet and tangy…
+        - listitem:
+          - link "Orange – A Favorite Fruit of Children":
+            - /url: https://betteromation.shahrear.site/docs/orange-a-favorite-fruit-of-children/
+            - paragraph: Orange – A Favorite Fruit of Children
+          - paragraph: Introduction Oranges are one of the most popular fruits around the world, known for their sweet and tangy taste. They…
+        - listitem:
+          - link "The Fruit that Named after Color":
+            - /url: https://betteromation.shahrear.site/docs/the-fruit-that-named-after-color/
+            - paragraph: The Fruit that Named after Color
+          - paragraph: Introduction Fruits that are named after colors can evoke vivid images and associations. One of the most notable examples is…
+        - listitem:
+          - link "Importance of Multi Vitamin in Life":
+            - /url: https://betteromation.shahrear.site/docs/importance-of-multi-vitamin-in-life/
+            - paragraph: Importance of Multi Vitamin in Life
+          - paragraph: Vitamins are essential nutrients that our body needs to function properly. Multi vitamins help fill in the nutritional gaps in…
+        - listitem:
+          - link "Sejuti – The Leader of QA Team":
+            - /url: https://betteromation.shahrear.site/docs/sejuti-the-leader-of-qa-team/
+            - paragraph: Sejuti – The Leader of QA Team
+          - paragraph: Introduction Sejuti is a highly proficient leader of the Quality Assurance (QA) team, known for her deep understanding of software…
+        - listitem:
+          - link "Hurram – The Co Lead of Security Team":
+            - /url: https://betteromation.shahrear.site/docs/hurram-the-co-lead-of-security-team/
+            - paragraph: Hurram – The Co Lead of Security Team
+          - paragraph: Introduction Hurram is a dedicated professional who serves as the Co Lead of the Security Team within our organization. With…
+        - listitem:
+          - link "Ovi – The Co Lead of QA Team":
+            - /url: https://betteromation.shahrear.site/docs/ovi-the-co-lead-of-qa-team/
+            - paragraph: Ovi – The Co Lead of QA Team
+          - paragraph: Introduction Ovi is an integral member of the QA Team, serving as the Co Lead in the department. With a…
+        - listitem:
+          - link "Developers, QA, Support – the Engines of A Software Team":
+            - /url: https://betteromation.shahrear.site/docs/developers-qa-support-the-engines-of-a-software-team/
+            - paragraph: Developers, QA, Support – the Engines of A Software Team
+          - paragraph: "Introduction In the world of software development, three critical roles drive the success and efficiency of a project: developers, quality…"
+        - listitem:
+          - link "Junior QA – The Sprit House":
+            - /url: https://betteromation.shahrear.site/docs/junior-qa-the-sprit-house/
+            - paragraph: Junior QA – The Sprit House
+          - paragraph: Overview This documentation provides an overview of the Junior QA position at The Sprit House, focusing on the essential topics…
+        - listitem:
+          - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
+            - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+            - paragraph: NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders
+          - paragraph: "Representational image. Picture: Collected Most of the gold currently in the country, as well as new imports, is coming through…"
+        - listitem:
+          - link "NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses":
+            - /url: https://betteromation.shahrear.site/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
+            - paragraph: NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses
+          - paragraph: If VAT is properly applied on value addition with full input tax credit, the effective burden should not be excessive,…
+        - listitem:
+          - link "QA Glossary Test for BetterDocs":
+            - /url: https://betteromation.shahrear.site/docs/qa-glossary-test-for-betterdocs/
+            - paragraph: QA Glossary Test for BetterDocs
+          - paragraph: Understanding key terms is essential in any learning or professional environment. Certain words starting with the letter A are particularly…
+      - paragraph
+      - paragraph
+      - paragraph
+      - paragraph: With Nested & Pagination
+      - list:
+        - listitem:
+          - link "Fencing – The Beautiful Sport":
+            - /url: https://betteromation.shahrear.site/docs/fencing-the-beautiful-sport/
+            - paragraph: Fencing – The Beautiful Sport
+          - paragraph: Passion Fencing is more than just a sport; it’s a way of life for many. The passion that drives fencers…
+        - listitem:
+          - link "Basketball – The Game of Sprit":
+            - /url: https://betteromation.shahrear.site/docs/basketball-the-game-of-sprit/
+            - paragraph: Basketball – The Game of Sprit
+          - paragraph: Introduction Basketball is not just a game; it’s a spirit that unites players through teamwork and dedication. It emphasizes the…
+        - listitem:
+          - link "Cricket – The Gentlemen’s Game":
+            - /url: https://betteromation.shahrear.site/docs/cricket-the-gentlemens-game/
+            - paragraph: Cricket – The Gentlemen’s Game
+          - paragraph: Squad The squad refers to the group of players selected to represent a team in a cricket competition. A typical…
+        - listitem:
+          - link "Football World Cup 2014":
+            - /url: https://betteromation.shahrear.site/docs/football-world-cup-2014/
+            - paragraph: Football World Cup 2014
+          - paragraph: Final Match The final match of the 2014 FIFA World Cup took place on July 13, 2014, at the Maracanã…
+        - listitem:
+          - link "Golf – The Game of Patience and Dedication":
+            - /url: https://betteromation.shahrear.site/docs/golf-the-game-of-patience-and-dedication/
+            - paragraph: Golf – The Game of Patience and Dedication
+          - paragraph: Introduction Golf is a sport that emphasizes the importance of patience, focus, and dedication. Unlike many other sports, golf requires…
+        - listitem:
+          - link "Watermelon – A Juicy Fruit":
+            - /url: https://betteromation.shahrear.site/docs/watermelon-a-juicy-fruit/
+            - paragraph: Watermelon – A Juicy Fruit
+          - paragraph: Introduction Watermelon is a refreshing and popular summer fruit known for its sweet flavor and high water content. Scientifically classified…
+        - listitem:
+          - link "Juice vs Direct Fruit":
+            - /url: https://betteromation.shahrear.site/docs/juice-vs-direct-fruit/
+            - paragraph: Juice vs Direct Fruit
+          - paragraph: Introduction The debate between consuming juice and direct fruit often arises in discussions about health and nutrition. Both have their…
+        - listitem:
+          - link "Apple – A Daily Fruit":
+            - /url: https://betteromation.shahrear.site/docs/apple-a-daily-fruit/
+            - paragraph: Apple – A Daily Fruit
+          - paragraph: Introduction Apples are one of the most popular fruits consumed worldwide. Known for their crisp texture and sweet, tart flavor,…
+        - listitem:
+          - link "Orange – The Source of Vitamin C":
+            - /url: https://betteromation.shahrear.site/docs/orange-the-source-of-vitamin-c/
+            - paragraph: Orange – The Source of Vitamin C
+          - paragraph: Introduction Oranges are one of the most popular fruits in the world and are known for their sweet and tangy…
+        - listitem:
+          - link "Orange – A Favorite Fruit of Children":
+            - /url: https://betteromation.shahrear.site/docs/orange-a-favorite-fruit-of-children/
+            - paragraph: Orange – A Favorite Fruit of Children
+          - paragraph: Introduction Oranges are one of the most popular fruits around the world, known for their sweet and tangy taste. They…
+        - listitem:
+          - link "The Fruit that Named after Color":
+            - /url: https://betteromation.shahrear.site/docs/the-fruit-that-named-after-color/
+            - paragraph: The Fruit that Named after Color
+          - paragraph: Introduction Fruits that are named after colors can evoke vivid images and associations. One of the most notable examples is…
+        - listitem:
+          - link "Importance of Multi Vitamin in Life":
+            - /url: https://betteromation.shahrear.site/docs/importance-of-multi-vitamin-in-life/
+            - paragraph: Importance of Multi Vitamin in Life
+          - paragraph: Vitamins are essential nutrients that our body needs to function properly. Multi vitamins help fill in the nutritional gaps in…
+        - listitem:
+          - link "Sejuti – The Leader of QA Team":
+            - /url: https://betteromation.shahrear.site/docs/sejuti-the-leader-of-qa-team/
+            - paragraph: Sejuti – The Leader of QA Team
+          - paragraph: Introduction Sejuti is a highly proficient leader of the Quality Assurance (QA) team, known for her deep understanding of software…
+        - listitem:
+          - link "Hurram – The Co Lead of Security Team":
+            - /url: https://betteromation.shahrear.site/docs/hurram-the-co-lead-of-security-team/
+            - paragraph: Hurram – The Co Lead of Security Team
+          - paragraph: Introduction Hurram is a dedicated professional who serves as the Co Lead of the Security Team within our organization. With…
+        - listitem:
+          - link "Ovi – The Co Lead of QA Team":
+            - /url: https://betteromation.shahrear.site/docs/ovi-the-co-lead-of-qa-team/
+            - paragraph: Ovi – The Co Lead of QA Team
+          - paragraph: Introduction Ovi is an integral member of the QA Team, serving as the Co Lead in the department. With a…
+        - listitem:
+          - link "Developers, QA, Support – the Engines of A Software Team":
+            - /url: https://betteromation.shahrear.site/docs/developers-qa-support-the-engines-of-a-software-team/
+            - paragraph: Developers, QA, Support – the Engines of A Software Team
+          - paragraph: "Introduction In the world of software development, three critical roles drive the success and efficiency of a project: developers, quality…"
+        - listitem:
+          - link "Junior QA – The Sprit House":
+            - /url: https://betteromation.shahrear.site/docs/junior-qa-the-sprit-house/
+            - paragraph: Junior QA – The Sprit House
+          - paragraph: Overview This documentation provides an overview of the Junior QA position at The Sprit House, focusing on the essential topics…
+        - listitem:
+          - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
+            - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+            - paragraph: NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders
+          - paragraph: "Representational image. Picture: Collected Most of the gold currently in the country, as well as new imports, is coming through…"
+        - listitem:
+          - link "NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses":
+            - /url: https://betteromation.shahrear.site/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
+            - paragraph: NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses
+          - paragraph: If VAT is properly applied on value addition with full input tax credit, the effective burden should not be excessive,…
+        - listitem:
+          - link "QA Glossary Test for BetterDocs":
+            - /url: https://betteromation.shahrear.site/docs/qa-glossary-test-for-betterdocs/
+            - paragraph: QA Glossary Test for BetterDocs
+          - paragraph: Understanding key terms is essential in any learning or professional environment. Certain words starting with the letter A are particularly…
+      - list:
+        - listitem:
+          - link "1":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-b-l2/page/1
+        - listitem:
+          - link "2":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-b-l2/page/2
+        - listitem:
+          - link "❯":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-b-l2/page/2
+  `);
+});

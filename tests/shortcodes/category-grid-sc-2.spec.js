@@ -1,0 +1,177 @@
+// @ts-check
+const { test, expect } = require("@playwright/test");
+const { safeGoto } = require("../helpers");
+require("dotenv").config();
+
+const BASE_URL = process.env.BASE_URL;
+
+test("Category Grid Sc 2 - Snapshot", async ({ page }) => {
+  await safeGoto(page, `${BASE_URL}/category-grid-sc-2/`);
+  const content = page.locator("main#content");
+  await expect(content).toBeVisible({ timeout: 10000 });
+  await expect(content).toMatchAriaSnapshot(`
+    - main:
+      - heading "Category Grid SC 2" [level=1]
+      - link "betterdocs-category-icon Star 2 Docs":
+        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - img "betterdocs-category-icon"
+        - heading "Star" [level=2]
+        - text: 2 Docs
+      - link "QA 5 Docs":
+        - /url: https://betteromation.shahrear.site/docs/team/qa/
+        - heading "QA" [level=2]
+        - text: 5 Docs
+      - link "betterdocs-category-icon Developer 1 Doc":
+        - /url: https://betteromation.shahrear.site/docs/team/developer/
+        - img "betterdocs-category-icon"
+        - heading "Developer" [level=2]
+        - text: 1 Doc
+      - article:
+        - heading "Watermelon" [level=2]
+        - list:
+          - listitem:
+            - img
+            - link "Importance of Multi Vitamin in Life":
+              - /url: https://betteromation.shahrear.site/docs/importance-of-multi-vitamin-in-life/
+          - listitem:
+            - img
+            - link "Juice vs Direct Fruit":
+              - /url: https://betteromation.shahrear.site/docs/juice-vs-direct-fruit/
+          - listitem:
+            - img
+            - link "Watermelon – A Juicy Fruit":
+              - /url: https://betteromation.shahrear.site/docs/watermelon-a-juicy-fruit/
+      - article:
+        - heading "Orange" [level=2]
+        - list:
+          - listitem:
+            - img
+            - link "Orange – A Favorite Fruit of Children":
+              - /url: https://betteromation.shahrear.site/docs/orange-a-favorite-fruit-of-children/
+          - listitem:
+            - img
+            - link "The Fruit that Named after Color":
+              - /url: https://betteromation.shahrear.site/docs/the-fruit-that-named-after-color/
+          - listitem:
+            - img
+            - link "Orange – The Source of Vitamin C":
+              - /url: https://betteromation.shahrear.site/docs/orange-the-source-of-vitamin-c/
+      - article:
+        - heading "Apple" [level=2]
+        - list:
+          - listitem:
+            - img
+            - link "Apple – A Daily Fruit":
+              - /url: https://betteromation.shahrear.site/docs/apple-a-daily-fruit/
+      - article:
+        - heading "Fencing" [level=2]
+        - list:
+          - listitem:
+            - img
+            - link "Fencing – The Beautiful Sport":
+              - /url: https://betteromation.shahrear.site/docs/fencing-the-beautiful-sport/
+      - article:
+        - heading "Golf" [level=2]
+        - list:
+          - listitem:
+            - img
+            - link "Golf – The Game of Patience and Dedication":
+              - /url: https://betteromation.shahrear.site/docs/golf-the-game-of-patience-and-dedication/
+      - article:
+        - heading "Basketball" [level=2]
+        - list:
+          - listitem:
+            - img
+            - link "Basketball – The Game of Sprit":
+              - /url: https://betteromation.shahrear.site/docs/basketball-the-game-of-sprit/
+      - article:
+        - heading "Football" [level=2]
+        - list:
+          - listitem:
+            - img
+            - link "Football World Cup 2014":
+              - /url: https://betteromation.shahrear.site/docs/football-world-cup-2014/
+      - article:
+        - heading "Cricket" [level=2]
+        - list:
+          - listitem:
+            - img
+            - link "Cricket – The Gentlemen’s Game":
+              - /url: https://betteromation.shahrear.site/docs/cricket-the-gentlemens-game/
+      - paragraph: Customize
+      - link "betterdocs-category-icon MSF 1 Doc":
+        - /url: https://betteromation.shahrear.site/docs/qa/msf/
+        - img "betterdocs-category-icon"
+        - heading "MSF" [level=2]
+        - text: 1 Doc
+      - link "WPD 1 Doc":
+        - /url: https://betteromation.shahrear.site/docs/qa/wpd/
+        - heading "WPD" [level=2]
+        - text: 1 Doc
+      - link "betterdocs-category-icon Star 2 Docs":
+        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - img "betterdocs-category-icon"
+        - heading "Star" [level=2]
+        - text: 2 Docs
+      - article:
+        - heading "JuniorQA" [level=2]
+        - list:
+          - listitem:
+            - img
+            - link "QA Glossary Test for BetterDocs":
+              - /url: https://betteromation.shahrear.site/docs/qa-glossary-test-for-betterdocs/
+          - listitem:
+            - img
+            - link "Junior QA – The Sprit House":
+              - /url: https://betteromation.shahrear.site/docs/junior-qa-the-sprit-house/
+      - article:
+        - heading "Developer" [level=2]
+        - list:
+          - listitem:
+            - img
+            - link "Developers, QA, Support – the Engines of A Software Team":
+              - /url: https://betteromation.shahrear.site/docs/developers-qa-support-the-engines-of-a-software-team/
+      - article:
+        - heading "Coleads" [level=2]
+        - list:
+          - listitem:
+            - img
+            - link "Ovi – The Co Lead of QA Team":
+              - /url: https://betteromation.shahrear.site/docs/ovi-the-co-lead-of-qa-team/
+          - listitem:
+            - img
+            - link "Hurram – The Co Lead of Security Team":
+              - /url: https://betteromation.shahrear.site/docs/hurram-the-co-lead-of-security-team/
+      - article:
+        - heading "Leads" [level=2]
+        - list:
+          - listitem:
+            - img
+            - link "Sejuti – The Leader of QA Team":
+              - /url: https://betteromation.shahrear.site/docs/sejuti-the-leader-of-qa-team/
+      - article:
+        - heading "Watermelon" [level=2]
+        - list
+      - article:
+        - heading "Orange" [level=2]
+        - list
+      - article:
+        - heading "Apple" [level=2]
+        - list
+      - article:
+        - heading "Fencing" [level=2]
+        - list
+      - article:
+        - heading "Golf" [level=2]
+        - list
+      - article:
+        - heading "Basketball" [level=2]
+        - list
+      - article:
+        - heading "Football" [level=2]
+        - list
+      - article:
+        - heading "Cricket" [level=2]
+        - list
+  `);
+});

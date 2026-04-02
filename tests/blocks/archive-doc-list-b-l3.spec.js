@@ -1,0 +1,188 @@
+// @ts-check
+const { test, expect } = require("@playwright/test");
+const { safeGoto } = require("../helpers");
+require("dotenv").config();
+
+const BASE_URL = process.env.BASE_URL;
+
+test("Archive Doc List B L3 - Snapshot", async ({ page }) => {
+  await safeGoto(page, `${BASE_URL}/archive-doc-list-b-l3/`);
+  const content = page.locator("main#content");
+  await expect(content).toBeVisible({ timeout: 10000 });
+  await expect(content).toMatchAriaSnapshot(`
+    - main:
+      - heading "Archive Doc List B L3" [level=1]
+      - paragraph: Without Nested & Pagination
+      - heading "Fencing – The Beautiful Sport" [level=2]:
+        - img
+        - link "Fencing – The Beautiful Sport":
+          - /url: https://betteromation.shahrear.site/docs/fencing-the-beautiful-sport/
+      - text: "Last Updated: December 15, 2025"
+      - paragraph: Passion Fencing is more than just a sport; it’s a way of life for many. The passion that drives fencers to the next level is evident in their dedication to practice and competition. This sport, derived from centuries of tradition, inspires a love for physical fitness, strategy, and elegance. Each bout showcases an artist’s flair…
+      - heading "Basketball – The Game of Sprit" [level=2]:
+        - img
+        - link "Basketball – The Game of Sprit":
+          - /url: https://betteromation.shahrear.site/docs/basketball-the-game-of-sprit/
+      - text: "Last Updated: December 15, 2025"
+      - paragraph: Introduction Basketball is not just a game; it’s a spirit that unites players through teamwork and dedication. It emphasizes the importance of collaboration and practice to refine one’s skills. Teamwork Teamwork is the cornerstone of basketball. The game requires players to communicate effectively, share the ball, and support one another on and off the court….
+      - heading "Cricket – The Gentlemen’s Game" [level=2]:
+        - img
+        - link "Cricket – The Gentlemen’s Game":
+          - /url: https://betteromation.shahrear.site/docs/cricket-the-gentlemens-game/
+      - text: "Last Updated: December 15, 2025"
+      - paragraph: Squad The squad refers to the group of players selected to represent a team in a cricket competition. A typical cricket squad consists of 15 to 20 players, from which the playing XI is chosen. Teams often include a mix of specialist batsmen, bowlers, all-rounders, and wicketkeepers. Playing XI The playing XI is the final…
+      - heading "Football World Cup 2014" [level=2]:
+        - img
+        - link "Football World Cup 2014":
+          - /url: https://betteromation.shahrear.site/docs/football-world-cup-2014/
+      - text: "Last Updated: January 27, 2026"
+      - paragraph: Final Match The final match of the 2014 FIFA World Cup took place on July 13, 2014, at the Maracanã Stadium in Rio de Janeiro, Brazil. The match featured Germany competing against Argentina, a historic rivalry in football. Germany vs Argentina The intense final saw both teams displaying exceptional skills and strategies. The game was…
+      - heading "Golf – The Game of Patience and Dedication" [level=2]:
+        - img
+        - link "Golf – The Game of Patience and Dedication":
+          - /url: https://betteromation.shahrear.site/docs/golf-the-game-of-patience-and-dedication/
+      - text: "Last Updated: December 15, 2025"
+      - paragraph: Introduction Golf is a sport that emphasizes the importance of patience, focus, and dedication. Unlike many other sports, golf requires players to not only hone their physical skills but also cultivate mental resilience and strategic thinking. Agility In golf, agility is not just about physical flexibility or the ability to move swiftly. It is about…
+      - heading "Watermelon – A Juicy Fruit" [level=2]:
+        - img
+        - link "Watermelon – A Juicy Fruit":
+          - /url: https://betteromation.shahrear.site/docs/watermelon-a-juicy-fruit/
+      - text: "Last Updated: October 12, 2025"
+      - paragraph: Introduction Watermelon is a refreshing and popular summer fruit known for its sweet flavor and high water content. Scientifically classified as Citrullus lanatus, this fruit is not only delicious but also nutritious. Nutritional Benefits Watermelon is low in calories and packed with hydration, making it a healthy choice for many. Here are some of its…
+      - heading "Juice vs Direct Fruit" [level=2]:
+        - img
+        - link "Juice vs Direct Fruit":
+          - /url: https://betteromation.shahrear.site/docs/juice-vs-direct-fruit/
+      - text: "Last Updated: October 12, 2025"
+      - paragraph: Introduction The debate between consuming juice and direct fruit often arises in discussions about health and nutrition. Both have their advantages and disadvantages, but understanding these can help you make better dietary choices. Nutritional Comparison Juice and whole fruits differ significantly in their nutritional profiles. Whole fruits, such as watermelon, contain fiber and a range…
+      - heading "Apple – A Daily Fruit" [level=2]:
+        - img
+        - link "Apple – A Daily Fruit":
+          - /url: https://betteromation.shahrear.site/docs/apple-a-daily-fruit/
+      - text: "Last Updated: October 12, 2025"
+      - paragraph: Introduction Apples are one of the most popular fruits consumed worldwide. Known for their crisp texture and sweet, tart flavor, apples are not only delicious but also highly nutritious. Rich in essential vitamins, minerals, and antioxidants, they are often touted for their health benefits. This documentation provides insights into the benefits of including apples in…
+      - heading "Orange – The Source of Vitamin C" [level=2]:
+        - img
+        - link "Orange – The Source of Vitamin C":
+          - /url: https://betteromation.shahrear.site/docs/orange-the-source-of-vitamin-c/
+      - text: "Last Updated: October 12, 2025"
+      - paragraph: Introduction Oranges are one of the most popular fruits in the world and are known for their sweet and tangy flavor. They belong to the citrus family and are primarily cultivated in warm climates. Rich in flavor and juiciness, oranges are not only delicious but also packed with nutrients, particularly vitamin C, which plays an…
+      - heading "Orange – A Favorite Fruit of Children" [level=2]:
+        - img
+        - link "Orange – A Favorite Fruit of Children":
+          - /url: https://betteromation.shahrear.site/docs/orange-a-favorite-fruit-of-children/
+      - text: "Last Updated: October 12, 2025"
+      - paragraph: Introduction Oranges are one of the most popular fruits around the world, known for their sweet and tangy taste. They are particularly favored by children due to their bright color and delicious flavor. Rich in vitamin C and other essential nutrients, oranges are not only tasty but also contribute to a healthy diet. Importance The…
+      - heading "The Fruit that Named after Color" [level=2]:
+        - img
+        - link "The Fruit that Named after Color":
+          - /url: https://betteromation.shahrear.site/docs/the-fruit-that-named-after-color/
+      - text: "Last Updated: October 12, 2025"
+      - paragraph: Introduction Fruits that are named after colors can evoke vivid images and associations. One of the most notable examples is the orange. This fruit is not only cherished for its unique taste but also for its vibrant color that has even influenced the name itself. Orange The orange is a citrus fruit that is thought…
+      - heading "Importance of Multi Vitamin in Life" [level=2]:
+        - img
+        - link "Importance of Multi Vitamin in Life":
+          - /url: https://betteromation.shahrear.site/docs/importance-of-multi-vitamin-in-life/
+      - text: "Last Updated: October 12, 2025"
+      - paragraph: Vitamins are essential nutrients that our body needs to function properly. Multi vitamins help fill in the nutritional gaps in our diet and are crucial for overall health. Benefits of Vitamins Multi vitamins provide a wide range of benefits, including improved immune function, increased energy levels, and better mental clarity. Incorporating fruits rich in vitamins…
+      - heading "Sejuti – The Leader of QA Team" [level=2]:
+        - img
+        - link "Sejuti – The Leader of QA Team":
+          - /url: https://betteromation.shahrear.site/docs/sejuti-the-leader-of-qa-team/
+      - text: "Last Updated: January 15, 2026"
+      - paragraph: Introduction Sejuti is a highly proficient leader of the Quality Assurance (QA) team, known for her deep understanding of software testing and commitment to delivering high-quality products. With over a decade of experience in the field, Sejuti has been instrumental in enhancing the QA processes and fostering a culture of quality within the organization. Her…
+      - heading "Hurram – The Co Lead of Security Team" [level=2]:
+        - img
+        - link "Hurram – The Co Lead of Security Team":
+          - /url: https://betteromation.shahrear.site/docs/hurram-the-co-lead-of-security-team/
+      - text: "Last Updated: January 15, 2026"
+      - paragraph: Introduction Hurram is a dedicated professional who serves as the Co Lead of the Security Team within our organization. With a strong background in cybersecurity, risk management, and team leadership, Hurram has been instrumental in developing and implementing security protocols that safeguard our digital assets. His experience and expertise make him a vital part of…
+      - heading "Ovi – The Co Lead of QA Team" [level=2]:
+        - img
+        - link "Ovi – The Co Lead of QA Team":
+          - /url: https://betteromation.shahrear.site/docs/ovi-the-co-lead-of-qa-team/
+      - text: "Last Updated: January 15, 2026"
+      - paragraph: Introduction Ovi is an integral member of the QA Team, serving as the Co Lead in the department. With a robust background in software testing and quality assurance, Ovi brings a wealth of experience and knowledge to the team. His passion for ensuring the delivery of high-quality software solutions helps drive the company’s success and…
+      - heading "Developers, QA, Support – the Engines of A Software Team" [level=2]:
+        - img
+        - link "Developers, QA, Support – the Engines of A Software Team":
+          - /url: https://betteromation.shahrear.site/docs/developers-qa-support-the-engines-of-a-software-team/
+      - text: "Last Updated: October 12, 2025"
+      - paragraph: "Introduction In the world of software development, three critical roles drive the success and efficiency of a project: developers, quality assurance (QA) professionals, and support teams. Each role is essential, and together they create a robust framework that not only delivers quality software but also ensures that the software meets user needs and provides a…"
+      - heading "Junior QA – The Sprit House" [level=2]:
+        - img
+        - link "Junior QA – The Sprit House":
+          - /url: https://betteromation.shahrear.site/docs/junior-qa-the-sprit-house/
+      - text: "Last Updated: January 15, 2026"
+      - paragraph: "Overview This documentation provides an overview of the Junior QA position at The Sprit House, focusing on the essential topics related to Plugins, SAAS, Server, and Hosting. Plugins Plugins are essential components that enhance the functionality of applications at The Sprit House. During your time as a Junior QA, you will be responsible for: SAAS…"
+      - heading "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders" [level=2]:
+        - img
+        - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
+          - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+      - text: "Last Updated: January 15, 2026"
+      - paragraph: "Representational image. Picture: Collected Most of the gold currently in the country, as well as new imports, is coming through illegal channels, National Board of Revenue (NBR) Chairman Abdur Rahman Khan said today (14 January). The First Heading The NBR would provide necessary support to bring discipline to the sector, he said while speaking at…"
+      - heading "NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses" [level=2]:
+        - img
+        - link "NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses":
+          - /url: https://betteromation.shahrear.site/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
+      - text: "Last Updated: January 15, 2026"
+      - paragraph: "If VAT is properly applied on value addition with full input tax credit, the effective burden should not be excessive, he said National Board of Revenue (NBR) Chairman Abdur Rahman Khan speaks to journalists at his office at the NBR Headquarters in the capital’s Agargaon on Monday, 30 June 2025. Photo: TBS National Board of…"
+      - heading "QA Glossary Test for BetterDocs" [level=2]:
+        - img
+        - link "QA Glossary Test for BetterDocs":
+          - /url: https://betteromation.shahrear.site/docs/qa-glossary-test-for-betterdocs/
+      - text: "Last Updated: March 31, 2026"
+      - paragraph: Understanding key terms is essential in any learning or professional environment. Certain words starting with the letter A are particularly useful for building clarity, communication, and insight. Ambition, Altruism, and Aesthetic highlight personal drive, selfless behavior, and appreciation for beauty, respectively. These concepts can shape attitudes, relationships, and creative thinking in both personal and professional…
+      - paragraph
+      - paragraph
+      - paragraph
+      - paragraph
+      - paragraph: With Nested & Pagination
+      - heading "Fencing – The Beautiful Sport" [level=2]:
+        - img
+        - link "Fencing – The Beautiful Sport":
+          - /url: https://betteromation.shahrear.site/docs/fencing-the-beautiful-sport/
+      - text: "Last Updated: December 15, 2025"
+      - paragraph: Passion Fencing is more than just a sport; it’s a way of life for many. The passion that drives fencers to the next level is evident in their dedication to practice and competition. This sport, derived from centuries of tradition, inspires a love for physical fitness, strategy, and elegance. Each bout showcases an artist’s flair…
+      - heading "Basketball – The Game of Sprit" [level=2]:
+        - img
+        - link "Basketball – The Game of Sprit":
+          - /url: https://betteromation.shahrear.site/docs/basketball-the-game-of-sprit/
+      - text: "Last Updated: December 15, 2025"
+      - paragraph: Introduction Basketball is not just a game; it’s a spirit that unites players through teamwork and dedication. It emphasizes the importance of collaboration and practice to refine one’s skills. Teamwork Teamwork is the cornerstone of basketball. The game requires players to communicate effectively, share the ball, and support one another on and off the court….
+      - heading "Cricket – The Gentlemen’s Game" [level=2]:
+        - img
+        - link "Cricket – The Gentlemen’s Game":
+          - /url: https://betteromation.shahrear.site/docs/cricket-the-gentlemens-game/
+      - text: "Last Updated: December 15, 2025"
+      - paragraph: Squad The squad refers to the group of players selected to represent a team in a cricket competition. A typical cricket squad consists of 15 to 20 players, from which the playing XI is chosen. Teams often include a mix of specialist batsmen, bowlers, all-rounders, and wicketkeepers. Playing XI The playing XI is the final…
+      - heading "Football World Cup 2014" [level=2]:
+        - img
+        - link "Football World Cup 2014":
+          - /url: https://betteromation.shahrear.site/docs/football-world-cup-2014/
+      - text: "Last Updated: January 27, 2026"
+      - paragraph: Final Match The final match of the 2014 FIFA World Cup took place on July 13, 2014, at the Maracanã Stadium in Rio de Janeiro, Brazil. The match featured Germany competing against Argentina, a historic rivalry in football. Germany vs Argentina The intense final saw both teams displaying exceptional skills and strategies. The game was…
+      - heading "Golf – The Game of Patience and Dedication" [level=2]:
+        - img
+        - link "Golf – The Game of Patience and Dedication":
+          - /url: https://betteromation.shahrear.site/docs/golf-the-game-of-patience-and-dedication/
+      - text: "Last Updated: December 15, 2025"
+      - paragraph: Introduction Golf is a sport that emphasizes the importance of patience, focus, and dedication. Unlike many other sports, golf requires players to not only hone their physical skills but also cultivate mental resilience and strategic thinking. Agility In golf, agility is not just about physical flexibility or the ability to move swiftly. It is about…
+      - list:
+        - listitem:
+          - link "1":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-b-l3/page/1
+        - listitem:
+          - link "2":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-b-l3/page/2
+        - listitem:
+          - link "3":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-b-l3/page/3
+        - listitem:
+          - link "4":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-b-l3/page/4
+        - listitem:
+          - link "❯":
+            - /url: https://betteromation.shahrear.site/archive-doc-list-b-l3/page/2
+  `);
+});

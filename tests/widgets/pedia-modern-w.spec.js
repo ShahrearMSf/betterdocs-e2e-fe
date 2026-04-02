@@ -1,0 +1,222 @@
+// @ts-check
+const { test, expect } = require("@playwright/test");
+const { safeGoto } = require("../helpers");
+require("dotenv").config();
+
+const BASE_URL = process.env.BASE_URL;
+
+test("Pedia Modern W - Snapshot", async ({ page }) => {
+  await safeGoto(page, `${BASE_URL}/pedia-modern-w/`);
+  const content = page.locator("main#content");
+  await expect(content).toBeVisible({ timeout: 10000 });
+  await expect(content).toMatchAriaSnapshot(`
+    - main:
+      - heading "Pedia Modern W" [level=1]
+      - list:
+        - listitem:
+          - link "All":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/
+        - listitem:
+          - link "A":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=A
+        - listitem:
+          - link "B":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=B
+        - listitem:
+          - link "C":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=C
+        - listitem:
+          - link "D":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=D
+        - listitem:
+          - link "E":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=E
+        - listitem:
+          - link "F":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=F
+        - listitem:
+          - link "G":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=G
+        - listitem:
+          - link "H":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=H
+        - listitem:
+          - link "I":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=I
+        - listitem:
+          - link "J":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=J
+        - listitem:
+          - link "K":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=K
+        - listitem:
+          - link "L":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=L
+        - listitem:
+          - link "M":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=M
+        - listitem:
+          - link "N":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=N
+        - listitem:
+          - link "O":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=O
+        - listitem:
+          - link "P":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=P
+        - listitem:
+          - link "Q":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=Q
+        - listitem:
+          - link "R":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=R
+        - listitem:
+          - link "S":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=S
+        - listitem:
+          - link "T":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=T
+        - listitem:
+          - link "U":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=U
+        - listitem:
+          - link "V":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=V
+        - listitem:
+          - link "W":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=W
+        - listitem:
+          - link "X":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=X
+        - listitem:
+          - link "Y":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=Y
+        - listitem:
+          - link "Z":
+            - /url: https://betteromation.shahrear.site/pedia-modern-w/?encyclopedia_prefix=Z
+      - text: A
+      - heading "Aesthetic" [level=3]
+      - paragraph: Related to the appreciation of beauty or art.Aesthetic choices influence design, fashion, and visual appeal.
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/aesthetic
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/aesthetic
+      - heading "Altruism" [level=3]
+      - paragraph: The selfless concern for the well-being of others.Acts of altruism often promote kindness and social...
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/altruism
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/altruism
+      - heading "Ambition" [level=3]
+      - paragraph: A strong desire to achieve something significant.It drives individuals to set goals and work persistently.
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/ambition
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/ambition
+      - heading "Ample" [level=3]
+      - paragraph: Plentiful or more than enough in quantity or space.It conveys abundance and often a sense...
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/ample
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/ample
+      - heading "Analogy" [level=3]
+      - paragraph: A comparison between two things for explanation or clarification.Analogies help in understanding complex concepts through...
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/analogy
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/analogy
+      - heading "Anomaly" [level=3]
+      - paragraph: Something that deviates from what is standard or expected.Detecting anomalies can reveal errors, patterns, or...
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/anomaly
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/anomaly
+      - heading "Anticipate" [level=3]
+      - paragraph: To expect or predict something before it occurs.Anticipation helps in preparation and proactive decision-making.
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/anticipate
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/anticipate
+      - heading "Apple" [level=3]
+      - paragraph: Apple is a fruit.
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/apple
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/apple
+      - heading "Arbitrary" [level=3]
+      - paragraph: Based on random choice or personal whim rather than reason. Arbitrary decisions may seem unfair if...
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/arbitrary
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/arbitrary
+      - heading "Ascend" [level=3]
+      - paragraph: To move upward or rise to a higher position. It can describe physical movement or...
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/ascend
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/ascend
+      - link "Explore 1 More Docs":
+        - /url: "?encyclopedia_prefix=A"
+        - text: Explore 1 More Docs
+        - img
+      - link:
+        - /url: "?encyclopedia_prefix=A"
+      - text: B
+      - heading "Ball" [level=3]
+      - paragraph: There are different types of balls.
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/ball
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/ball
+      - text: C
+      - heading "Cat" [level=3]
+      - paragraph: Cat is a very adorable animal.
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/cat
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/cat
+      - text: D
+      - heading "Dog" [level=3]
+      - paragraph: Dog is a faithful animal.
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/dog
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/dog
+      - text: E
+      - heading "Egg" [level=3]
+      - paragraph: We should eat egg everyday.
+      - link "Learn More":
+        - /url: https://betteromation.shahrear.site/encyclopedia/egg
+      - link "→":
+        - /url: "#"
+      - link:
+        - /url: https://betteromation.shahrear.site/encyclopedia/egg
+      - text: Load More
+  `);
+});

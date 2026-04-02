@@ -1,0 +1,218 @@
+// @ts-check
+const { test, expect } = require("@playwright/test");
+const { safeGoto } = require("../helpers");
+require("dotenv").config();
+
+const BASE_URL = process.env.BASE_URL;
+
+test("Pedia B Retro - Snapshot", async ({ page }) => {
+  await safeGoto(page, `${BASE_URL}/pedia-b-retro/`);
+  const content = page.locator("main#content");
+  await expect(content).toBeVisible({ timeout: 10000 });
+  await expect(content).toMatchAriaSnapshot(`
+    - main:
+      - heading "Pedia B Retro" [level=1]
+      - list:
+        - listitem:
+          - link "All":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/
+        - listitem:
+          - link "A":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=A
+        - listitem:
+          - link "B":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=B
+        - listitem:
+          - link "C":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=C
+        - listitem:
+          - link "D":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=D
+        - listitem:
+          - link "E":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=E
+        - listitem:
+          - link "F":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=F
+        - listitem:
+          - link "G":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=G
+        - listitem:
+          - link "H":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=H
+        - listitem:
+          - link "I":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=I
+        - listitem:
+          - link "J":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=J
+        - listitem:
+          - link "K":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=K
+        - listitem:
+          - link "L":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=L
+        - listitem:
+          - link "M":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=M
+        - listitem:
+          - link "N":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=N
+        - listitem:
+          - link "O":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=O
+        - listitem:
+          - link "P":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=P
+        - listitem:
+          - link "Q":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=Q
+        - listitem:
+          - link "R":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=R
+        - listitem:
+          - link "S":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=S
+        - listitem:
+          - link "T":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=T
+        - listitem:
+          - link "U":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=U
+        - listitem:
+          - link "V":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=V
+        - listitem:
+          - link "W":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=W
+        - listitem:
+          - link "X":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=X
+        - listitem:
+          - link "Y":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=Y
+        - listitem:
+          - link "Z":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=Z
+      - text: A
+      - link "Aesthetic":
+        - /url: https://betteromation.shahrear.site/encyclopedia/aesthetic/
+      - link "Altruism":
+        - /url: https://betteromation.shahrear.site/encyclopedia/altruism/
+      - link "Ambition":
+        - /url: https://betteromation.shahrear.site/encyclopedia/ambition/
+      - link "Ample":
+        - /url: https://betteromation.shahrear.site/encyclopedia/ample/
+      - link "Analogy":
+        - /url: https://betteromation.shahrear.site/encyclopedia/analogy/
+      - link "Anomaly":
+        - /url: https://betteromation.shahrear.site/encyclopedia/anomaly/
+      - link "Anticipate":
+        - /url: https://betteromation.shahrear.site/encyclopedia/anticipate/
+      - link "Apple":
+        - /url: https://betteromation.shahrear.site/encyclopedia/apple/
+      - link "Arbitrary":
+        - /url: https://betteromation.shahrear.site/encyclopedia/arbitrary/
+      - link "Ascend":
+        - /url: https://betteromation.shahrear.site/encyclopedia/ascend/
+      - link "Explore 1 More Docs":
+        - /url: "?encyclopedia_prefix=A"
+        - text: Explore 1 More Docs
+        - img
+      - text: B
+      - link "Ball":
+        - /url: https://betteromation.shahrear.site/encyclopedia/ball/
+      - text: C
+      - link "Cat":
+        - /url: https://betteromation.shahrear.site/encyclopedia/cat/
+      - text: D
+      - link "Dog":
+        - /url: https://betteromation.shahrear.site/encyclopedia/dog/
+      - text: E
+      - link "Egg":
+        - /url: https://betteromation.shahrear.site/encyclopedia/egg/
+      - text: Load More
+      - heading "Box – Exclude –" [level=2]
+      - heading "Encyclopedia" [level=1]
+      - list:
+        - listitem:
+          - link "All":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/
+        - listitem:
+          - link "G":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=G
+        - listitem:
+          - link "H":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=H
+        - listitem:
+          - link "I":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=I
+        - listitem:
+          - link "J":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=J
+        - listitem:
+          - link "K":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=K
+        - listitem:
+          - link "L":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=L
+        - listitem:
+          - link "M":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=M
+        - listitem:
+          - link "N":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=N
+        - listitem:
+          - link "O":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=O
+        - listitem:
+          - link "P":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=P
+        - listitem:
+          - link "Q":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=Q
+        - listitem:
+          - link "R":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=R
+        - listitem:
+          - link "S":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=S
+        - listitem:
+          - link "T":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=T
+        - listitem:
+          - link "U":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=U
+        - listitem:
+          - link "V":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=V
+        - listitem:
+          - link "W":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=W
+        - listitem:
+          - link "X":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=X
+        - listitem:
+          - link "Y":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=Y
+        - listitem:
+          - link "Z":
+            - /url: https://betteromation.shahrear.site/pedia-b-retro/?encyclopedia_prefix=Z
+      - text: G
+      - link "Gold":
+        - /url: https://betteromation.shahrear.site/encyclopedia/gold/
+      - text: H
+      - link "Holiday":
+        - /url: https://betteromation.shahrear.site/encyclopedia/holiday/
+      - text: I
+      - link "Ice":
+        - /url: https://betteromation.shahrear.site/encyclopedia/ice/
+      - text: J
+      - link "Jewelry":
+        - /url: https://betteromation.shahrear.site/encyclopedia/jewelry/
+      - text: K
+      - link "Knights":
+        - /url: https://betteromation.shahrear.site/encyclopedia/knights/
+      - text: Load More
+  `);
+});

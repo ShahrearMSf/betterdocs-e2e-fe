@@ -1,0 +1,233 @@
+<a id="readme-top"></a>
+
+<br />
+<div align="center">
+  <a href="https://betterdocs.co">
+    <img src="https://betterdocs.co/wp-content/uploads/2023/08/Better-docs-logo-Fill.svg" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">BetterDocs E2E Test Automation (Lite)</h3>
+
+  <p align="center">
+    Frontend-only Playwright test suite for BetterDocs plugin
+  </p>
+</div>
+
+## About The Project
+
+[BetterDocs](https://betterdocs.co) is a popular WordPress knowledge base plugin with thousands of users worldwide. It helps create and organize documentation, FAQs, knowledge bases, and glossaries with beautiful layouts, AI-powered chatbots, and instant answers.
+
+This project provides end-to-end frontend automation testing for BetterDocs using Playwright. It covers Gutenberg blocks, Elementor widgets, shortcodes, instant answer, chatbot interactions, and more — all without requiring admin/backend access.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+* [![Node][Node.js]][Node-url]
+* [![Playwright][Playwright.js]][Playwright-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js version 22 LTS
+- npm
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone <repo-url>
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Create the `.env` file and provide necessary details
+   ```sh
+   cp .env.example .env
+   ```
+4. Install Playwright browsers
+   ```sh
+   npx playwright install --with-deps
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Usage
+
+```sh
+# Run all tests (headless)
+npm test
+
+# Run in headed mode (visible browser)
+npx playwright test --headed
+
+# Run by category
+npm run test:blocks
+npm run test:widgets
+npm run test:shortcodes
+npm run test:basic
+
+# View HTML report
+npm run report
+```
+
+_For more examples, refer to the [Playwright Documentation](https://playwright.dev)_
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Project Structure
+
+```
+tests/
+├── blocks/                  # Gutenberg block aria snapshot tests (39)
+├── widgets/                 # Elementor widget aria snapshot tests (34)
+├── shortcodes/              # Shortcode aria snapshot tests (16)
+├── basic/
+│   ├── 404-checks/          # Page load / 404 verification across sites (7)
+│   ├── card_based/          # Frontend regression tests (39)
+│   │   ├── chatbot-style    # Chatbot launcher styling, color, hover, click
+│   │   ├── deprecated-code  # .elementor-widget-container class absence
+│   │   ├── disable-js       # Verify removed scripts aren't loaded
+│   │   └── nested-slug      # Nested category URL slug verification
+│   ├── category-navigation  # Category box visibility, doc counts, click nav (6)
+│   ├── faq-interaction      # FAQ expand/collapse, multi-expand behavior (6)
+│   ├── search               # Search bar, modal open, live search results (5)
+│   ├── docs                 # Docs page full aria snapshot (1)
+│   └── encyclopedia         # Encyclopedia page full aria snapshot (1)
+├── instant-answer/          # Instant answer widget - 4 tab tests (25)
+│   ├── home-tab             # Header, search input, docs list, tab names
+│   ├── chatbot-tab          # Welcome message, email/guest login, fields
+│   ├── ask-tab              # Query form: email, name, subject, upload, send
+│   └── resources-tab        # Doc categories, Q&A section
+├── chatbot/                 # AI chatbot interaction tests (10)
+│   ├── chatbot-ui           # Panel title, response time, description, tabs
+│   ├── guest-search         # Guest login, send message, AI response + links
+│   └── email-search         # Email login, 'Fencing' search, response links
+└── helpers.js               # Shared utilities (safeGoto, sendChatbotMessage, etc.)
+```
+
+**Total: 194 tests across 112 files**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## What We Did
+
+### Snapshot Testing (89 tests)
+Each Gutenberg block, Elementor widget, and shortcode page is visited once, and the full aria tree of `main#content` is captured using Playwright's `toMatchAriaSnapshot()`. This verifies the complete content structure — headings, links, categories, doc counts, icons, and text — without relying on visual pixel comparisons.
+
+### 404 Checks (7 tests)
+Pages across three different sites (`betteromation`, `betterdocs.msf`, `cbotai`) are checked to ensure they load properly and don't return 404 errors. These use HTTP status code verification to handle cases where the server may return non-2xx responses (e.g. 502) without crashing the test.
+
+### Interactive Frontend Tests (17 tests)
+- **Category Navigation:** Verifies category boxes render correctly with names, doc counts, and icons. Clicks each category and confirms navigation to the correct archive page.
+- **FAQ Interaction:** Tests expand/collapse behavior of FAQ sections, verifies multiple answers can be expanded simultaneously, and checks that answer content becomes visible on click.
+- **Search:** Validates search bar visibility, placeholder text, modal opening on click, and live search results appearing when typing.
+
+### Regression Tests (39 tests)
+Adapted from the existing BDS_Automation admin test suite (CardBased folder):
+- **Chatbot Launcher Styling:** Verifies launcher button background color, border-radius, hover color change, and panel opening behavior.
+- **Deprecated Code Check:** Scans 12 pages to confirm `.elementor-widget-container` class is absent (regression for removed Elementor code).
+- **Removed Script Check:** Scans 19 pages to verify `extend-search-modal.js` is no longer loaded.
+- **Nested URL Slugs:** Validates that nested category URLs (`/docs/team/qa/`, `/docs/sports/`) resolve correctly.
+
+### Instant Answer Widget (25 tests)
+The instant answer widget has 4 tabs: **Home**, **Chatbot**, **Query**, and **Assets**. Each tab is tested individually:
+- Home: header text, search input, docs list, tab navigation
+- Chatbot: welcome message, email login, guest login, field visibility
+- Query: contact form fields (email, name, subject, message, file upload, send button)
+- Assets: doc categories list, Q&A section with FAQ questions
+
+### AI Chatbot (10 tests)
+- **Guest Mode:** Login as guest, type and send a message, verify AI responds and response links aren't 404.
+- **Email Mode:** Login with `msf@pro.automation`, search "Fencing", verify AI responds and response links aren't 404.
+- **UI Elements:** Panel title, response time info, description text, welcome message, send button, tab switching.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Error Handling & Resilience
+
+| Scenario | How It's Handled |
+|---|---|
+| **DB Connection Error** | `safeGoto()` detects "Error Establishing a Database Connection", waits 2 minutes, retries once |
+| **HTTP Error (502/500)** | `safeGoto()` catches `page.goto()` failures gracefully, test checks status code instead of page content |
+| **Chatbot "Thinking"** | `sendChatbotMessage()` polls for up to 1 minute waiting for AI response text to appear |
+| **Chatbot Technical Error** | If AI returns "experiencing" error, page is reloaded and the full chatbot flow is retried once |
+| **Code Snippet YAML** | Pages with raw code content (colons break YAML) use structural-only snapshots, skipping code text |
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Known Technical Considerations
+
+- **Aria snapshots are content-sensitive.** If page content changes (new categories added, text modified, FAQ questions updated), the corresponding snapshot test will fail and needs to be regenerated. Run `npx playwright test --update-snapshots` to refresh.
+- **AI chatbot responses vary.** The chatbot is powered by an external AI service. Response time, content, and availability can fluctuate. Tests verify that _a response was received_ rather than checking exact response text.
+- **Code snippet pages** contain raw source code with special characters (colons, backticks, curly braces) that are incompatible with YAML-based aria snapshots. These tests intentionally skip the code text and only verify structural elements.
+- **Server-side errors (502/500)** on certain pages (e.g. `/docs/team/`) are server infrastructure issues, not test failures. Tests check HTTP status is not 404 rather than requiring 200.
+- **Headed vs headless** mode may have minor timing differences. The test suite is optimized for both, but AI chatbot tests may take longer in headed mode due to rendering overhead.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Future Changes
+
+This test suite is designed to evolve alongside BetterDocs:
+
+- **Snapshot regeneration** will be needed when new features, layouts, or content changes are deployed. The `generate-tests.js` script in `/scripts` can bulk-regenerate snapshots for any category.
+- **New blocks/widgets/shortcodes** can be added by appending URLs to the generator script and running it for the relevant category.
+- **Admin/backend tests** could be introduced later with authentication setup (similar to the BDS_Automation project's `auth.setup.js` pattern).
+- **Additional chatbot scenarios** (multi-turn conversations, different queries, edge cases) can be added using the `sendChatbotMessage()` helper.
+- **Cross-browser testing** (Firefox, WebKit) can be enabled by adding projects to `playwright.config.js`.
+- **CI/CD integration** via GitHub Actions is straightforward — a workflow template can be added to `.github/workflows/`.
+- **Instant answer tab names and content** may change as the plugin is customized. Tests use flexible text matching where possible but may need updates after significant UI changes.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Roadmap
+
+- [x] All Gutenberg block snapshots
+- [x] All Elementor widget snapshots
+- [x] All shortcode snapshots
+- [x] Basic page snapshots (Docs, Encyclopedia)
+- [x] 404 checks across multiple sites
+- [x] Category navigation tests
+- [x] FAQ interaction tests
+- [x] Search modal tests
+- [x] Instant answer (4 tabs)
+- [x] AI chatbot (guest + email login, response link validation)
+- [x] Frontend regression tests (deprecated code, removed scripts, URL slugs)
+- [ ] CI/CD pipeline (GitHub Actions)
+- [ ] Cross-browser support (Firefox, WebKit)
+- [ ] Admin panel tests (with authentication)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Contact
+
+Muammar Shahrear - [@Muammar Shahrear](https://www.linkedin.com/in/muammarshahrear/) - shahrearmuammar@gmail.com
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## About the Author
+
+**Muammar Shahrear** is a software tester and researcher specializing in test automation, AI agents, WordPress plugin testing, and SaaS product quality assurance. He completed his B.Sc. and M.Sc. from the Institute of Information Technology (IIT), Jahangirnagar University (JU), Bangladesh, and also holds an M.Sc. from Technische Hochschule Mittelhessen (THM), Germany.
+
+- [LinkedIn](https://www.linkedin.com/in/muammarshahrear/)
+- [Google Scholar](https://scholar.google.com/citations?user=nPKujs4AAAAJ)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Acknowledgments
+
+* [Playwright](https://playwright.dev)
+* [BetterDocs](https://betterdocs.co)
+* [othneildrew/Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[Node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
+[Node-url]: https://nodejs.org/
+[Playwright.js]: https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white
+[Playwright-url]: https://playwright.dev

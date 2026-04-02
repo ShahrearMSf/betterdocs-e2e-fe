@@ -1,0 +1,19 @@
+{
+  "name": "betteromation-lite",
+  "version": "1.0.0",
+  "description": "Playwright E2E test suite for BetterOmation",
+  "author": "Muammar Shahrear",
+  "license": "ISC",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:blocks": "npx playwright test tests/blocks/",
+    "test:widgets": "npx playwright test tests/widgets/",
+    "test:shortcodes": "npx playwright test tests/shortcodes/",
+    "test:basic": "npx playwright test tests/basic/",
+    "report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "dotenv": "^16.4.7"
+  }
+}
