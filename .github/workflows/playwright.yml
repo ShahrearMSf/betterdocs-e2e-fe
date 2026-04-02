@@ -29,9 +29,31 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright tests
-        run: npx playwright test --timeout=300000
+        id: test-run
+        continue-on-error: true
+        run: npx playwright test --timeout=300000 --reporter=html,json
         env:
           BASE_URL: ${{ secrets.BASE_URL }}
+          PLAYWRIGHT_JSON_OUTPUT_NAME: results.json
+
+      - name: Parse test results
+        if: always()
+        id: parse-results
+        run: |
+          if [ -f results.json ]; then
+            PASSED=$(jq '[.suites[] | .. | objects | select(.status=="expected")] | length' results.json 2>/dev/null || echo "0")
+            FAILED=$(jq '[.suites[] | .. | objects | select(.status=="unexpected")] | length' results.json 2>/dev/null || echo "0")
+            SKIPPED=$(jq '[.suites[] | .. | objects | select(.status=="skipped")] | length' results.json 2>/dev/null || echo "0")
+          else
+            PASSED=0
+            FAILED=0
+            SKIPPED=0
+          fi
+
+          echo "passed=$PASSED" >> $GITHUB_OUTPUT
+          echo "failed=$FAILED" >> $GITHUB_OUTPUT
+          echo "skipped=$SKIPPED" >> $GITHUB_OUTPUT
+          echo "test_outcome=${{ steps.test-run.outcome }}" >> $GITHUB_OUTPUT
 
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
@@ -43,7 +65,7 @@ jobs:
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
-        if: failure()
+        if: always()
         with:
           name: test-results
           path: test-results/
@@ -56,10 +78,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Collect test results
-        id: collect-results
+      - name: Send Slack notification
+        if: env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
           RESULT='${{ needs.playwright-test.result }}'
+          WORKFLOW_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
           if [ "$RESULT" == "success" ]; then
             STATUS="All tests passed"
@@ -72,21 +97,11 @@ jobs:
             COLOR="warning"
           fi
 
-          echo "status=$STATUS" >> $GITHUB_OUTPUT
-          echo "color=$COLOR" >> $GITHUB_OUTPUT
-
-      - name: Send Slack notification
-        if: env.SLACK_WEBHOOK_URL != ''
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: |
-          WORKFLOW_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-
           PAYLOAD=$(cat <<EOF
           {
             "attachments": [
               {
-                "color": "${{ steps.collect-results.outputs.color }}",
+                "color": "$COLOR",
                 "blocks": [
                   {
                     "type": "header",
@@ -100,7 +115,7 @@ jobs:
                     "type": "section",
                     "text": {
                       "type": "mrkdwn",
-                      "text": "*Status:* ${{ steps.collect-results.outputs.status }}"
+                      "text": "*Status:* $STATUS"
                     }
                   },
                   {
