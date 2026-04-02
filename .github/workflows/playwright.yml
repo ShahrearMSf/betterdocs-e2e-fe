@@ -80,96 +80,96 @@ jobs:
           path: test-results/
           retention-days: 14
 
-  # notify-slack:
-  #   name: Send Slack Notification
-  #   needs: playwright-test
-  #   if: always()
-  #   runs-on: ubuntu-latest
-  #
-  #   steps:
-  #     - name: Send Slack notification
-  #       if: env.SLACK_WEBHOOK_URL != ''
-  #       env:
-  #         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-  #       run: |
-  #         RESULT='${{ needs.playwright-test.result }}'
-  #         WORKFLOW_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-  #
-  #         if [ "$RESULT" == "success" ]; then
-  #           STATUS="All tests passed"
-  #           COLOR="good"
-  #         elif [ "$RESULT" == "failure" ]; then
-  #           STATUS="Some tests failed"
-  #           COLOR="danger"
-  #         else
-  #           STATUS="Tests $RESULT"
-  #           COLOR="warning"
-  #         fi
-  #
-  #         PAYLOAD=$(cat <<EOF
-  #         {
-  #           "attachments": [
-  #             {
-  #               "color": "$COLOR",
-  #               "blocks": [
-  #                 {
-  #                   "type": "header",
-  #                   "text": {
-  #                     "type": "plain_text",
-  #                     "text": "BetterDocs Lite - Playwright Test Results",
-  #                     "emoji": true
-  #                   }
-  #                 },
-  #                 {
-  #                   "type": "section",
-  #                   "text": {
-  #                     "type": "mrkdwn",
-  #                     "text": "*Status:* $STATUS"
-  #                   }
-  #                 },
-  #                 {
-  #                   "type": "section",
-  #                   "fields": [
-  #                     {
-  #                       "type": "mrkdwn",
-  #                       "text": "*Branch:*\n${{ github.ref_name }}"
-  #                     },
-  #                     {
-  #                       "type": "mrkdwn",
-  #                       "text": "*Triggered by:*\n${{ github.event_name == 'schedule' && 'Scheduled (Wed/Sat 7:45 AM BST)' || github.actor }}"
-  #                     }
-  #                   ]
-  #                 },
-  #                 {
-  #                   "type": "section",
-  #                   "text": {
-  #                     "type": "mrkdwn",
-  #                     "text": "*Executed:* $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
-  #                   }
-  #                 },
-  #                 {
-  #                   "type": "actions",
-  #                   "elements": [
-  #                     {
-  #                       "type": "button",
-  #                       "text": {
-  #                         "type": "plain_text",
-  #                         "text": "View Workflow Run",
-  #                         "emoji": true
-  #                       },
-  #                       "url": "$WORKFLOW_URL",
-  #                       "style": "primary"
-  #                     }
-  #                   ]
-  #                 }
-  #               ]
-  #             }
-  #           ]
-  #         }
-  #         EOF
-  #         )
-  #
-  #         curl -X POST "$SLACK_WEBHOOK_URL" \
-  #           -H 'Content-Type: application/json' \
-  #           -d "$PAYLOAD"
-  #         echo "Slack notification sent"
+  notify-slack:
+    name: Send Slack Notification
+    needs: playwright-test
+    if: always()
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Slack notification
+        if: env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          RESULT='${{ needs.playwright-test.result }}'
+          WORKFLOW_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+          if [ "$RESULT" == "success" ]; then
+            STATUS="All tests passed"
+            COLOR="good"
+          elif [ "$RESULT" == "failure" ]; then
+            STATUS="Some tests failed"
+            COLOR="danger"
+          else
+            STATUS="Tests $RESULT"
+            COLOR="warning"
+          fi
+
+          PAYLOAD=$(cat <<EOF
+          {
+            "attachments": [
+              {
+                "color": "$COLOR",
+                "blocks": [
+                  {
+                    "type": "header",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "BetterDocs Lite - Playwright Test Results",
+                      "emoji": true
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "*Status:* $STATUS"
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "fields": [
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Branch:*\n${{ github.ref_name }}"
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Triggered by:*\n${{ github.event_name == 'schedule' && 'Scheduled (Wed/Sat 7:45 AM BST)' || github.actor }}"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "*Executed:* $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+                    }
+                  },
+                  {
+                    "type": "actions",
+                    "elements": [
+                      {
+                        "type": "button",
+                        "text": {
+                          "type": "plain_text",
+                          "text": "View Workflow Run",
+                          "emoji": true
+                        },
+                        "url": "$WORKFLOW_URL",
+                        "style": "primary"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+          EOF
+          )
+
+          curl -X POST "$SLACK_WEBHOOK_URL" \
+            -H 'Content-Type: application/json' \
+            -d "$PAYLOAD"
+          echo "Slack notification sent"
