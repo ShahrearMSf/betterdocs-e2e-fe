@@ -18,6 +18,11 @@ jobs:
     timeout-minutes: 60
     env:
       CI: true
+    outputs:
+      passed: ${{ steps.parse-results.outputs.passed }}
+      failed: ${{ steps.parse-results.outputs.failed }}
+      flaky: ${{ steps.parse-results.outputs.flaky }}
+      skipped: ${{ steps.parse-results.outputs.skipped }}
 
     steps:
       - name: Checkout repository
@@ -53,15 +58,18 @@ jobs:
           if [ -f results.json ]; then
             PASSED=$(jq '[.suites[] | .. | objects | select(has("status")) | select(.status=="expected")] | length' results.json 2>/dev/null || echo "0")
             FAILED=$(jq '[.suites[] | .. | objects | select(has("status")) | select(.status=="unexpected")] | length' results.json 2>/dev/null || echo "0")
+            FLAKY=$(jq '[.suites[] | .. | objects | select(has("status")) | select(.status=="flaky")] | length' results.json 2>/dev/null || echo "0")
             SKIPPED=$(jq '[.suites[] | .. | objects | select(has("status")) | select(.status=="skipped")] | length' results.json 2>/dev/null || echo "0")
           else
             PASSED=0
             FAILED=0
+            FLAKY=0
             SKIPPED=0
           fi
 
           echo "passed=$PASSED" >> $GITHUB_OUTPUT
           echo "failed=$FAILED" >> $GITHUB_OUTPUT
+          echo "flaky=$FLAKY" >> $GITHUB_OUTPUT
           echo "skipped=$SKIPPED" >> $GITHUB_OUTPUT
 
       - name: Upload HTML report
@@ -95,6 +103,17 @@ jobs:
           RESULT='${{ needs.playwright-test.result }}'
           WORKFLOW_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
+          PASSED='${{ needs.playwright-test.outputs.passed }}'
+          FAILED='${{ needs.playwright-test.outputs.failed }}'
+          FLAKY='${{ needs.playwright-test.outputs.flaky }}'
+          SKIPPED='${{ needs.playwright-test.outputs.skipped }}'
+
+          # Default to 0 if empty
+          PASSED=${PASSED:-0}
+          FAILED=${FAILED:-0}
+          FLAKY=${FLAKY:-0}
+          SKIPPED=${SKIPPED:-0}
+
           if [ "$RESULT" == "success" ]; then
             STATUS="All tests passed"
             COLOR="good"
@@ -118,6 +137,13 @@ jobs:
                       "type": "plain_text",
                       "text": "BetterDocs Lite - Playwright Test Results",
                       "emoji": true
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": ":white_check_mark: $PASSED | :x: $FAILED | :large_yellow_circle: $FLAKY | :fast_forward: $SKIPPED"
                     }
                   },
                   {
