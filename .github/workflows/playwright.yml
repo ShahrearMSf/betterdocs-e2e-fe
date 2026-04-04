@@ -1,9 +1,11 @@
 name: BetterDocs Lite - Playwright Tests
 
 on:
-  # Scheduled: Saturday & Wednesday at 7:45 AM BST (6:45 AM UTC)
   schedule:
-    - cron: "45 6 * * 3,6"
+    # Wed & Sat at 7:00 AM Bangladesh Time (1:00 AM UTC) → Webhook 1
+    - cron: "0 1 * * 3,6"
+    # Friday & Sunday at 7:00 AM Bangladesh Time (1:00 AM UTC) → Webhook 2
+    - cron: "0 1 * * 0,5"
   # Manual trigger
   workflow_dispatch:
 
@@ -128,10 +130,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Send Slack notification
-        if: env.SLACK_WEBHOOK_URL != ''
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      - name: Build Slack payload
+        id: slack-payload
         run: |
           WORKFLOW_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           REPORT_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
@@ -141,7 +141,6 @@ jobs:
           FLAKY='${{ needs.playwright-test.outputs.flaky }}'
           SKIPPED='${{ needs.playwright-test.outputs.skipped }}'
 
-          # Default to 0 if empty
           PASSED=${PASSED:-0}
           FAILED=${FAILED:-0}
           FLAKY=${FLAKY:-0}
@@ -161,7 +160,11 @@ jobs:
             COLOR="warning"
           fi
 
-          PAYLOAD=$(cat <<EOF
+          # Determine which schedule triggered (Friday = webhook 2, Wed/Sat = webhook 1)
+          DAY_OF_WEEK=$(date -u +%u)
+          echo "day=$DAY_OF_WEEK" >> $GITHUB_OUTPUT
+
+          cat > /tmp/slack-payload.json <<EOF
           {
             "attachments": [
               {
@@ -171,7 +174,7 @@ jobs:
                     "type": "header",
                     "text": {
                       "type": "plain_text",
-                      "text": "BetterDocs Lite - Playwright Test Results",
+                      "text": "BetterDocs - Playwright Front End Test Results",
                       "emoji": true
                     }
                   },
@@ -198,7 +201,7 @@ jobs:
                       },
                       {
                         "type": "mrkdwn",
-                        "text": "*Triggered by:*\n${{ github.event_name == 'schedule' && 'Scheduled (Wed/Sat 7:45 AM BST)' || github.actor }}"
+                        "text": "*Triggered by:*\n${{ github.event_name == 'schedule' && 'Scheduled' || github.actor }}"
                       }
                     ]
                   },
@@ -238,9 +241,23 @@ jobs:
             ]
           }
           EOF
-          )
 
+      - name: Send to Slack Webhook 1 (Wed/Sat or manual)
+        if: env.SLACK_WEBHOOK_URL != '' && (github.event_name != 'schedule' || (steps.slack-payload.outputs.day != '5' && steps.slack-payload.outputs.day != '0'))
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
           curl -X POST "$SLACK_WEBHOOK_URL" \
             -H 'Content-Type: application/json' \
-            -d "$PAYLOAD"
-          echo "Slack notification sent"
+            -d @/tmp/slack-payload.json
+          echo "Slack webhook 1 sent"
+
+      - name: Send to Slack Webhook 2 (Friday & Sunday)
+        if: env.SLACK_WEBHOOK_URL_2 != '' && github.event_name == 'schedule' && (steps.slack-payload.outputs.day == '5' || steps.slack-payload.outputs.day == '0')
+        env:
+          SLACK_WEBHOOK_URL_2: ${{ secrets.SLACK_WEBHOOK_URL_2 }}
+        run: |
+          curl -X POST "$SLACK_WEBHOOK_URL_2" \
+            -H 'Content-Type: application/json' \
+            -d @/tmp/slack-payload.json
+          echo "Slack webhook 2 sent"
