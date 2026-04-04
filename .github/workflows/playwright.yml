@@ -2,10 +2,10 @@ name: BetterDocs Lite - Playwright Tests
 
 on:
   schedule:
-    # Wed & Sat at 7:45 AM Bangladesh Time (1:45 AM UTC) → Webhook 1
-    - cron: "45 1 * * 3,6"
-    # Friday at 7:45 AM Bangladesh Time (1:45 AM UTC) → Webhook 2
-    - cron: "45 1 * * 5"
+    # Wed & Sat at 7:00 AM Bangladesh Time (1:00 AM UTC) → Webhook 1
+    - cron: "0 1 * * 3,6"
+    # Friday & Sunday at 7:00 AM Bangladesh Time (1:00 AM UTC) → Webhook 2
+    - cron: "0 1 * * 0,5"
   # Manual trigger
   workflow_dispatch:
 
@@ -243,7 +243,7 @@ jobs:
           EOF
 
       - name: Send to Slack Webhook 1 (Wed/Sat or manual)
-        if: env.SLACK_WEBHOOK_URL != '' && (github.event_name != 'schedule' || steps.slack-payload.outputs.day != '5')
+        if: env.SLACK_WEBHOOK_URL != '' && (github.event_name != 'schedule' || (steps.slack-payload.outputs.day != '5' && steps.slack-payload.outputs.day != '0'))
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
@@ -252,8 +252,8 @@ jobs:
             -d @/tmp/slack-payload.json
           echo "Slack webhook 1 sent"
 
-      - name: Send to Slack Webhook 2 (Friday only)
-        if: env.SLACK_WEBHOOK_URL_2 != '' && github.event_name == 'schedule' && steps.slack-payload.outputs.day == '5'
+      - name: Send to Slack Webhook 2 (Friday & Sunday)
+        if: env.SLACK_WEBHOOK_URL_2 != '' && github.event_name == 'schedule' && (steps.slack-payload.outputs.day == '5' || steps.slack-payload.outputs.day == '0')
         env:
           SLACK_WEBHOOK_URL_2: ${{ secrets.SLACK_WEBHOOK_URL_2 }}
         run: |
