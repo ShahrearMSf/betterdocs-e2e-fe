@@ -4,8 +4,8 @@ on:
   schedule:
     # Wed & Sat at 7:00 AM Bangladesh Time (1:00 AM UTC) → Webhook 1
     - cron: "0 1 * * 3,6"
-    # Friday & Sunday at 7:00 AM Bangladesh Time (1:00 AM UTC) → Webhook 2
-    - cron: "0 1 * * 0,5"
+    # Friday & Sunday at 11:00 AM Bangladesh Time (5:00 AM UTC) → Webhook 2
+    - cron: "0 5 * * 0,5"
   # Manual trigger
   workflow_dispatch:
 
@@ -160,8 +160,8 @@ jobs:
             COLOR="warning"
           fi
 
-          # Determine which schedule triggered (Friday = webhook 2, Wed/Sat = webhook 1)
-          DAY_OF_WEEK=$(date -u +%u)
+          # Determine which schedule triggered using Bangladesh time (UTC+6)
+          DAY_OF_WEEK=$(TZ='Asia/Dhaka' date +%u)
           echo "day=$DAY_OF_WEEK" >> $GITHUB_OUTPUT
 
           cat > /tmp/slack-payload.json <<EOF
@@ -243,7 +243,7 @@ jobs:
           EOF
 
       - name: Send to Slack Webhook 1 (Wed/Sat or manual)
-        if: env.SLACK_WEBHOOK_URL != '' && (github.event_name != 'schedule' || (steps.slack-payload.outputs.day != '5' && steps.slack-payload.outputs.day != '0'))
+        if: env.SLACK_WEBHOOK_URL != '' && (github.event_name != 'schedule' || (steps.slack-payload.outputs.day != '5' && steps.slack-payload.outputs.day != '7'))
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
@@ -253,7 +253,7 @@ jobs:
           echo "Slack webhook 1 sent"
 
       - name: Send to Slack Webhook 2 (Friday & Sunday)
-        if: env.SLACK_WEBHOOK_URL_2 != '' && github.event_name == 'schedule' && (steps.slack-payload.outputs.day == '5' || steps.slack-payload.outputs.day == '0')
+        if: env.SLACK_WEBHOOK_URL_2 != '' && github.event_name == 'schedule' && (steps.slack-payload.outputs.day == '5' || steps.slack-payload.outputs.day == '7')
         env:
           SLACK_WEBHOOK_URL_2: ${{ secrets.SLACK_WEBHOOK_URL_2 }}
         run: |

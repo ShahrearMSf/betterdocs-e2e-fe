@@ -28,6 +28,11 @@ test("Mkb B Classic - Snapshot", async ({ page }) => {
         - img "betterdocs-category-icon"
         - heading "Sports" [level=2]
         - text: 5 Docs
+      - link "betterdocs-category-icon Team 6 Docs":
+        - /url: https://betteromation.shahrear.site/docs/team/
+        - img "betterdocs-category-icon"
+        - heading "Team" [level=2]
+        - text: 6 Docs
       - heading "Include Sports Fruits Descending Slug" [level=2]
       - link "betterdocs-category-icon Sports 5 Docs":
         - /url: https://betteromation.shahrear.site/docs/sports/
@@ -40,16 +45,11 @@ test("Mkb B Classic - Snapshot", async ({ page }) => {
         - heading "Fruits" [level=2]
         - text: 7 Docs
       - heading "Exclude Sports Fruits Knowledge Base Ascending" [level=2]
-      - link "betterdocs-category-icon Sports 5 Docs":
-        - /url: https://betteromation.shahrear.site/docs/sports/
+      - link "betterdocs-category-icon Team 6 Docs":
+        - /url: https://betteromation.shahrear.site/docs/team/
         - img "betterdocs-category-icon"
-        - heading "Sports" [level=2]
-        - text: 5 Docs
-      - link "betterdocs-category-icon Fruits 7 Docs":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
-        - img "betterdocs-category-icon"
-        - heading "Fruits" [level=2]
-        - text: 7 Docs
+        - heading "Team" [level=2]
+        - text: 6 Docs
       - link "betterdocs-category-icon Company 2 Docs":
         - /url: https://betteromation.shahrear.site/docs/qa/
         - img "betterdocs-category-icon"
@@ -66,6 +66,11 @@ test("Mkb B Classic - Snapshot", async ({ page }) => {
         - img "betterdocs-category-icon"
         - heading "Sports" [level=2]
         - text: Shahrear 5 Blogs
+      - link "betterdocs-category-icon Team Shahrear 6 Blogs":
+        - /url: https://betteromation.shahrear.site/docs/team/
+        - img "betterdocs-category-icon"
+        - heading "Team" [level=2]
+        - text: Shahrear 6 Blogs
       - link "betterdocs-category-icon Fruits Shahrear 7 Blogs":
         - /url: https://betteromation.shahrear.site/docs/fruits/
         - img "betterdocs-category-icon"

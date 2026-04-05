@@ -41,7 +41,7 @@ test("Search B Classic - Snapshot", async ({ page }) => {
         - option "WPD"
         - option "MSF"
       - button "Submit search": Search
-      - text: Popular Search orange Cricket mer ora gold
+      - text: Popular Search Cricket orange mer ora gold
       - heading "Custom with Advanced" [level=2]
       - heading "What a Beautiful Lie" [level=2]
       - heading "Life is Beautiful" [level=3]
@@ -67,6 +67,6 @@ test("Search B Classic - Snapshot", async ({ page }) => {
         - option "WPD"
         - option "MSF"
       - button "Submit search": Search
-      - text: Popular Search orange Cricket mer ora gold
+      - text: Popular Search Cricket orange mer ora gold
   `);
 });

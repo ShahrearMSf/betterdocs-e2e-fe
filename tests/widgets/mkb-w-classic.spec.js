@@ -22,6 +22,11 @@ test("Mkb W Classic - Snapshot", async ({ page }) => {
         - img "betterdocs-category-icon"
         - heading "Fruits" [level=2]
         - text: MSF 7 Articles
+      - link "betterdocs-category-icon Team MSF 6 Articles":
+        - /url: https://betteromation.shahrear.site/docs/team/
+        - img "betterdocs-category-icon"
+        - heading "Team" [level=2]
+        - text: MSF 6 Articles
       - link "betterdocs-category-icon Company MSF 2 Articles":
         - /url: https://betteromation.shahrear.site/docs/qa/
         - img "betterdocs-category-icon"
@@ -41,6 +46,10 @@ test("Mkb W Classic - Snapshot", async ({ page }) => {
         - heading "Team" [level=2]
         - text: MSF 6 Articles
       - heading "Exclude" [level=2]
+      - link "betterdocs-category-icon MSF 6 Blogs":
+        - /url: https://betteromation.shahrear.site/docs/team/
+        - img "betterdocs-category-icon"
+        - text: MSF 6 Blogs
       - link "betterdocs-category-icon MSF 5 Blogs":
         - /url: https://betteromation.shahrear.site/docs/sports/
         - img "betterdocs-category-icon"
@@ -49,10 +58,6 @@ test("Mkb W Classic - Snapshot", async ({ page }) => {
         - /url: https://betteromation.shahrear.site/docs/qa/
         - img "betterdocs-category-icon"
         - text: MSF 2 Blogs
-      - link "betterdocs-category-icon MSF 7 Blogs":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
-        - img "betterdocs-category-icon"
-        - text: MSF 7 Blogs
       - heading "Custom" [level=2]
       - link "betterdocs-category-icon Sports MSF 5 Articles":
         - /url: https://betteromation.shahrear.site/docs/sports/
