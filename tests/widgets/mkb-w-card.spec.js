@@ -27,6 +27,11 @@ test("Mkb W Card - Snapshot", async ({ page }) => {
         - img "betterdocs-category-icon"
         - heading "Sports" [level=2]
         - text: "5"
+      - link "betterdocs-category-icon Team 6":
+        - /url: https://betteromation.shahrear.site/docs/team/
+        - img "betterdocs-category-icon"
+        - heading "Team" [level=2]
+        - text: "6"
       - heading "Include" [level=2]
       - link "betterdocs-category-icon Sports 5":
         - /url: https://betteromation.shahrear.site/docs/sports/
@@ -43,29 +48,24 @@ test("Mkb W Card - Snapshot", async ({ page }) => {
         - /url: https://betteromation.shahrear.site/docs/qa/
         - heading "Company" [level=1]
         - text: "2"
-      - link "Fruits 7":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
-        - heading "Fruits" [level=1]
-        - text: "7"
+      - link "Team 6":
+        - /url: https://betteromation.shahrear.site/docs/team/
+        - heading "Team" [level=1]
+        - text: "6"
       - link "Sports 5":
         - /url: https://betteromation.shahrear.site/docs/sports/
         - heading "Sports" [level=1]
         - text: "5"
       - heading "Custom" [level=2]
-      - link "betterdocs-category-icon Sports 5":
-        - /url: https://betteromation.shahrear.site/docs/sports/
+      - link "betterdocs-category-icon Team 6":
+        - /url: https://betteromation.shahrear.site/docs/team/
         - img "betterdocs-category-icon"
-        - heading "Sports" [level=1]
-        - text: "5"
+        - heading "Team" [level=1]
+        - text: "6"
       - link "betterdocs-category-icon Company 2":
         - /url: https://betteromation.shahrear.site/docs/qa/
         - img "betterdocs-category-icon"
         - heading "Company" [level=1]
         - text: "2"
-      - link "betterdocs-category-icon Fruits 7":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
-        - img "betterdocs-category-icon"
-        - heading "Fruits" [level=1]
-        - text: "7"
   `);
 });

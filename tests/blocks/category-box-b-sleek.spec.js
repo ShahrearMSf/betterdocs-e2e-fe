@@ -49,11 +49,5 @@ test("Category Box B Sleek - Snapshot", async ({ page }) => {
         - heading "Star" [level=2]
         - text: 1 Sub Category | 1 Doc
         - paragraph: "Last Updated: January 15, 2026"
-      - 'link "MSF 1 Doc Last Updated: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/msf/
-        - img
-        - heading "MSF" [level=2]
-        - text: 1 Doc
-        - paragraph: "Last Updated: January 15, 2026"
   `);
 });

@@ -22,6 +22,11 @@ test("Mkb W Box - Snapshot", async ({ page }) => {
         - img "betterdocs-category-icon"
         - heading "Fruits" [level=2]
         - text: 7 Docs
+      - link "betterdocs-category-icon Team 6 Docs":
+        - /url: https://betteromation.shahrear.site/docs/team/
+        - img "betterdocs-category-icon"
+        - heading "Team" [level=2]
+        - text: 6 Docs
       - link "betterdocs-category-icon Company 2 Docs":
         - /url: https://betteromation.shahrear.site/docs/qa/
         - img "betterdocs-category-icon"
@@ -44,31 +49,26 @@ test("Mkb W Box - Snapshot", async ({ page }) => {
         - img "betterdocs-category-icon"
         - heading "Company" [level=2]
         - text: 2026 December 2 Docs
-      - link "betterdocs-category-icon Fruits 2026 December 7 Docs":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+      - link "betterdocs-category-icon Team 2026 December 6 Docs":
+        - /url: https://betteromation.shahrear.site/docs/team/
         - img "betterdocs-category-icon"
-        - heading "Fruits" [level=2]
-        - text: 2026 December 7 Docs
-      - link "betterdocs-category-icon Sports 2026 December 5 Docs":
-        - /url: https://betteromation.shahrear.site/docs/sports/
-        - img "betterdocs-category-icon"
-        - heading "Sports" [level=2]
-        - text: 2026 December 5 Docs
+        - heading "Team" [level=2]
+        - text: 2026 December 6 Docs
       - heading "Custom" [level=2]
       - link "betterdocs-category-icon Company 2026 December 2 Docs":
         - /url: https://betteromation.shahrear.site/docs/qa/
         - img "betterdocs-category-icon"
         - heading "Company" [level=2]
         - text: 2026 December 2 Docs
-      - link "betterdocs-category-icon Fruits 2026 December 7 Docs":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
-        - img "betterdocs-category-icon"
-        - heading "Fruits" [level=2]
-        - text: 2026 December 7 Docs
       - link "betterdocs-category-icon Sports 2026 December 5 Docs":
         - /url: https://betteromation.shahrear.site/docs/sports/
         - img "betterdocs-category-icon"
         - heading "Sports" [level=2]
         - text: 2026 December 5 Docs
+      - link "betterdocs-category-icon Team 2026 December 6 Docs":
+        - /url: https://betteromation.shahrear.site/docs/team/
+        - img "betterdocs-category-icon"
+        - heading "Team" [level=2]
+        - text: 2026 December 6 Docs
   `);
 });

@@ -20,6 +20,10 @@ test("Docs - Snapshot", async ({ page }) => {
       - img "betterdocs-category-icon"
       - heading "Fruits" [level=2]
       - text: 7 Docs
+    - link "betterdocs-category-icon Team 6 Docs":
+      - img "betterdocs-category-icon"
+      - heading "Team" [level=2]
+      - text: 6 Docs
     - link "betterdocs-category-icon Company 2 Docs":
       - img "betterdocs-category-icon"
       - heading "Company" [level=2]

@@ -12,27 +12,29 @@ test.describe("Docs Page - Category Navigation", () => {
 
   test("Category boxes are visible with correct names", async ({ page }) => {
     const categories = page.locator(".betterdocs-single-category-wrapper");
-    await expect(categories).toHaveCount(3);
+    await expect(categories).toHaveCount(4);
 
     await expect(categories.nth(0)).toContainText("Sports");
     await expect(categories.nth(1)).toContainText("Fruits");
-    await expect(categories.nth(2)).toContainText("Company");
+    await expect(categories.nth(2)).toContainText("Team");
+    await expect(categories.nth(3)).toContainText("Company");
   });
 
   test("Category boxes display doc counts", async ({ page }) => {
     const counts = page.locator(".betterdocs-category-items-counts");
-    await expect(counts).toHaveCount(3);
+    await expect(counts).toHaveCount(4);
 
     await expect(counts.nth(0)).toContainText("5 Docs");
     await expect(counts.nth(1)).toContainText("7 Docs");
-    await expect(counts.nth(2)).toContainText("2 Docs");
+    await expect(counts.nth(2)).toContainText("6 Docs");
+    await expect(counts.nth(3)).toContainText("2 Docs");
   });
 
   test("Category icons are visible", async ({ page }) => {
     const icons = page.locator(".betterdocs-category-icon-img");
-    await expect(icons).toHaveCount(3);
+    await expect(icons).toHaveCount(4);
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       await expect(icons.nth(i)).toBeVisible();
     }
   });

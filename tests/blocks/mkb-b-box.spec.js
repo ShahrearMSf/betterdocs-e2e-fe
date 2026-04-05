@@ -23,6 +23,11 @@ test("Mkb B Box - Snapshot", async ({ page }) => {
         - img "betterdocs-category-icon"
         - heading "Fruits" [level=2]
         - text: 7 Docs
+      - link "betterdocs-category-icon Team 6 Docs":
+        - /url: https://betteromation.shahrear.site/docs/team/
+        - img "betterdocs-category-icon"
+        - heading "Team" [level=2]
+        - text: 6 Docs
       - link "betterdocs-category-icon Company 2 Docs":
         - /url: https://betteromation.shahrear.site/docs/qa/
         - img "betterdocs-category-icon"
@@ -37,6 +42,11 @@ test("Mkb B Box - Snapshot", async ({ page }) => {
         - heading "Company" [level=2]
         - text: 2 Docs
       - heading "Exclude Company Name based Order Descending" [level=2]
+      - link "betterdocs-category-icon Team 6 Docs":
+        - /url: https://betteromation.shahrear.site/docs/team/
+        - img "betterdocs-category-icon"
+        - heading "Team" [level=2]
+        - text: 6 Docs
       - link "betterdocs-category-icon Sports 5 Docs":
         - /url: https://betteromation.shahrear.site/docs/sports/
         - img "betterdocs-category-icon"
@@ -47,11 +57,6 @@ test("Mkb B Box - Snapshot", async ({ page }) => {
         - img "betterdocs-category-icon"
         - heading "Fruits" [level=2]
         - text: 7 Docs
-      - link "betterdocs-category-icon Company 2 Docs":
-        - /url: https://betteromation.shahrear.site/docs/qa/
-        - img "betterdocs-category-icon"
-        - heading "Company" [level=2]
-        - text: 2 Docs
       - heading "Custom Suffix and Prefix – Id Ascending" [level=2]
       - link "betterdocs-category-icon Sports Favourite 5 Articles":
         - /url: https://betteromation.shahrear.site/docs/sports/
@@ -63,6 +68,11 @@ test("Mkb B Box - Snapshot", async ({ page }) => {
         - img "betterdocs-category-icon"
         - heading "Fruits" [level=2]
         - text: Favourite 7 Articles
+      - link "betterdocs-category-icon Team Favourite 6 Articles":
+        - /url: https://betteromation.shahrear.site/docs/team/
+        - img "betterdocs-category-icon"
+        - heading "Team" [level=2]
+        - text: Favourite 6 Articles
       - link "betterdocs-category-icon Company Favourite 2 Articles":
         - /url: https://betteromation.shahrear.site/docs/qa/
         - img "betterdocs-category-icon"

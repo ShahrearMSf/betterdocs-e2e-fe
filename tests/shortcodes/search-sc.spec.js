@@ -43,6 +43,6 @@ test("Search Sc - Snapshot", async ({ page }) => {
         - option "WPD"
         - option "MSF"
       - button "Submit search": Search
-      - text: Popular Search orange Cricket mer ora gold
+      - text: Popular Search Cricket orange mer ora gold
   `);
 });
