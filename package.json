@@ -10,6 +10,8 @@
     "test:widgets": "npx playwright test tests/widgets/",
     "test:shortcodes": "npx playwright test tests/shortcodes/",
     "test:basic": "npx playwright test tests/basic/",
+    "test:chatbot": "npx playwright test tests/chatbot/",
+    "test:instant-answer": "npx playwright test tests/instant-answer/",
     "report": "npx playwright show-report"
   },
   "devDependencies": {
