@@ -108,9 +108,16 @@ tests/
 │   │   ├── deprecated-code      # .elementor-widget-container absence
 │   │   ├── disable-js           # Verify removed scripts aren't loaded
 │   │   └── nested-slug          # Nested category URL slug verification
-│   ├── category-navigation      # Category box visibility, counts, nav (6)
-│   ├── faq-interaction          # FAQ expand/collapse behavior (6)
-│   ├── search                   # Search bar, modal, live results (5)
+│   ├── navigation/              # Interactive navigation tests (44)
+│   │   ├── archive-pagination   # Pagination controls, page nav, doc links
+│   │   ├── category-navigation  # Category box visibility, counts, nav
+│   │   ├── doc-link-navigation  # Single doc clicks, category archives
+│   │   ├── encyclopedia-nav     # A-Z filter, entry links, reset
+│   │   ├── glossary-navigation  # Glossary tooltips, links, new tab nav
+│   │   ├── faq-interaction      # FAQ expand/collapse behavior
+│   │   ├── search               # Search bar, modal, live results
+│   │   ├── search-filter        # Category dropdown, popular tags
+│   │   └── sidebar-navigation   # Sidebar categories, icons, doc counts
 │   ├── docs                     # Docs page full aria snapshot (1)
 │   └── encyclopedia             # Encyclopedia page full aria snapshot (1)
 ├── instant-answer/              # Instant answer widget - 4 tab tests (25)
@@ -125,7 +132,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 219 tests across 120 files**
+**Total: 246 tests across 126 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -145,10 +152,16 @@ Pages across three different sites (`betteromation`, `betterdocs.msf`, `cbotai`)
 - **Intentional 404 validation** — non-existent slugs and double slugs return HTTP 404
 - **API endpoints** — RSS feed, REST API docs and category endpoints respond
 
-### Interactive Frontend Tests (17 tests)
+### Interactive Frontend Tests (44 tests)
 - **Category Navigation:** Verifies category boxes render correctly with names, doc counts, and icons. Clicks each category and confirms navigation to the correct archive page.
 - **FAQ Interaction:** Tests expand/collapse behavior of FAQ sections, verifies multiple answers can be expanded simultaneously, and checks that answer content becomes visible on click.
 - **Search:** Validates search bar visibility, placeholder text, modal opening on click, and live search results appearing when typing.
+- **Search Filter:** Category dropdown selection, popular search tags visibility, submit button functionality on the block search page.
+- **Encyclopedia Navigation:** A-Z alphabet filter links, clicking a letter filters entries, clicking All resets, entry links navigate to single encyclopedia pages.
+- **Archive Pagination:** Pagination controls visibility, page 2 navigation, next arrow click, and doc list link click-through.
+- **Doc Link Navigation:** Clicks docs from Sports and Fruits category archives, verifies single doc content loads, checks nested category archives.
+- **Sidebar Navigation:** Sidebar category visibility with icons and doc counts across multiple sections.
+- **Glossary Navigation:** Verifies glossary tooltip terms on a single doc page, checks tooltip data, confirms links point to encyclopedia entries, validates new-tab navigation, and ensures all glossary links are not 404.
 
 ### Regression Tests (39 tests)
 Adapted from the existing BDS_Automation admin test suite (CardBased folder):
@@ -224,6 +237,12 @@ This test suite is designed to evolve alongside BetterDocs:
 - [x] Instant answer (4 tabs)
 - [x] AI chatbot (guest + email login, response link validation)
 - [x] Frontend regression tests (deprecated code, removed scripts, URL slugs)
+- [x] Encyclopedia A-Z filter navigation
+- [x] Archive pagination navigation
+- [x] Doc link & category archive navigation
+- [x] Search category filter & popular tags
+- [x] Sidebar category navigation
+- [x] Glossary tooltip & encyclopedia link validation
 - [ ] CI/CD pipeline (GitHub Actions)
 - [ ] Cross-browser support (Firefox, WebKit)
 - [ ] Admin panel tests (with authentication)
