@@ -17,7 +17,7 @@
 
 [BetterDocs](https://betterdocs.co) is a popular WordPress knowledge base plugin with thousands of users worldwide. It helps create and organize documentation, FAQs, knowledge bases, and glossaries with beautiful layouts, AI-powered chatbots, and instant answers.
 
-This project provides end-to-end frontend automation testing for BetterDocs using Playwright. It covers Gutenberg blocks, Elementor widgets, shortcodes, instant answer, chatbot interactions, and more — all without requiring admin/backend access.
+This project provides end-to-end frontend automation testing for BetterDocs using Playwright. It covers Gutenberg blocks, Elementor widgets, shortcodes, instant answer, chatbot interactions, permalink routing, API endpoints, and more — all without requiring admin/backend access.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -70,6 +70,8 @@ npm run test:blocks
 npm run test:widgets
 npm run test:shortcodes
 npm run test:basic
+npm run test:chatbot
+npm run test:instant-answer
 
 # View HTML report
 npm run report
@@ -83,44 +85,65 @@ _For more examples, refer to the [Playwright Documentation](https://playwright.d
 
 ```
 tests/
-├── blocks/                  # Gutenberg block aria snapshot tests (39)
-├── widgets/                 # Elementor widget aria snapshot tests (34)
-├── shortcodes/              # Shortcode aria snapshot tests (16)
+├── blocks/                      # Gutenberg block aria snapshot tests (39)
+├── widgets/                     # Elementor widget aria snapshot tests (34)
+├── shortcodes/                  # Shortcode aria snapshot tests (16)
 ├── basic/
-│   ├── 404-checks/          # Page load / 404 verification across sites (7)
-│   ├── card_based/          # Frontend regression tests (39)
-│   │   ├── chatbot-style    # Chatbot launcher styling, color, hover, click
-│   │   ├── deprecated-code  # .elementor-widget-container class absence
-│   │   ├── disable-js       # Verify removed scripts aren't loaded
-│   │   └── nested-slug      # Nested category URL slug verification
-│   ├── category-navigation  # Category box visibility, doc counts, click nav (6)
-│   ├── faq-interaction      # FAQ expand/collapse, multi-expand behavior (6)
-│   ├── search               # Search bar, modal open, live search results (5)
-│   ├── docs                 # Docs page full aria snapshot (1)
-│   └── encyclopedia         # Encyclopedia page full aria snapshot (1)
-├── instant-answer/          # Instant answer widget - 4 tab tests (25)
-│   ├── home-tab             # Header, search input, docs list, tab names
-│   ├── chatbot-tab          # Welcome message, email/guest login, fields
-│   ├── ask-tab              # Query form: email, name, subject, upload, send
-│   └── resources-tab        # Doc categories, Q&A section
-├── chatbot/                 # AI chatbot interaction tests (10)
-│   ├── chatbot-ui           # Panel title, response time, description, tabs
-│   ├── guest-search         # Guest login, send message, AI response + links
-│   └── email-search         # Email login, 'Fencing' search, response links
-└── helpers.js               # Shared utilities (safeGoto, sendChatbotMessage, etc.)
+│   ├── 404-checks/              # Page load / 404 verification across sites (10)
+│   │   ├── cbotai-*             # Cbotai domain checks (docs, encyclopedia)
+│   │   ├── msf-*                # MSF domain checks (docs, encyclopedia)
+│   │   ├── docs-*               # Main site doc/category checks
+│   │   ├── cross-domain         # Cross-domain parity (cbotai, msf, main)
+│   │   └── intentional-404      # Verify 404 renders for invalid URLs
+│   ├── permalink-routing/       # URL routing & edge case tests (15)
+│   │   ├── trailing-slash       # /docs vs /docs/ consistency
+│   │   ├── pagination           # /docs/page/1/, out-of-range pages
+│   │   ├── search-permalinks    # ?s=test&post_type=docs search URLs
+��   │   ├── author-archive       # /docs/authors/ archive pages
+│   │   └── edge-cases           # Uppercase URLs, encoded chars, homepage
+│   ├── api-endpoints/           # Feed & REST API availability (3)
+│   │   └── feed-api             # RSS feed, wp-json docs & doc_category
+│   ├── card_based/              # Frontend regression tests (39)
+│   │   ├── chatbot-style        # Launcher styling, color, hover, click
+│   │   ├── deprecated-code      # .elementor-widget-container absence
+│   │   ├── disable-js           # Verify removed scripts aren't loaded
+│   │   └── nested-slug          # Nested category URL slug verification
+│   ├── category-navigation      # Category box visibility, counts, nav (6)
+│   ├── faq-interaction          # FAQ expand/collapse behavior (6)
+│   ├── search                   # Search bar, modal, live results (5)
+│   ├── docs                     # Docs page full aria snapshot (1)
+│   └── encyclopedia             # Encyclopedia page full aria snapshot (1)
+├── instant-answer/              # Instant answer widget - 4 tab tests (25)
+│   ├── home-tab                 # Header, search input, docs list, tabs
+│   ├── chatbot-tab              # Welcome message, email/guest login
+│   ├── ask-tab                  # Query form: email, name, subject, upload
+│   └── resources-tab            # Doc categories, Q&A section
+├── chatbot/                     # AI chatbot interaction tests (10)
+│   ├── chatbot-ui               # Panel title, response time, tabs
+│   ├── guest-search             # Guest login, message, AI response + links
+│   └── email-search             # Email login, search, response + links
+└── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 194 tests across 112 files**
+**Total: 219 tests across 120 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## What We Did
+## What We Test
 
 ### Snapshot Testing (89 tests)
 Each Gutenberg block, Elementor widget, and shortcode page is visited once, and the full aria tree of `main#content` is captured using Playwright's `toMatchAriaSnapshot()`. This verifies the complete content structure — headings, links, categories, doc counts, icons, and text — without relying on visual pixel comparisons.
 
-### 404 Checks (7 tests)
-Pages across three different sites (`betteromation`, `betterdocs.msf`, `cbotai`) are checked to ensure they load properly and don't return 404 errors. These use HTTP status code verification to handle cases where the server may return non-2xx responses (e.g. 502) without crashing the test.
+### 404 & Permalink Checks (28 tests)
+Pages across three different sites (`betteromation`, `betterdocs.msf`, `cbotai`) are checked to ensure they load properly and don't return 404 errors. Additional permalink routing tests verify:
+- **Trailing slash consistency** — `/docs` vs `/docs/` both resolve correctly
+- **Pagination URLs** — `/docs/page/1/`, category pagination, out-of-range pages return 404
+- **Search permalinks** — `?s=test&post_type=docs` search result pages load
+- **Author archives** — `/docs/authors/1/` loads without errors
+- **Edge cases** — uppercase URLs, URL-encoded characters, homepage validation
+- **Cross-domain parity** — same paths work across all three domains
+- **Intentional 404 validation** — non-existent slugs and double slugs return HTTP 404
+- **API endpoints** — RSS feed, REST API docs and category endpoints respond
 
 ### Interactive Frontend Tests (17 tests)
 - **Category Navigation:** Verifies category boxes render correctly with names, doc counts, and icons. Clicks each category and confirms navigation to the correct archive page.
@@ -191,6 +214,10 @@ This test suite is designed to evolve alongside BetterDocs:
 - [x] All shortcode snapshots
 - [x] Basic page snapshots (Docs, Encyclopedia)
 - [x] 404 checks across multiple sites
+- [x] Cross-domain parity checks
+- [x] Permalink routing & edge case tests
+- [x] API endpoint availability checks
+- [x] Intentional 404 validation
 - [x] Category navigation tests
 - [x] FAQ interaction tests
 - [x] Search modal tests
@@ -213,8 +240,8 @@ Muammar Shahrear - [@Muammar Shahrear](https://www.linkedin.com/in/muammarshahre
 
 **Muammar Shahrear** is a software tester and researcher specializing in test automation, AI agents, WordPress plugin testing, and SaaS product quality assurance. He completed his B.Sc. and M.Sc. from the Institute of Information Technology (IIT), Jahangirnagar University (JU), Bangladesh, and also holds an M.Sc. from Technische Hochschule Mittelhessen (THM), Germany.
 
-- [LinkedIn](https://www.linkedin.com/in/muammarshahrear/)
-- [Google Scholar](https://scholar.google.com/citations?user=nPKujs4AAAAJ)
+- [![LinkedIn][LinkedIn-shield]][LinkedIn-url]
+- [![Google Scholar][Scholar-shield]][Scholar-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -231,3 +258,7 @@ Muammar Shahrear - [@Muammar Shahrear](https://www.linkedin.com/in/muammarshahre
 [Node-url]: https://nodejs.org/
 [Playwright.js]: https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white
 [Playwright-url]: https://playwright.dev
+[LinkedIn-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+[LinkedIn-url]: https://www.linkedin.com/in/muammarshahrear/
+[Scholar-shield]: https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=googlescholar&logoColor=white
+[Scholar-url]: https://scholar.google.com/citations?user=nPKujs4AAAAJ
