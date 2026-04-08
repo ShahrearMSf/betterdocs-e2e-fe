@@ -1,6 +1,6 @@
 // @ts-check
 const { test, expect } = require("@playwright/test");
-const { safeGoto } = require("../helpers");
+const { safeGoto } = require("../../helpers");
 require("dotenv").config();
 
 const BASE_URL = process.env.BASE_URL;
