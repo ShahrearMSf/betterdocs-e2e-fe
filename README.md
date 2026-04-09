@@ -9,7 +9,7 @@
   <h3 align="center">BetterDocs E2E Test Automation (Lite)</h3>
 
   <p align="center">
-    Frontend-only Playwright test suite for BetterDocs plugin
+    Playwright test suite for BetterDocs plugin
   </p>
 </div>
 
