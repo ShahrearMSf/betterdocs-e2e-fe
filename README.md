@@ -95,12 +95,15 @@ tests/
 │   │   ├── docs-*               # Main site doc/category checks
 │   │   ├── cross-domain         # Cross-domain parity (cbotai, msf, main)
 │   │   └── intentional-404      # Verify 404 renders for invalid URLs
-│   ├── permalink-routing/       # URL routing & edge case tests (15)
+│   ├── permalink-routing/       # URL routing, SEO & structure tests (33)
 │   │   ├── trailing-slash       # /docs vs /docs/ consistency
 │   │   ├── pagination           # /docs/page/1/, out-of-range pages
 │   │   ├── search-permalinks    # ?s=test&post_type=docs search URLs
-��   │   ├── author-archive       # /docs/authors/ archive pages
-│   │   └── edge-cases           # Uppercase URLs, encoded chars, homepage
+│   │   ├── author-archive       # /docs/authors/ archive pages
+│   │   ├── edge-cases           # Uppercase URLs, encoded chars, homepage
+│   │   ├── sitemap-robots       # sitemap.xml & robots.txt availability
+│   │   ├── canonical-urls       # Canonical URL consistency (strips UTM, multi-doc)
+│   │   └── permalink-structure  # Trailing-slash redirect, double-slash, UTM, category & encyclopedia
 │   ├── api-endpoints/           # Feed & REST API availability (3)
 │   │   └── feed-api             # RSS feed, wp-json docs & doc_category
 │   ├── card_based/              # Frontend regression tests (39)
@@ -118,6 +121,18 @@ tests/
 │   │   ├── search               # Search bar, modal, live results
 │   │   ├── search-filter        # Category dropdown, popular tags
 │   │   └── sidebar-navigation   # Sidebar categories, icons, doc counts
+│   ├── single-doc/              # Single doc & encyclopedia entry features (13)
+│   │   ├── single-doc-features  # Breadcrumb, TOC, sidebar, prev/next, related
+│   │   ├── article-reactions    # Thumbs up/down reactions, feedback form
+│   │   └── encyclopedia-single  # Entry title, alphabet list, URL match
+│   ├── seo/                     # SEO & meta tag tests (6)
+│   │   └── meta-tags            # Title, canonical, H1, viewport meta
+│   ├── accessibility/           # Accessibility tests (9)
+│   │   ├── console-errors       # No JS console errors on 5 key pages
+│   │   └── image-alt-text       # All images have alt attributes
+│   ├── site-chrome/             # Header, footer, responsive (9)
+│   │   ├── header-footer-nav    # Footer, logo home, main menu, skip link
+│   │   └── mobile-viewport      # Mobile viewport rendering (375×812)
 │   ├── docs                     # Docs page full aria snapshot (1)
 │   └── encyclopedia             # Encyclopedia page full aria snapshot (1)
 ├── instant-answer/              # Instant answer widget - 4 tab tests (25)
@@ -132,7 +147,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 246 tests across 126 files**
+**Total: 301 tests across 137 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -141,8 +156,8 @@ tests/
 ### Snapshot Testing (89 tests)
 Each Gutenberg block, Elementor widget, and shortcode page is visited once, and the full aria tree of `main#content` is captured using Playwright's `toMatchAriaSnapshot()`. This verifies the complete content structure — headings, links, categories, doc counts, icons, and text — without relying on visual pixel comparisons.
 
-### 404 & Permalink Checks (28 tests)
-Pages across three different sites (`betteromation`, `betterdocs.msf`, `cbotai`) are checked to ensure they load properly and don't return 404 errors. Additional permalink routing tests verify:
+### 404 & Permalink Checks (46 tests)
+Pages across three different sites (`betteromation`, `betterdocs.msf`, `cbotai`) are checked to ensure they load properly and don't return 404 errors. Additional permalink routing, SEO, and structure tests verify:
 - **Trailing slash consistency** — `/docs` vs `/docs/` both resolve correctly
 - **Pagination URLs** — `/docs/page/1/`, category pagination, out-of-range pages return 404
 - **Search permalinks** — `?s=test&post_type=docs` search result pages load
@@ -151,6 +166,25 @@ Pages across three different sites (`betteromation`, `betterdocs.msf`, `cbotai`)
 - **Cross-domain parity** — same paths work across all three domains
 - **Intentional 404 validation** — non-existent slugs and double slugs return HTTP 404
 - **API endpoints** — RSS feed, REST API docs and category endpoints respond
+- **Sitemap & robots.txt** — `sitemap.xml` returns XML, `robots.txt` returns 200
+- **Canonical URL consistency** — single doc canonical strips UTM/query params, encyclopedia archive canonical matches URL, multi-doc canonical check (Cricket, Fencing, Apple)
+- **Trailing-slash redirect** — `/docs/cricket-the-gentlemens-game` (no slash) redirects to `/docs/cricket-the-gentlemens-game/`
+- **Query-param resilience** — UTM-tagged URLs don't break rendering
+- **Double-slash normalization** — `/docs//cricket-.../` normalizes correctly
+- **Category archive coverage** — all real category archives (`sports`, `fruits`, `team`, `qa`) return 200
+- **Encyclopedia entry permalinks** — 5 entries (`aesthetic`, `altruism`, `ball`, `cat`, `dog`) all resolve
+
+### Single Doc & SEO Tests (19 tests)
+- **Single doc features** — Breadcrumb, home-link navigation, Table of Contents, sidebar, prev/next docs-nav, related articles
+- **Article reactions & feedback** — Reaction buttons and feedback form presence
+- **Encyclopedia single entry** — Entry title, alphabet navigation list, URL match
+- **Meta tags** — Title tag, canonical URL, H1 presence on docs & encyclopedia, viewport meta tag
+
+### Accessibility & Site Chrome (18 tests)
+- **Console errors** — No JS console errors on 5 key pages (homepage, docs, encyclopedia, single doc, single encyclopedia entry)
+- **Image alt text** — All images have `alt` attributes on 4 key pages
+- **Header & footer** — Footer visibility, logo→home navigation, main menu, skip-to-content link
+- **Mobile viewport (375×812)** — Homepage renders without horizontal scroll, docs/encyclopedia/single doc render correctly on mobile
 
 ### Interactive Frontend Tests (44 tests)
 - **Category Navigation:** Verifies category boxes render correctly with names, doc counts, and icons. Clicks each category and confirms navigation to the correct archive page.
@@ -243,6 +277,15 @@ This test suite is designed to evolve alongside BetterDocs:
 - [x] Search category filter & popular tags
 - [x] Sidebar category navigation
 - [x] Glossary tooltip & encyclopedia link validation
+- [x] Single doc features (breadcrumb, TOC, reactions, related, feedback)
+- [x] Encyclopedia single-entry page tests
+- [x] SEO meta tag checks (title, canonical, H1, viewport)
+- [x] Accessibility: console errors & image alt text
+- [x] Header/footer navigation & skip-to-content link
+- [x] Mobile viewport responsive rendering
+- [x] Sitemap.xml & robots.txt availability
+- [x] Canonical URL consistency & query-param stripping
+- [x] Trailing-slash redirects, double-slash normalization
 - [ ] CI/CD pipeline (GitHub Actions)
 - [ ] Cross-browser support (Firefox, WebKit)
 - [ ] Admin panel tests (with authentication)
