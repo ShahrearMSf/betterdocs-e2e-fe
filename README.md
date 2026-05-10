@@ -95,18 +95,18 @@ tests/
 │   │   ├── docs-*               # Main site doc/category checks
 │   │   ├── cross-domain         # Cross-domain parity (cbotai, msf, main)
 │   │   └── intentional-404      # Verify 404 renders for invalid URLs
-│   ├── permalink-routing/       # URL routing, SEO & structure tests (33)
+│   ├── permalink-routing/       # URL routing, SEO, structure & API (36)
 │   │   ├── trailing-slash       # /docs vs /docs/ consistency
 │   │   ├── pagination           # /docs/page/1/, out-of-range pages
 │   │   ├── search-permalinks    # ?s=test&post_type=docs search URLs
 │   │   ├── author-archive       # /docs/authors/ archive pages
 │   │   ├── edge-cases           # Uppercase URLs, encoded chars, homepage
 │   │   ├── sitemap-robots       # sitemap.xml & robots.txt availability
+│   │   ├── sitemap-structure    # XML root tag valid, ≥5 <loc> entries
 │   │   ├── canonical-urls       # Canonical URL consistency (strips UTM, multi-doc)
-│   │   └── permalink-structure  # Trailing-slash redirect, double-slash, UTM, category & encyclopedia
-│   ├── api-endpoints/           # Feed & REST API availability (3)
+│   │   ├── permalink-structure  # Trailing-slash redirect, double-slash, UTM, category & encyclopedia
 │   │   └── feed-api             # RSS feed, wp-json docs & doc_category
-│   ├── card_based/              # Frontend regression tests (39)
+│   ├── card-based/              # Frontend regression tests (39)
 │   │   ├── chatbot-style        # Launcher styling, color, hover, click
 │   │   ├── deprecated-code      # .elementor-widget-container absence
 │   │   ├── disable-js           # Verify removed scripts aren't loaded
@@ -125,16 +125,21 @@ tests/
 │   │   ├── single-doc-features  # Breadcrumb, TOC, sidebar, prev/next, related
 │   │   ├── article-reactions    # Thumbs up/down reactions, feedback form
 │   │   └── encyclopedia-single  # Entry title, alphabet list, URL match
-│   ├── seo/                     # SEO & meta tag tests (6)
-│   │   └── meta-tags            # Title, canonical, H1, viewport meta
+│   ├── seo/                     # SEO, meta tag & HTML structure tests (15)
+│   │   ├── meta-tags            # Title, canonical, H1, viewport meta
+│   │   └── html-structure       # HTML5 doctype, <html lang>, UTF-8 charset
+│   ├── security/                # Security headers & access control (5)
+│   │   └── security-headers     # X-Frame-Options, X-Content-Type-Options, wp-admin redirect, REST API, comments feed
 │   ├── accessibility/           # Accessibility tests (9)
 │   │   ├── console-errors       # No JS console errors on 5 key pages
 │   │   └── image-alt-text       # All images have alt attributes
-│   ├── site-chrome/             # Header, footer, responsive (9)
+│   ├── site-chrome/             # Header, footer, responsive, menu (10)
 │   │   ├── header-footer-nav    # Footer, logo home, main menu, skip link
-│   │   └── mobile-viewport      # Mobile viewport rendering (375×812)
-│   ├── docs                     # Docs page full aria snapshot (1)
-│   └── encyclopedia             # Encyclopedia page full aria snapshot (1)
+│   │   ├── mobile-viewport      # Mobile viewport rendering (375×812)
+│   │   └── main-menu-links      # All top-level menu links resolve (no 4xx/5xx)
+│   └── page-snapshots/          # Full-page aria snapshots (2)
+│       ├── docs                 # Docs page full aria snapshot
+│       └── encyclopedia         # Encyclopedia page full aria snapshot
 ├── instant-answer/              # Instant answer widget - 4 tab tests (25)
 │   ├── home-tab                 # Header, search input, docs list, tabs
 │   ├── chatbot-tab              # Welcome message, email/guest login
@@ -147,7 +152,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 301 tests across 137 files**
+**Total: 318 tests across 141 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -180,11 +185,20 @@ Pages across three different sites (`betteromation`, `betterdocs.msf`, `cbotai`)
 - **Encyclopedia single entry** — Entry title, alphabet navigation list, URL match
 - **Meta tags** — Title tag, canonical URL, H1 presence on docs & encyclopedia, viewport meta tag
 
-### Accessibility & Site Chrome (18 tests)
+### Accessibility & Site Chrome (19 tests)
 - **Console errors** — No JS console errors on 5 key pages (homepage, docs, encyclopedia, single doc, single encyclopedia entry)
 - **Image alt text** — All images have `alt` attributes on 4 key pages
 - **Header & footer** — Footer visibility, logo→home navigation, main menu, skip-to-content link
 - **Mobile viewport (375×812)** — Homepage renders without horizontal scroll, docs/encyclopedia/single doc render correctly on mobile
+- **Main menu link resolution** — All top-level menu links resolve without 4xx/5xx
+
+### HTML Structure & Security (14 tests)
+- **HTML5 document validity** — Doctype `<!doctype html>`, `<html lang>` attribute, UTF-8 charset on 4 key pages
+- **Security headers** — `X-Frame-Options` (clickjacking) and `X-Content-Type-Options: nosniff` (MIME-sniff defense)
+- **Access control** — `/wp-admin/` redirects unauthenticated users to login
+- **WP REST API** — `/wp-json/` root endpoint accessible
+- **Comments feed** — `/comments/feed/` returns 200
+- **Sitemap structure** — XML root is `<urlset>` or `<sitemapindex>`, lists ≥5 URLs/sitemaps
 
 ### Interactive Frontend Tests (44 tests)
 - **Category Navigation:** Verifies category boxes render correctly with names, doc counts, and icons. Clicks each category and confirms navigation to the correct archive page.
