@@ -95,7 +95,7 @@ tests/
 │   │   ├── docs-*               # Main site doc/category checks
 │   │   ├── cross-domain         # Cross-domain parity (cbotai, msf, main)
 │   │   └── intentional-404      # Verify 404 renders for invalid URLs
-│   ├── permalink-routing/       # URL routing, SEO, structure & API (36)
+│   ├── permalink-routing/       # URL routing, SEO, structure, feeds & API (62)
 │   │   ├── trailing-slash       # /docs vs /docs/ consistency
 │   │   ├── pagination           # /docs/page/1/, out-of-range pages
 │   │   ├── search-permalinks    # ?s=test&post_type=docs search URLs
@@ -103,9 +103,14 @@ tests/
 │   │   ├── edge-cases           # Uppercase URLs, encoded chars, homepage
 │   │   ├── sitemap-robots       # sitemap.xml & robots.txt availability
 │   │   ├── sitemap-structure    # XML root tag valid, ≥5 <loc> entries
+│   │   ├── wp-sitemaps          # All WP sitemap sub-files (post, page, doc_category, users)
+│   │   ├── robots-content       # robots.txt User-agent, Disallow, Sitemap directives
 │   │   ├── canonical-urls       # Canonical URL consistency (strips UTM, multi-doc)
 │   │   ├── permalink-structure  # Trailing-slash redirect, double-slash, UTM, category & encyclopedia
-│   │   └── feed-api             # RSS feed, wp-json docs & doc_category
+│   │   ├── legacy-permalinks    # ?p= / ?page_id= redirect, /page/2/ multi-page, ?paged=
+│   │   ├── feed-api             # Docs RSS feed, wp-json docs & doc_category
+│   │   ├── feed-permalinks      # Main /feed/, atom, rss2, category feeds
+│   │   └── betterdocs-rest-api  # /wp-json/betterdocs/v1, search, doc_category, knowledge_base
 │   ├── card-based/              # Frontend regression tests (39)
 │   │   ├── chatbot-style        # Launcher styling, color, hover, click
 │   │   ├── deprecated-code      # .elementor-widget-container absence
@@ -152,7 +157,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 318 tests across 141 files**
+**Total: 344 tests across 146 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -178,6 +183,12 @@ Pages across three different sites (`betteromation`, `betterdocs.msf`, `cbotai`)
 - **Double-slash normalization** — `/docs//cricket-.../` normalizes correctly
 - **Category archive coverage** — all real category archives (`sports`, `fruits`, `team`, `qa`) return 200
 - **Encyclopedia entry permalinks** — 5 entries (`aesthetic`, `altruism`, `ball`, `cat`, `dog`) all resolve
+- **WP core sitemap sub-files** — `/wp-sitemap.xml`, posts, pages, doc_category, users sitemaps all return 200 with valid XML; doc_category sub-sitemap is referenced from root
+- **robots.txt content** — declares `User-agent`, disallows `/wp-admin/`, references `wp-sitemap.xml`
+- **Legacy permalink redirects** — `?p=N` and `?page_id=N` redirect to friendly URLs
+- **Multi-page docs & encyclopedia pagination** — `/docs/{slug}/page/2/` and `/encyclopedia/page/2/` resolve, `?paged=N` accepted
+- **Feed permalinks** — site `/feed/`, `/feed/atom/`, `/feed/rss2/`, `/docs/feed/`, doc-category feed `/docs/sports/feed/` all return 200; main feed body is valid RSS XML
+- **BetterDocs REST API** — plugin namespace `/wp-json/betterdocs`, `/betterdocs/v1`, `/betterdocs/v1/search`, WP REST `doc_category` and `knowledge_base` taxonomies, discovery JSON advertises BetterDocs namespace
 
 ### Single Doc & SEO Tests (19 tests)
 - **Single doc features** — Breadcrumb, home-link navigation, Table of Contents, sidebar, prev/next docs-nav, related articles
