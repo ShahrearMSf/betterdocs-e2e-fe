@@ -110,7 +110,8 @@ tests/
 │   │   ├── legacy-permalinks    # ?p= / ?page_id= redirect, /page/2/ multi-page, ?paged=
 │   │   ├── feed-api             # Docs RSS feed, wp-json docs & doc_category
 │   │   ├── feed-permalinks      # Main /feed/, atom, rss2, category feeds
-│   │   └── betterdocs-rest-api  # /wp-json/betterdocs/v1, search, doc_category, knowledge_base
+│   │   ├── betterdocs-rest-api  # /wp-json/betterdocs/v1, search, doc_category, knowledge_base
+│   │   └── multi-category-archive # Regression test for BetterDocs issue #57 (multi-cat URLs return 200)
 │   ├── card-based/              # Frontend regression tests (39)
 │   │   ├── chatbot-style        # Launcher styling, color, hover, click
 │   │   ├── deprecated-code      # .elementor-widget-container absence
@@ -157,7 +158,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 344 tests across 146 files**
+**Total: 366 tests across 147 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -189,6 +190,7 @@ Pages across three different sites (`betteromation`, `betterdocs.msf`, `cbotai`)
 - **Multi-page docs & encyclopedia pagination** — `/docs/{slug}/page/2/` and `/encyclopedia/page/2/` resolve, `?paged=N` accepted
 - **Feed permalinks** — site `/feed/`, `/feed/atom/`, `/feed/rss2/`, `/docs/feed/`, doc-category feed `/docs/sports/feed/` all return 200; main feed body is valid RSS XML
 - **BetterDocs REST API** — plugin namespace `/wp-json/betterdocs`, `/betterdocs/v1`, `/betterdocs/v1/search`, WP REST `doc_category` and `knowledge_base` taxonomies, discovery JSON advertises BetterDocs namespace
+- **BetterDocs issue #57 regression** — multi-category archive (`/docs/cat-1,cat-2/`), multi-cat RSS feed, multi-cat JSON feed, three-category URL, and control cases (single-cat 200, invalid 404). Locks in the expected behavior so the 4.3.8 regression cannot silently come back
 
 ### Single Doc & SEO Tests (19 tests)
 - **Single doc features** — Breadcrumb, home-link navigation, Table of Contents, sidebar, prev/next docs-nav, related articles
