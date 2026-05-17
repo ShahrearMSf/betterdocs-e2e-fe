@@ -88,6 +88,66 @@ test.describe("Permalink - Hierarchical single-doc URL (betterdocs.msf.shahrear.
   });
 });
 
+test.describe("Permalink - Non-Latin doc_category & post slugs (cbotai.shahrear.site)", () => {
+  // Direct regression for FBS-81660 single-doc-permalink-non-latin-404
+  // (commit 256f116). The fix compares hierarchical category paths in
+  // urldecode'd form so non-Latin (Bengali, Arabic, CJK) slugs match.
+  // cbotai has live Korean + Bengali categories and one Korean single doc.
+
+  test("Korean category archive /ko/docs/삶/ returns 200 directly", async ({
+    request,
+  }) => {
+    const res = await request.get(
+      "https://cbotai.shahrear.site/ko/docs/%ec%82%b6/",
+      { maxRedirects: 0 }
+    );
+    expect(res.status()).toBe(200);
+  });
+
+  test("Korean category archive /ko/docs/오늘/ returns 200 directly", async ({
+    request,
+  }) => {
+    const res = await request.get(
+      "https://cbotai.shahrear.site/ko/docs/%ec%98%a4%eb%8a%98/",
+      { maxRedirects: 0 }
+    );
+    expect(res.status()).toBe(200);
+  });
+
+  test("Korean single doc with non-Latin post slug returns 200 directly", async ({
+    request,
+  }) => {
+    // /ko/docs/강둑을-따라서는-어떤-복잡한-생태계가-번성할까요-what/
+    // Exercises the exact code path the FBS-81660 fix was for: post lookup
+    // disambiguation when the URL contains non-Latin slug bytes.
+    const res = await request.get(
+      "https://cbotai.shahrear.site/ko/docs/%ea%b0%95%eb%91%91%ec%9d%84-%eb%94%b0%eb%9d%bc%ec%84%9c%eb%8a%94-%ec%96%b4%eb%96%a4-%eb%b3%b5%ec%9e%a1%ed%95%9c-%ec%83%9d%ed%83%9c%ea%b3%84%ea%b0%80-%eb%b2%88%ec%84%b1%ed%95%a0%ea%b9%8c%ec%9a%94-what/",
+      { maxRedirects: 0 }
+    );
+    expect(res.status()).toBe(200);
+  });
+
+  test("Bengali category archive /bn/docs/bবিপদ/ returns 200 directly", async ({
+    request,
+  }) => {
+    const res = await request.get(
+      "https://cbotai.shahrear.site/bn/docs/b%e0%a6%ac%e0%a6%bf%e0%a6%aa%e0%a6%a6/",
+      { maxRedirects: 0 }
+    );
+    expect(res.status()).toBe(200);
+  });
+
+  test("Bengali category archive /bn/docs/lজীবন/ returns 200 directly", async ({
+    request,
+  }) => {
+    const res = await request.get(
+      "https://cbotai.shahrear.site/bn/docs/l%e0%a6%9c%e0%a7%80%e0%a6%ac%e0%a6%a8/",
+      { maxRedirects: 0 }
+    );
+    expect(res.status()).toBe(200);
+  });
+});
+
 test.describe("Permalink - WPML language-prefixed archive (cbotai.shahrear.site)", () => {
   test("/ko/docs/ - Korean docs archive resolves (FBS-81660 wpml-archive-slug-404)", async ({
     request,
