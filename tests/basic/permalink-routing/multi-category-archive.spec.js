@@ -54,11 +54,12 @@ test.describe("BetterDocs #57 - Multi-Category Archive HTTP Status", () => {
     // Acceptance: /docs-category/cat-1,cat-2/feed/json → 200 OK
     //
     // *** THIS IS THE PRIMARY REGRESSION TEST FOR #57 ***
-    // This is the exact URL pattern the customer reported:
-    //   "example.com/docs-category/management,e-mail/feed/json returns 404"
-    // It currently fails on the live site (404) and will turn green once the
-    // fix from issue #57 is merged into BetterDocs and deployed.
-    const res = await request.get(`${BASE_URL}/docs/sports,fruits/feed/json/`);
+    // This URL is the customer-reported pattern from issue #57 on the MSF site:
+    //   /index.php/docs-category/program-management,allinallmsf/feed/json/
+    // If this returns 404, the multi-category 404 regression has come back.
+    const res = await request.get(
+      "https://betterdocs.msf.shahrear.site/index.php/docs-category/program-management,allinallmsf/feed/json/"
+    );
     expect(res.status()).toBe(200);
   });
 
