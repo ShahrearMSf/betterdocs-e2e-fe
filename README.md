@@ -131,6 +131,8 @@ tests/
 │   │   ├── single-doc-features  # Breadcrumb, TOC, sidebar, prev/next, related
 │   │   ├── article-reactions    # Thumbs up/down reactions, feedback form
 │   │   └── encyclopedia-single  # Entry title, alphabet list, URL match
+│   ├── multi-kb/                # Multi Knowledge Base flow on chatbotliveserver (13)
+│   │   └── mkb-flow             # MKB block → KB archive → category grid → single doc end-to-end navigation (Gutenberg)
 │   ├── seo/                     # SEO, meta tag & HTML structure tests (15)
 │   │   ├── meta-tags            # Title, canonical, H1, viewport meta
 │   │   └── html-structure       # HTML5 doctype, <html lang>, UTF-8 charset
@@ -158,7 +160,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 366 tests across 147 files**
+**Total: 379 tests across 148 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
