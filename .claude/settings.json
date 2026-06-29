@@ -7,7 +7,16 @@
       "Bash(/usr/bin/curl -sLI -o /dev/null -w '  /docs/alpha/ → %{http_code}\\\\n' https://aichatbotliveserver.shahrear.site/docs/alpha/)",
       "Bash(/usr/bin/curl -sLI -o /dev/null -w '  /docs/alpha/installation/ → %{http_code}\\\\n' https://aichatbotliveserver.shahrear.site/docs/alpha/installation/)",
       "Bash(/usr/bin/curl -sL https://aichatbotliveserver.shahrear.site/docs/)",
-      "Bash(/usr/bin/grep -oE 'href=\"https://aichatbotliveserver.shahrear.site/docs/[^\"]+/\"')"
+      "Bash(/usr/bin/grep -oE 'href=\"https://aichatbotliveserver.shahrear.site/docs/[^\"]+/\"')",
+      "Bash(/usr/bin/curl -sLI -o /dev/null -w '  Status: %{http_code}\\\\n' https://aichatbotliveserver.shahrear.site/encyclopedia/)",
+      "Bash(/usr/bin/curl -sL https://aichatbotliveserver.shahrear.site/encyclopedia/)",
+      "Bash(/usr/bin/grep -oE 'href=\"[^\"]*encyclopedia_prefix=[A-Z][^\"]*\"')",
+      "Bash(/usr/bin/curl -sLI -o /dev/null -w '  /encyclopedia/bp → %{http_code}\\\\n' https://aichatbotliveserver.shahrear.site/encyclopedia/bp)",
+      "Bash(/usr/bin/curl -sLI -o /dev/null -w '  /encyclopedia/bp/ → %{http_code}\\\\n' https://aichatbotliveserver.shahrear.site/encyclopedia/bp/)",
+      "Bash(/usr/bin/curl -sLI -o /dev/null -w '  ?encyclopedia_prefix=A \\(no entries\\) → %{http_code}\\\\n' https://aichatbotliveserver.shahrear.site/encyclopedia/?encyclopedia_prefix=A)",
+      "Bash(/usr/bin/curl -sLI -o /dev/null -w '  ?encyclopedia_prefix=B → %{http_code}\\\\n' https://aichatbotliveserver.shahrear.site/encyclopedia/?encyclopedia_prefix=B)",
+      "Bash(/usr/bin/curl -sLI -o /dev/null -w '  ?encyclopedia_prefix=Z → %{http_code}\\\\n' https://aichatbotliveserver.shahrear.site/encyclopedia/?encyclopedia_prefix=Z)",
+      "Bash(/usr/bin/grep -oE \"<h[12][^>]*>[^<]+</h[12]>\")"
     ]
   }
 }
