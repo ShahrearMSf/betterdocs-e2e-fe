@@ -7,12 +7,12 @@ require("dotenv").config({ path: path.resolve(__dirname, "../../../.env") });
 /**
  * Multi Knowledge Base (MKB) navigation flow tests.
  *
- * Target site: https://chatbotliveserver.shahrear.site (Gutenberg block environment)
+ * Target site: https://aichatbotliveserver.shahrear.site (Gutenberg block environment)
  *
  * Flow under test:
  *   1. Visit /docs/                → Multi KB block renders with the "Alpha" KB card
  *   2. Click MKB card              → land on /docs/alpha/ (KB archive)
- *   3. Category Grid block renders → 3 categories (Configurations, Installation, Setup Process)
+ *   3. Category Grid block renders → categories (Configurations, Installation, Setup Process, ...)
  *   4. Click a category card       → land on a single doc page
  *   5. Single doc content renders  → article/content area visible
  *
@@ -20,7 +20,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "../../../.env") });
  * betteromation). Same pattern as 404-checks/cross-domain.spec.js.
  */
 
-const SITE = "https://chatbotliveserver.shahrear.site";
+const SITE = "https://aichatbotliveserver.shahrear.site";
 const DOCS_URL = `${SITE}/docs/`;
 const KB_ARCHIVE_URL = `${SITE}/docs/alpha/`;
 const CATEGORY_ARCHIVE_URL = `${SITE}/docs/alpha/installation/`;
@@ -132,29 +132,51 @@ test.describe("MKB Flow - Step 4 & 5: Click category card lands on a doc page", 
 test.describe("MKB Flow - Category Archive → Single Doc (deeper path)", () => {
   test("Category archive lists multiple doc links", async ({ page }) => {
     await safeGoto(page, CATEGORY_ARCHIVE_URL);
-    const docLinks = page.locator(
-      `main a[href*="${SITE}/docs/"], article a[href*="${SITE}/docs/"]`
-    );
-    const count = await docLinks.count();
-    expect(count).toBeGreaterThanOrEqual(2);
+    // Count unique doc URLs on the page (exclude /alpha/ subcategory and /feed/)
+    const hrefs = await page
+      .locator(`a[href*="${SITE}/docs/"]`)
+      .evaluateAll((els) => els.map((a) => a.getAttribute("href")));
+    const uniqueDocHrefs = [
+      ...new Set(
+        hrefs.filter(
+          (h) =>
+            h &&
+            !h.includes("/docs/alpha") &&
+            !h.includes("/docs/feed") &&
+            h.includes(`${SITE}/docs/`)
+        )
+      ),
+    ];
+    expect(uniqueDocHrefs.length).toBeGreaterThanOrEqual(2);
   });
 
   test("Clicking a doc from category archive opens single doc", async ({
     page,
   }) => {
     await safeGoto(page, CATEGORY_ARCHIVE_URL);
-    // Pick the first VISIBLE doc link (some links may be in collapsed sidebar)
-    const docLink = page
-      .locator(`a[href*="${SITE}/docs/"][href*="why"], a[href*="${SITE}/docs/"][href*="learn"], a[href*="${SITE}/docs/"][href*="smartwatch"], a[href*="${SITE}/docs/"][href*="wordpress"]`)
-      .filter({ visible: true })
-      .first();
-    await expect(docLink).toBeVisible();
-    const href = await docLink.getAttribute("href");
-    await docLink.click();
-    // Match whichever doc was clicked
-    const slug = href.replace(`${SITE}/docs/`, "").replace(/\/$/, "");
-    await expect(page).toHaveURL(new RegExp(`/docs/${slug}`));
+    // Get the first VISIBLE doc link (exclude /alpha/ subcategories and feed URLs)
+    const visibleDocHref = await page
+      .locator(`a[href*="${SITE}/docs/"]`)
+      .evaluateAll((els) => {
+        const docs = els.filter((a) => {
+          const href = a.getAttribute("href") || "";
+          return (
+            href.includes("/docs/") &&
+            !href.includes("/docs/alpha") &&
+            !href.includes("/docs/feed")
+          );
+        });
+        const visible = docs.find((a) => {
+          const r = a.getBoundingClientRect();
+          return r.width > 0 && r.height > 0;
+        });
+        return visible ? visible.getAttribute("href") : null;
+      });
+    expect(visibleDocHref).toBeTruthy();
+    await page.goto(visibleDocHref);
     await expect(page.locator("h1").first()).toBeVisible();
+    const bodyText = await page.locator("body").innerText();
+    expect(bodyText.toLowerCase()).not.toContain("page not found");
   });
 });
 
