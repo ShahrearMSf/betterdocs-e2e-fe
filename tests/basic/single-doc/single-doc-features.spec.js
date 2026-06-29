@@ -53,4 +53,21 @@ test.describe("Single Doc Page - Core Features", () => {
     const related = page.locator(".betterdocs-related-articles-container-front");
     await expect(related).toBeVisible();
   });
+
+  test("Single doc renders theme chrome, NOT FSE compat footer", async ({
+    page,
+  }) => {
+    // Regression guard for fbs-79870 (FSE chrome leak).
+    const bodyText = await page.locator("body").innerText();
+    expect(bodyText).not.toContain("Proudly powered by WordPress");
+  });
+
+  test("Single doc has correct body class", async ({ page }) => {
+    // Wrong body class means the wrong template loaded (e.g., MKB grid on a
+    // doc URL).
+    const bodyClass = await page
+      .locator("body")
+      .evaluate((el) => el.className);
+    expect(bodyClass).toContain("single-docs");
+  });
 });
