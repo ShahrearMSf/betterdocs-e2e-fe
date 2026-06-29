@@ -127,12 +127,13 @@ tests/
 │   │   ├── search               # Search bar, modal, live results
 │   │   ├── search-filter        # Category dropdown, popular tags
 │   │   └── sidebar-navigation   # Sidebar categories, icons, doc counts
-│   ├── single-doc/              # Single doc & encyclopedia entry features (13)
-│   │   ├── single-doc-features  # Breadcrumb, TOC, sidebar, prev/next, related
+│   ├── single-doc/              # Single doc & encyclopedia entry features (17)
+│   │   ├── single-doc-features  # Breadcrumb, TOC, sidebar, prev/next, related, body class, FSE chrome guard
 │   │   ├── article-reactions    # Thumbs up/down reactions, feedback form
-│   │   └── encyclopedia-single  # Entry title, alphabet list, URL match
-│   ├── multi-kb/                # Multi Knowledge Base flow on chatbotliveserver (13)
-│   │   └── mkb-flow             # MKB block → KB archive → category grid → single doc end-to-end navigation (Gutenberg)
+│   │   └── encyclopedia-single  # Entry title, alphabet list, URL match, body class, FSE chrome guard
+│   ├── multi-kb/                # Multi Knowledge Base flow on aichatbotliveserver (25)
+│   │   ├── mkb-flow             # MKB block → KB archive → category grid → single doc end-to-end (Gutenberg) + template/body-class integrity checks
+│   │   └── encyclopedia-routing # Encyclopedia archive, single entry, alphabet filter, invalid path 404
 │   ├── seo/                     # SEO, meta tag & HTML structure tests (15)
 │   │   ├── meta-tags            # Title, canonical, H1, viewport meta
 │   │   └── html-structure       # HTML5 doctype, <html lang>, UTF-8 charset
@@ -141,10 +142,11 @@ tests/
 │   ├── accessibility/           # Accessibility tests (9)
 │   │   ├── console-errors       # No JS console errors on 5 key pages
 │   │   └── image-alt-text       # All images have alt attributes
-│   ├── site-chrome/             # Header, footer, responsive, menu (10)
+│   ├── site-chrome/             # Header, footer, responsive, menu (15)
 │   │   ├── header-footer-nav    # Footer, logo home, main menu, skip link
 │   │   ├── mobile-viewport      # Mobile viewport rendering (375×812)
-│   │   └── main-menu-links      # All top-level menu links resolve (no 4xx/5xx)
+│   │   ├── main-menu-links      # All top-level menu links resolve (no 4xx/5xx)
+│   │   └── theme-footer         # FSE chrome-leak sweep across 5 page types (no "Proudly powered by WordPress")
 │   └── page-snapshots/          # Full-page aria snapshots (2)
 │       ├── docs                 # Docs page full aria snapshot
 │       └── encyclopedia         # Encyclopedia page full aria snapshot
@@ -160,7 +162,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 379 tests across 148 files**
+**Total: 391 tests across 149 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
