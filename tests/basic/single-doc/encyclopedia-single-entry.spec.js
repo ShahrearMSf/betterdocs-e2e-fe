@@ -30,4 +30,23 @@ test.describe("Encyclopedia - Single Entry Page", () => {
   test("Entry URL matches slug", async ({ page }) => {
     await expect(page).toHaveURL(/\/encyclopedia\/aesthetic\/?$/);
   });
+
+  test("Entry page renders theme chrome, NOT FSE compat footer", async ({
+    page,
+  }) => {
+    // Regression guard for fbs-79870 (FSE chrome leak) — destination loads
+    // but with the bare "Proudly powered by WordPress" footer, indicating a
+    // wrong-template / FSE-compat fallback rendered instead of the theme.
+    const bodyText = await page.locator("body").innerText();
+    expect(bodyText).not.toContain("Proudly powered by WordPress");
+  });
+
+  test("Entry page has correct taxonomy body class", async ({ page }) => {
+    // Encyclopedia entries are rendered via the glossaries taxonomy template.
+    // Wrong body class indicates the wrong template was loaded.
+    const bodyClass = await page
+      .locator("body")
+      .evaluate((el) => el.className);
+    expect(bodyClass).toContain("tax-glossaries");
+  });
 });

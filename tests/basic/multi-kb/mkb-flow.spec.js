@@ -129,6 +129,36 @@ test.describe("MKB Flow - Step 4 & 5: Click category card lands on a doc page", 
   });
 });
 
+test.describe("MKB Flow - Template Integrity (body-class & chrome)", () => {
+  test("KB archive /docs/alpha/ has tax-knowledge_base body class", async ({
+    page,
+  }) => {
+    await safeGoto(page, KB_ARCHIVE_URL);
+    const bodyClass = await page
+      .locator("body")
+      .evaluate((el) => el.className);
+    expect(bodyClass).toContain("tax-knowledge_base");
+  });
+
+  test("Category archive /docs/alpha/installation/ has tax-doc_category body class", async ({
+    page,
+  }) => {
+    // Regression guard: if MKB grid template renders on a category URL
+    // (wrong-template bug), this body class will not contain tax-doc_category.
+    await safeGoto(page, CATEGORY_ARCHIVE_URL);
+    const bodyClass = await page
+      .locator("body")
+      .evaluate((el) => el.className);
+    expect(bodyClass).toContain("tax-doc_category");
+  });
+
+  test("Category page does NOT render FSE compat footer", async ({ page }) => {
+    await safeGoto(page, CATEGORY_ARCHIVE_URL);
+    const bodyText = await page.locator("body").innerText();
+    expect(bodyText).not.toContain("Proudly powered by WordPress");
+  });
+});
+
 test.describe("MKB Flow - Category Archive → Single Doc (deeper path)", () => {
   test("Category archive lists multiple doc links", async ({ page }) => {
     await safeGoto(page, CATEGORY_ARCHIVE_URL);
