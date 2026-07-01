@@ -2,6 +2,8 @@
 const { test, expect } = require("@playwright/test");
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../../../.env") });
+const BASE_URL_2 = process.env.BASE_URL_2;
+const BASE_URL_3 = process.env.BASE_URL_3;
 
 const BASE_URL = process.env.BASE_URL;
 
@@ -71,7 +73,7 @@ test.describe("Permalink - Hierarchical single-doc URL (betterdocs.msf.shahrear.
     request,
   }) => {
     const res = await request.get(
-      "https://betterdocs.msf.shahrear.site/index.php/docs/team/lead/coleads/juniorqa/junior-qa-the-sprit-house/",
+      `${BASE_URL_3}/index.php/docs/team/lead/coleads/juniorqa/junior-qa-the-sprit-house/`,
       { maxRedirects: 0 }
     );
     expect(res.status()).toBe(200);
@@ -81,7 +83,7 @@ test.describe("Permalink - Hierarchical single-doc URL (betterdocs.msf.shahrear.
     request,
   }) => {
     const res = await request.get(
-      "https://betterdocs.msf.shahrear.site/index.php/docs/team/lead/coleads/",
+      `${BASE_URL_3}/index.php/docs/team/lead/coleads/`,
       { maxRedirects: 0 }
     );
     expect(res.status()).toBe(200);
@@ -98,7 +100,7 @@ test.describe("Permalink - Non-Latin doc_category & post slugs (cbotai.shahrear.
     request,
   }) => {
     const res = await request.get(
-      "https://cbotai.shahrear.site/ko/docs/%ec%82%b6/",
+      `${BASE_URL_2}/ko/docs/%ec%82%b6/`,
       { maxRedirects: 0 }
     );
     expect(res.status()).toBe(200);
@@ -108,7 +110,7 @@ test.describe("Permalink - Non-Latin doc_category & post slugs (cbotai.shahrear.
     request,
   }) => {
     const res = await request.get(
-      "https://cbotai.shahrear.site/ko/docs/%ec%98%a4%eb%8a%98/",
+      `${BASE_URL_2}/ko/docs/%ec%98%a4%eb%8a%98/`,
       { maxRedirects: 0 }
     );
     expect(res.status()).toBe(200);
@@ -121,7 +123,7 @@ test.describe("Permalink - Non-Latin doc_category & post slugs (cbotai.shahrear.
     // Exercises the exact code path the FBS-81660 fix was for: post lookup
     // disambiguation when the URL contains non-Latin slug bytes.
     const res = await request.get(
-      "https://cbotai.shahrear.site/ko/docs/%ea%b0%95%eb%91%91%ec%9d%84-%eb%94%b0%eb%9d%bc%ec%84%9c%eb%8a%94-%ec%96%b4%eb%96%a4-%eb%b3%b5%ec%9e%a1%ed%95%9c-%ec%83%9d%ed%83%9c%ea%b3%84%ea%b0%80-%eb%b2%88%ec%84%b1%ed%95%a0%ea%b9%8c%ec%9a%94-what/",
+      `${BASE_URL_2}/ko/docs/%ea%b0%95%eb%91%91%ec%9d%84-%eb%94%b0%eb%9d%bc%ec%84%9c%eb%8a%94-%ec%96%b4%eb%96%a4-%eb%b3%b5%ec%9e%a1%ed%95%9c-%ec%83%9d%ed%83%9c%ea%b3%84%ea%b0%80-%eb%b2%88%ec%84%b1%ed%95%a0%ea%b9%8c%ec%9a%94-what/`,
       { maxRedirects: 0 }
     );
     expect(res.status()).toBe(200);
@@ -131,7 +133,7 @@ test.describe("Permalink - Non-Latin doc_category & post slugs (cbotai.shahrear.
     request,
   }) => {
     const res = await request.get(
-      "https://cbotai.shahrear.site/bn/docs/b%e0%a6%ac%e0%a6%bf%e0%a6%aa%e0%a6%a6/",
+      `${BASE_URL_2}/bn/docs/b%e0%a6%ac%e0%a6%bf%e0%a6%aa%e0%a6%a6/`,
       { maxRedirects: 0 }
     );
     expect(res.status()).toBe(200);
@@ -141,7 +143,7 @@ test.describe("Permalink - Non-Latin doc_category & post slugs (cbotai.shahrear.
     request,
   }) => {
     const res = await request.get(
-      "https://cbotai.shahrear.site/bn/docs/l%e0%a6%9c%e0%a7%80%e0%a6%ac%e0%a6%a8/",
+      `${BASE_URL_2}/bn/docs/l%e0%a6%9c%e0%a7%80%e0%a6%ac%e0%a6%a8/`,
       { maxRedirects: 0 }
     );
     expect(res.status()).toBe(200);
@@ -156,7 +158,7 @@ test.describe("Permalink - WPML language-prefixed archive (cbotai.shahrear.site)
     // /<lang>/<slug>/ used to 404 after the strict-prefix commit was added.
     // The fix expanded validate_request_path()'s valid-prefix list. This
     // assertion enforces the fix stays in place.
-    const res = await request.get("https://cbotai.shahrear.site/ko/docs/");
+    const res = await request.get(`${BASE_URL_2}/ko/docs/`);
     expect(res.status()).toBe(200);
   });
 
@@ -164,7 +166,7 @@ test.describe("Permalink - WPML language-prefixed archive (cbotai.shahrear.site)
     request,
   }) => {
     const res = await request.get(
-      "https://cbotai.shahrear.site/ko/encyclopedia/"
+      `${BASE_URL_2}/ko/encyclopedia/`
     );
     expect(res.status()).toBe(200);
   });
@@ -176,7 +178,7 @@ test.describe("Permalink - WPML language-prefixed archive (cbotai.shahrear.site)
     // the language prefix is valid — the fix only relaxed prefix matching,
     // not single-doc existence checks.
     const res = await request.get(
-      "https://cbotai.shahrear.site/ko/docs/some-fake-doc-xyz/"
+      `${BASE_URL_2}/ko/docs/some-fake-doc-xyz/`
     );
     expect(res.status()).toBe(404);
   });

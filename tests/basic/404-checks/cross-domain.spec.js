@@ -2,10 +2,12 @@
 const { test, expect } = require("@playwright/test");
 const { safeGoto } = require("../../helpers");
 require("dotenv").config();
+const BASE_URL_2 = process.env.BASE_URL_2;
+const BASE_URL_3 = process.env.BASE_URL_3;
 
 test.describe("404 Check - Cross-Domain Parity", () => {
   test("Cbotai - docs root", async ({ page }) => {
-    await safeGoto(page, "https://cbotai.shahrear.site/docs/");
+    await safeGoto(page, `${BASE_URL_2}/docs/`);
     const bodyText = await page.locator("body").innerText();
     expect(bodyText.toLowerCase()).not.toContain("404");
     expect(bodyText.toLowerCase()).not.toContain("page not found");
@@ -14,7 +16,7 @@ test.describe("404 Check - Cross-Domain Parity", () => {
   test("Cbotai - encyclopedia prefix A", async ({ page }) => {
     await safeGoto(
       page,
-      "https://cbotai.shahrear.site/encyclopedia/?encyclopedia_prefix=A"
+      `${BASE_URL_2}/encyclopedia/?encyclopedia_prefix=A`
     );
     const bodyText = await page.locator("body").innerText();
     expect(bodyText.toLowerCase()).not.toContain("404");
@@ -24,7 +26,7 @@ test.describe("404 Check - Cross-Domain Parity", () => {
   test("MSF - encyclopedia root", async ({ page }) => {
     await safeGoto(
       page,
-      "https://betterdocs.msf.shahrear.site/index.php/encyclopedia/"
+      `${BASE_URL_3}/index.php/encyclopedia/`
     );
     const bodyText = await page.locator("body").innerText();
     expect(bodyText.toLowerCase()).not.toContain("404");
@@ -34,7 +36,7 @@ test.describe("404 Check - Cross-Domain Parity", () => {
   test("MSF - docs search", async ({ page }) => {
     await safeGoto(
       page,
-      "https://betterdocs.msf.shahrear.site/index.php/?s=test&post_type=docs"
+      `${BASE_URL_3}/index.php/?s=test&post_type=docs`
     );
     const bodyText = await page.locator("body").innerText();
     expect(bodyText.toLowerCase()).not.toContain("page not found");

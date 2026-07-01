@@ -3,6 +3,7 @@ const { test, expect } = require("@playwright/test");
 const { safeGoto } = require("../../helpers");
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../../../.env") });
+const BASE_URL_4 = process.env.BASE_URL_4;
 
 /**
  * Multi Knowledge Base (MKB) navigation flow tests.
@@ -20,7 +21,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "../../../.env") });
  * betteromation). Same pattern as 404-checks/cross-domain.spec.js.
  */
 
-const SITE = "https://aichatbotliveserver.shahrear.site";
+const SITE = BASE_URL_4;
 const DOCS_URL = `${SITE}/docs/`;
 const KB_ARCHIVE_URL = `${SITE}/docs/alpha/`;
 const CATEGORY_ARCHIVE_URL = `${SITE}/docs/alpha/installation/`;

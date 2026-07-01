@@ -2,6 +2,7 @@
 const { test, expect } = require("@playwright/test");
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../../../.env") });
+const BASE_URL_3 = process.env.BASE_URL_3;
 
 const BASE_URL = process.env.BASE_URL;
 
@@ -58,7 +59,7 @@ test.describe("BetterDocs #57 - Multi-Category Archive HTTP Status", () => {
     //   /index.php/docs-category/program-management,allinallmsf/feed/json/
     // If this returns 404, the multi-category 404 regression has come back.
     const res = await request.get(
-      "https://betterdocs.msf.shahrear.site/index.php/docs-category/program-management,allinallmsf/feed/json/"
+      `${BASE_URL_3}/index.php/docs-category/program-management,allinallmsf/feed/json/`
     );
     expect(res.status()).toBe(200);
   });

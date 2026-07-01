@@ -3,6 +3,7 @@ const { test, expect } = require("@playwright/test");
 const { safeGoto } = require("../../helpers");
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../../../.env") });
+const BASE_URL_4 = process.env.BASE_URL_4;
 
 /**
  * Encyclopedia routing tests for the AI Chatbot Live site (Gutenberg env).
@@ -17,7 +18,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "../../../.env") });
  *   - Invalid entry slug returns 404
  */
 
-const SITE = "https://aichatbotliveserver.shahrear.site";
+const SITE = BASE_URL_4;
 const ENCYCLOPEDIA_URL = `${SITE}/encyclopedia/`;
 const ENTRY_URL = `${SITE}/encyclopedia/bp/`;
 
