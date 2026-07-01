@@ -117,7 +117,7 @@ tests/
 │   │   ├── deprecated-code      # .elementor-widget-container absence
 │   │   ├── disable-js           # Verify removed scripts aren't loaded
 │   │   └── nested-slug          # Nested category URL slug verification
-│   ├── navigation/              # Interactive navigation tests (44)
+│   ├── navigation/              # Interactive navigation tests (51)
 │   │   ├── archive-pagination   # Pagination controls, page nav, doc links
 │   │   ├── category-navigation  # Category box visibility, counts, nav
 │   │   ├── doc-link-navigation  # Single doc clicks, category archives
@@ -125,12 +125,16 @@ tests/
 │   │   ├── glossary-navigation  # Glossary tooltips, links, new tab nav
 │   │   ├── faq-interaction      # FAQ expand/collapse behavior
 │   │   ├── search               # Search bar, modal, live results
+│   │   ├── search-modal-behaviors # Escape closes, result click navigates, no-result query
 │   │   ├── search-filter        # Category dropdown, popular tags
-│   │   └── sidebar-navigation   # Sidebar categories, icons, doc counts
-│   ├── single-doc/              # Single doc & encyclopedia entry features (17)
+│   │   ├── ai-search-suggestion # AI-powered search-to-chatbot connection block (sparkle, label, query echo)
+│   │   ├── sidebar-navigation   # Sidebar categories, icons, doc counts
+│   │   └── language-switcher    # WPML language switcher on cbotai — presence, current-lang, locale-prefixed URLs
+│   ├── single-doc/              # Single doc & encyclopedia entry features (22)
 │   │   ├── single-doc-features  # Breadcrumb, TOC, sidebar, prev/next, related, body class, FSE chrome guard
 │   │   ├── article-reactions    # Thumbs up/down reactions, feedback form
-│   │   └── encyclopedia-single  # Entry title, alphabet list, URL match, body class, FSE chrome guard
+│   │   ├── encyclopedia-single  # Entry title, alphabet list, URL match, body class, FSE chrome guard
+│   │   └── doc-summary          # AI-powered Doc Summary section — header, title, arrow, content, loading resolves
 │   ├── multi-kb/                # Multi Knowledge Base flow on aichatbotliveserver (25)
 │   │   ├── mkb-flow             # MKB block → KB archive → category grid → single doc end-to-end (Gutenberg) + template/body-class integrity checks
 │   │   └── encyclopedia-routing # Encyclopedia archive, single entry, alphabet filter, invalid path 404
@@ -155,14 +159,16 @@ tests/
 │   ├── chatbot-tab              # Welcome message, email/guest login
 │   ├── ask-tab                  # Query form: email, name, subject, upload
 │   └── resources-tab            # Doc categories, Q&A section
-├── chatbot/                     # AI chatbot interaction tests (10)
+├── chatbot/                     # AI chatbot interaction tests (23)
 │   ├── chatbot-ui               # Panel title, response time, tabs
 │   ├── guest-search             # Guest login, message, AI response + links
-│   └── email-search             # Email login, search, response + links
+│   ├── email-search             # Email login, search, response + links
+│   ├── chatbot-input            # Empty/whitespace send is no-op, Enter/button send, input clears after send
+│   └── transcript-menu          # Kebab menu 3 options: Download Transcript, Send Transcript, Start a New Chat (cbotai)
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 391 tests across 149 files**
+**Total: 431 tests across 154 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
