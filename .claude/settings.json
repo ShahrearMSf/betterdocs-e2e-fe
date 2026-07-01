@@ -17,7 +17,8 @@
       "Bash(/usr/bin/curl -sLI -o /dev/null -w '  ?encyclopedia_prefix=B → %{http_code}\\\\n' https://aichatbotliveserver.shahrear.site/encyclopedia/?encyclopedia_prefix=B)",
       "Bash(/usr/bin/curl -sLI -o /dev/null -w '  ?encyclopedia_prefix=Z → %{http_code}\\\\n' https://aichatbotliveserver.shahrear.site/encyclopedia/?encyclopedia_prefix=Z)",
       "Bash(/usr/bin/grep -oE \"<h[12][^>]*>[^<]+</h[12]>\")",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(node -e ' *)"
     ]
   }
 }
