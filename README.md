@@ -94,6 +94,8 @@ tests/
 │   │   ├── msf-*                # MSF domain checks (docs, encyclopedia)
 │   │   ├── docs-*               # Main site doc/category checks
 │   │   ├── cross-domain         # Cross-domain parity (cbotai, msf, main)
+│   │   ├── cross-domain-smoke   # Homepage 200 + non-empty title across all 4 sites (BASE_URL_1-4)
+│   │   ├── 404-page-usability   # 404 URL still renders theme header/nav/footer (no blank error page)
 │   │   └── intentional-404      # Verify 404 renders for invalid URLs
 │   ├── permalink-routing/       # URL routing, SEO, structure, feeds & API (62)
 │   │   ├── trailing-slash       # /docs vs /docs/ consistency
@@ -143,9 +145,10 @@ tests/
 │   │   └── html-structure       # HTML5 doctype, <html lang>, UTF-8 charset
 │   ├── security/                # Security headers & access control (5)
 │   │   └── security-headers     # X-Frame-Options, X-Content-Type-Options, wp-admin redirect, REST API, comments feed
-│   ├── accessibility/           # Accessibility tests (9)
+│   ├── accessibility/           # Accessibility tests (13)
 │   │   ├── console-errors       # No JS console errors on 5 key pages
-│   │   └── image-alt-text       # All images have alt attributes
+│   │   ├── image-alt-text       # All images have alt attributes
+│   │   └── broken-image-scan    # HEAD-check every <img src> on key pages, none return 404
 │   ├── site-chrome/             # Header, footer, responsive, menu (15)
 │   │   ├── header-footer-nav    # Footer, logo home, main menu, skip link
 │   │   ├── mobile-viewport      # Mobile viewport rendering (375×812)
@@ -168,7 +171,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 431 tests across 154 files**
+**Total: 442 tests across 157 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
