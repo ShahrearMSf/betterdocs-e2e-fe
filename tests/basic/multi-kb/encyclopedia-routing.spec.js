@@ -104,3 +104,70 @@ test.describe("Encyclopedia Routing - Invalid Paths", () => {
     expect(res.status()).toBe(404);
   });
 });
+
+/**
+ * FSE (Full Site Editing) template integrity for encyclopedia routing.
+ *
+ * aichatbotliveserver uses Twenty Twenty-Five (an FSE theme). Guards here
+ * catch: wrong template loading, block-theme fallback ("Proudly powered by
+ * WordPress" footer), taxonomy body-class regressions, and FSE chrome leaks.
+ */
+test.describe("Encyclopedia FSE - Template & Chrome Integrity", () => {
+  test("Archive page loads under the FSE (block) theme", async ({ page }) => {
+    await safeGoto(page, ENCYCLOPEDIA_URL);
+    const bodyClass = await page.locator("body").evaluate((el) => el.className);
+    // FSE theme marker — block themes always ship as `wp-theme-<slug>`
+    expect(bodyClass).toMatch(/wp-theme-twentytwentyfive/);
+  });
+
+  test("Single entry loads under the FSE (block) theme", async ({ page }) => {
+    await safeGoto(page, ENTRY_URL);
+    const bodyClass = await page.locator("body").evaluate((el) => el.className);
+    expect(bodyClass).toMatch(/wp-theme-twentytwentyfive/);
+  });
+
+  test("Single entry uses the glossaries taxonomy template", async ({
+    page,
+  }) => {
+    // Wrong template = wrong body class. `tax-glossaries` proves the correct
+    // FSE `taxonomy-glossaries` block template resolved.
+    await safeGoto(page, ENTRY_URL);
+    const bodyClass = await page.locator("body").evaluate((el) => el.className);
+    expect(bodyClass).toContain("tax-glossaries");
+  });
+
+  test("Single entry body class carries the term slug (term-bp)", async ({
+    page,
+  }) => {
+    // Confirms the taxonomy term resolved correctly, not a fallback / catch-all.
+    await safeGoto(page, ENTRY_URL);
+    const bodyClass = await page.locator("body").evaluate((el) => el.className);
+    expect(bodyClass).toContain("term-bp");
+  });
+
+  test("Archive does NOT show the FSE-compat 'Proudly powered by WordPress' footer", async ({
+    page,
+  }) => {
+    await safeGoto(page, ENCYCLOPEDIA_URL);
+    const bodyText = await page.locator("body").innerText();
+    expect(bodyText).not.toContain("Proudly powered by WordPress");
+  });
+
+  test("Single entry does NOT show the FSE-compat 'Proudly powered by WordPress' footer", async ({
+    page,
+  }) => {
+    await safeGoto(page, ENTRY_URL);
+    const bodyText = await page.locator("body").innerText();
+    expect(bodyText).not.toContain("Proudly powered by WordPress");
+  });
+
+  test("Archive renders a non-empty page (not blank template fallback)", async ({
+    page,
+  }) => {
+    // Guards against an FSE template resolution bug where the page returns
+    // 200 but renders empty. Body text should exceed a reasonable threshold.
+    await safeGoto(page, ENCYCLOPEDIA_URL);
+    const bodyText = (await page.locator("body").innerText()).trim();
+    expect(bodyText.length).toBeGreaterThan(100);
+  });
+});

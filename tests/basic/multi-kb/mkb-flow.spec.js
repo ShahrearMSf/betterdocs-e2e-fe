@@ -36,11 +36,17 @@ test.describe("MKB Flow - Step 1: /docs/ shows Multi Knowledge Base block", () =
     await expect(mkbWrapper).toBeVisible();
   });
 
-  test("MKB block contains at least one KB card", async ({ page }) => {
-    const kbCards = page
+  test("MKB block contains at least one KB entry (link to a KB archive)", async ({
+    page,
+  }) => {
+    // Robust to DOM refactors: assert user-observable behavior — a clickable
+    // link to a KB archive must exist inside the MKB block. We deliberately
+    // avoid coupling to internal class names like
+    // ".betterdocs-single-category-wrapper" which have been renamed before.
+    const kbLinks = page
       .locator(".betterdocs-multiple-kb-wrapper")
-      .locator(".betterdocs-single-category-wrapper");
-    const count = await kbCards.count();
+      .locator('a[href*="/docs/"]');
+    const count = await kbLinks.count();
     expect(count).toBeGreaterThanOrEqual(1);
   });
 
