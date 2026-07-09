@@ -132,23 +132,29 @@ tests/
 │   │   ├── ai-search-suggestion # AI-powered search-to-chatbot connection block (sparkle, label, query echo)
 │   │   ├── sidebar-navigation   # Sidebar categories, icons, doc counts
 │   │   └── language-switcher    # WPML language switcher on cbotai — presence, current-lang, locale-prefixed URLs
-│   ├── single-doc/              # Single doc & encyclopedia entry features (22)
+│   ├── single-doc/              # Single doc & encyclopedia entry features (27)
 │   │   ├── single-doc-features  # Breadcrumb, TOC, sidebar, prev/next, related, body class, FSE chrome guard
 │   │   ├── article-reactions    # Thumbs up/down reactions, feedback form
 │   │   ├── encyclopedia-single  # Entry title, alphabet list, URL match, body class, FSE chrome guard
-│   │   └── doc-summary          # AI-powered Doc Summary section — header, title, arrow, content, loading resolves
-│   ├── multi-kb/                # Multi Knowledge Base flow on aichatbotliveserver (25)
+│   │   ├── doc-summary          # AI-powered Doc Summary section — header, title, arrow, content, loading resolves
+│   │   ├── related-docs         # Related Docs list: ≥1 link, first link resolves, no ".undefined" corruption rows
+│   │   └── print-view           # Print button present, print media renders doc heading (CSS not hiding content)
+│   ├── multi-kb/                # Multi Knowledge Base flow on aichatbotliveserver (32)
 │   │   ├── mkb-flow             # MKB block → KB archive → category grid → single doc end-to-end (Gutenberg) + template/body-class integrity checks
-│   │   └── encyclopedia-routing # Encyclopedia archive, single entry, alphabet filter, invalid path 404
+│   │   └── encyclopedia-routing # Encyclopedia archive, single entry, alphabet filter, invalid path 404, FSE template & chrome integrity
 │   ├── seo/                     # SEO, meta tag & HTML structure tests (15)
 │   │   ├── meta-tags            # Title, canonical, H1, viewport meta
 │   │   └── html-structure       # HTML5 doctype, <html lang>, UTF-8 charset
-│   ├── security/                # Security headers & access control (5)
-│   │   └── security-headers     # X-Frame-Options, X-Content-Type-Options, wp-admin redirect, REST API, comments feed
-│   ├── accessibility/           # Accessibility tests (13)
+│   ├── security/                # Security headers, access control & vuln guards (20)
+│   │   ├── security-headers     # X-Frame-Options, X-Content-Type-Options, wp-admin redirect, REST API, comments feed
+│   │   ├── secret-leak-scan     # No API keys/tokens (OpenAI, api_key, license_key, AWS) leaked in HTML or inline scripts
+│   │   ├── xss-reflection       # Search/404-slug injections HTML-escaped, no raw <script> reflected, no DB/PHP internals leaked
+│   │   └── sql-error-leak       # WP search + BetterDocs REST resilient to injection markers, no SQL/PHP error signatures
+│   ├── accessibility/           # Accessibility & error-leak tests (20)
 │   │   ├── console-errors       # No JS console errors on 5 key pages
 │   │   ├── image-alt-text       # All images have alt attributes
-│   │   └── broken-image-scan    # HEAD-check every <img src> on key pages, none return 404
+│   │   ├── broken-image-scan    # HEAD-check every <img src> on key pages, none return 404
+│   │   └── php-error-scan       # HTML body of 7 page types contains no "Fatal error", "Warning:", "Notice:", stack traces, etc.
 │   ├── site-chrome/             # Header, footer, responsive, menu (15)
 │   │   ├── header-footer-nav    # Footer, logo home, main menu, skip link
 │   │   ├── mobile-viewport      # Mobile viewport rendering (375×812)
@@ -171,7 +177,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 442 tests across 157 files**
+**Total: 476 tests across 163 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
