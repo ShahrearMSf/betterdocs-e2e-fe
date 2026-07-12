@@ -95,3 +95,51 @@ test.describe("Chatbot Input - Send Behaviors", () => {
     expect(after).toBe(before);
   });
 });
+
+/**
+ * Chatbot AI-degradation guard.
+ *
+ * When the upstream provider (OpenAI / Claude / Gemini / etc.) fails, the
+ * chatbot must show a friendly fallback — NOT the raw provider error text.
+ * We send a message, wait for a reply, and assert the received bubble text
+ * contains no known provider-error markers.
+ */
+
+const PROVIDER_ERROR_MARKERS = [
+  "Request had invalid authentication credentials",
+  "invalid authentication",
+  "RESOURCE_EXHAUSTED",
+  "insufficient_quota",
+  "API key not valid",
+  "PERMISSION_DENIED",
+  "quota exceeded",
+  "AuthenticationError",
+  "openai.error",
+  "anthropic",
+];
+
+test.describe("Chatbot - Provider Error Leak Guard", () => {
+  test("AI reply text never leaks raw provider-error strings", async ({
+    page,
+  }) => {
+    const input = await openChatbotAsGuest(page);
+    await input.fill("what is life");
+    await input.press("Enter");
+
+    // Wait for at least one AI reply bubble (up to 60s — matches existing helper)
+    const received = page.locator(".message.received");
+    await expect(async () => {
+      const count = await received.count();
+      expect(count).toBeGreaterThan(1); // welcome + at least one reply
+    }).toPass({ timeout: 60000 });
+
+    const all = (await received.allInnerTexts()).join(" ");
+    const leaked = PROVIDER_ERROR_MARKERS.filter((m) =>
+      all.toLowerCase().includes(m.toLowerCase())
+    );
+    expect(
+      leaked,
+      `Chatbot leaked provider error to visitor: ${leaked.join(", ")}`
+    ).toEqual([]);
+  });
+});
