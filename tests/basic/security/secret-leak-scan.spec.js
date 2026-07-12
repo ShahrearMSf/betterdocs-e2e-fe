@@ -34,8 +34,18 @@ const PAGES = [
 // Regexes are strict on purpose to avoid false-positives from CSS class
 // names that happen to contain substrings like "sk-".
 const SECRET_PATTERNS = [
-  // OpenAI-style keys: sk- followed by 40+ base62 chars (project keys can be longer)
+  // OpenAI-style keys: sk- (and sk-proj-) followed by 40+ base62 chars
   { name: "OpenAI-style key", re: /\bsk-[A-Za-z0-9_-]{40,}\b/ },
+  // Anthropic (Claude) API keys: sk-ant-api03-... typically ~95 chars
+  { name: "Anthropic (Claude) key", re: /\bsk-ant-(?:api\d{2}-)?[A-Za-z0-9_-]{40,}\b/ },
+  // Google API keys (Gemini and other Google APIs): AIza + 35 chars
+  { name: "Google API key (Gemini)", re: /\bAIza[0-9A-Za-z_-]{35}\b/ },
+  // Google OAuth 2.0 authorization/refresh tokens: begin "1//" or "AQ."
+  {
+    name: "Google OAuth token (AQ.)",
+    re: /\bAQ\.[A-Za-z0-9_-]{20,}\b/,
+  },
+  { name: "Google OAuth refresh token", re: /\b1\/\/0[A-Za-z0-9_-]{40,}\b/ },
   // Explicit key names with a non-empty value assigned
   { name: "api_key with value", re: /"api_key"\s*:\s*"[^"]{8,}"/i },
   { name: "api_secret with value", re: /"api_secret"\s*:\s*"[^"]{8,}"/i },
@@ -45,7 +55,7 @@ const SECRET_PATTERNS = [
     name: "autowrite_api_key with value",
     re: /"autowrite_api_key"\s*:\s*"[^"]{8,}"/i,
   },
-  // AWS-style secret keys (long base64 followed by =)
+  // AWS-style access keys
   { name: "AWS-style secret", re: /AKIA[0-9A-Z]{16}/ },
 ];
 
