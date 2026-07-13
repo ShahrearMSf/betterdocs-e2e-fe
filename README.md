@@ -136,7 +136,7 @@ tests/
 │   │   ├── single-doc-features  # Breadcrumb, TOC, sidebar, prev/next, related, body class, FSE chrome guard
 │   │   ├── article-reactions    # Thumbs up/down reactions, feedback form
 │   │   ├── encyclopedia-single  # Entry title, alphabet list, URL match, body class, FSE chrome guard
-│   │   ├── doc-summary          # AI-powered Doc Summary section — header, title, arrow, content, loading resolves
+│   │   ├── doc-summary          # AI-powered Doc Summary — header, title, arrow, loading resolves + AI-degradation guard (no provider errors leaked) + content safety (no script/iframe/onerror, balanced tags)
 │   │   ├── related-docs         # Related Docs list: ≥1 link, first link resolves, no ".undefined" corruption rows
 │   │   └── print-view           # Print button present, print media renders doc heading (CSS not hiding content)
 │   ├── multi-kb/                # Multi Knowledge Base flow on aichatbotliveserver (32)
@@ -147,7 +147,7 @@ tests/
 │   │   └── html-structure       # HTML5 doctype, <html lang>, UTF-8 charset
 │   ├── security/                # Security headers, access control & vuln guards (20)
 │   │   ├── security-headers     # X-Frame-Options, X-Content-Type-Options, wp-admin redirect, REST API, comments feed
-│   │   ├── secret-leak-scan     # No API keys/tokens (OpenAI, api_key, license_key, AWS) leaked in HTML or inline scripts
+│   │   ├── secret-leak-scan     # No API keys/tokens (OpenAI, Claude sk-ant, Gemini AIza, Google OAuth, api_key, license_key, AWS) leaked in HTML or inline scripts
 │   │   ├── xss-reflection       # Search/404-slug injections HTML-escaped, no raw <script> reflected, no DB/PHP internals leaked
 │   │   └── sql-error-leak       # WP search + BetterDocs REST resilient to injection markers, no SQL/PHP error signatures
 │   ├── accessibility/           # Accessibility & error-leak tests (20)
@@ -172,12 +172,12 @@ tests/
 │   ├── chatbot-ui               # Panel title, response time, tabs
 │   ├── guest-search             # Guest login, message, AI response + links
 │   ├── email-search             # Email login, search, response + links
-│   ├── chatbot-input            # Empty/whitespace send is no-op, Enter/button send, input clears after send
+│   ├── chatbot-input            # Empty/whitespace send is no-op, Enter/button send, input clears after send, AI reply never leaks provider-error strings
 │   └── transcript-menu          # Kebab menu 3 options: Download Transcript, Send Transcript, Start a New Chat (cbotai)
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 476 tests across 163 files**
+**Total: 480 tests across 163 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
