@@ -13,19 +13,19 @@ test("Category Box B Card - Snapshot", async ({ page }) => {
     - main:
       - heading "Category Box B Card" [level=1]
       - link "betterdocs-category-icon Star 1":
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: "1"
       - heading "Name based order" [level=2]:
         - strong: Name based order
       - link "betterdocs-category-icon MSF 1":
-        - /url: https://betteromation.shahrear.site/docs/qa/msf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
         - img "betterdocs-category-icon"
         - heading "MSF" [level=2]
         - text: "1"
       - link "betterdocs-category-icon Star 1":
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: "1"
@@ -33,7 +33,7 @@ test("Category Box B Card - Snapshot", async ({ page }) => {
       - heading "Include Descending" [level=2]
       - heading "Exclude BetterDocs Order" [level=2]
       - link "betterdocs-category-icon Star 1":
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: "1"

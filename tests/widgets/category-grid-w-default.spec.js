@@ -24,7 +24,7 @@ test("Category Grid W Default - Snapshot", async ({ page }) => {
           - listitem:
             - text: 
             - link "NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses":
-              - /url: https://betteromation.shahrear.site/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
+              - /url: https://betteromation.shahrear.msf.bd/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
       - paragraph:
         - strong: Fit to Screen – Include MKB Sports
       - article:
@@ -35,7 +35,7 @@ test("Category Grid W Default - Snapshot", async ({ page }) => {
           - listitem:
             - text: 
             - link "Basketball – The Game of Sprit":
-              - /url: https://betteromation.shahrear.site/docs/basketball-the-game-of-sprit/
+              - /url: https://betteromation.shahrear.msf.bd/docs/basketball-the-game-of-sprit/
       - article:
         - img "betterdocs-category-icon"
         - heading "Cricket" [level=2]
@@ -44,7 +44,7 @@ test("Category Grid W Default - Snapshot", async ({ page }) => {
           - listitem:
             - text: 
             - link "Cricket – The Gentlemen’s Game":
-              - /url: https://betteromation.shahrear.site/docs/cricket-the-gentlemens-game/
+              - /url: https://betteromation.shahrear.msf.bd/docs/cricket-the-gentlemens-game/
       - article:
         - img "betterdocs-category-icon"
         - heading "Fencing" [level=2]
@@ -53,7 +53,7 @@ test("Category Grid W Default - Snapshot", async ({ page }) => {
           - listitem:
             - text: 
             - link "Fencing – The Beautiful Sport":
-              - /url: https://betteromation.shahrear.site/docs/fencing-the-beautiful-sport/
+              - /url: https://betteromation.shahrear.msf.bd/docs/fencing-the-beautiful-sport/
       - paragraph:
         - strong: Masonry – ID – Descending – including
       - article:
@@ -64,7 +64,7 @@ test("Category Grid W Default - Snapshot", async ({ page }) => {
           - listitem:
             - text: 
             - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-              - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+              - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
           - listitem:
             - link "WPD":
               - /url: "#"
@@ -73,17 +73,17 @@ test("Category Grid W Default - Snapshot", async ({ page }) => {
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]:
           - link "Star":
-            - /url: https://betteromation.shahrear.site/docs/qa/star/
+            - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - text: "2"
         - list:
           - listitem:
             - text: 
             - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-              - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+              - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
           - listitem:
             - link "WPD":
               - /url: "#"
         - link "Find More ":
-          - /url: https://betteromation.shahrear.site/docs/qa/star/
+          - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
   `);
 });

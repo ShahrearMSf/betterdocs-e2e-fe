@@ -15,7 +15,7 @@ test("Category Box B Sleek - Snapshot", async ({ page }) => {
       - paragraph:
         - strong: BetterDocs Order
       - 'link "Star 1 Sub Category | 1 Doc Last Updated: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img
         - heading "Star" [level=2]
         - text: 1 Sub Category | 1 Doc
@@ -23,13 +23,13 @@ test("Category Box B Sleek - Snapshot", async ({ page }) => {
       - heading "Name Based Order" [level=2]:
         - strong: Name Based Order
       - 'link "MSF 1 Doc Last Updated: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/msf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
         - img
         - heading "MSF" [level=2]
         - text: 1 Doc
         - paragraph: "Last Updated: January 15, 2026"
       - 'link "Star 1 Sub Category | 1 Doc Last Updated: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img
         - heading "Star" [level=2]
         - text: 1 Sub Category | 1 Doc
@@ -37,14 +37,14 @@ test("Category Box B Sleek - Snapshot", async ({ page }) => {
       - heading "MKB Based – Team – ID – Descending" [level=2]
       - heading "Include – BetterDocs" [level=2]
       - 'link "MSF 1 Doc Last Updated: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/msf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
         - img
         - heading "MSF" [level=2]
         - text: 1 Doc
         - paragraph: "Last Updated: January 15, 2026"
       - heading "Exclude – Slug – Descending" [level=2]
       - 'link "Star 1 Sub Category | 1 Doc Last Updated: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img
         - heading "Star" [level=2]
         - text: 1 Sub Category | 1 Doc

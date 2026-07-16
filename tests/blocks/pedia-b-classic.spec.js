@@ -17,115 +17,115 @@ test("Pedia B Classic - Snapshot", async ({ page }) => {
       - list:
         - listitem:
           - link "All":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/
         - listitem:
           - link "A":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=A
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=A
         - listitem:
           - link "B":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=B
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=B
         - listitem:
           - link "C":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=C
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=C
         - listitem:
           - link "D":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=D
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=D
         - listitem:
           - link "E":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=E
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=E
         - listitem:
           - link "F":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=F
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=F
         - listitem:
           - link "G":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=G
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=G
         - listitem:
           - link "H":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=H
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=H
         - listitem:
           - link "I":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=I
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=I
         - listitem:
           - link "J":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=J
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=J
         - listitem:
           - link "K":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=K
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=K
         - listitem:
           - link "L":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=L
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=L
         - listitem:
           - link "M":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=M
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=M
         - listitem:
           - link "N":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=N
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=N
         - listitem:
           - link "O":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=O
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=O
         - listitem:
           - link "P":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=P
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=P
         - listitem:
           - link "Q":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=Q
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=Q
         - listitem:
           - link "R":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=R
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=R
         - listitem:
           - link "S":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=S
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=S
         - listitem:
           - link "T":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=T
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=T
         - listitem:
           - link "U":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=U
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=U
         - listitem:
           - link "V":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=V
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=V
         - listitem:
           - link "W":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=W
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=W
         - listitem:
           - link "X":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=X
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=X
         - listitem:
           - link "Y":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=Y
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=Y
         - listitem:
           - link "Z":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=Z
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=Z
       - text: A
       - link "Aesthetic":
-        - /url: https://betteromation.shahrear.site/encyclopedia/aesthetic/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/aesthetic/
         - heading "Aesthetic" [level=2]
       - link "Altruism":
-        - /url: https://betteromation.shahrear.site/encyclopedia/altruism/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/altruism/
         - heading "Altruism" [level=2]
       - link "Ambition":
-        - /url: https://betteromation.shahrear.site/encyclopedia/ambition/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/ambition/
         - heading "Ambition" [level=2]
       - link "Ample":
-        - /url: https://betteromation.shahrear.site/encyclopedia/ample/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/ample/
         - heading "Ample" [level=2]
       - link "Analogy":
-        - /url: https://betteromation.shahrear.site/encyclopedia/analogy/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/analogy/
         - heading "Analogy" [level=2]
       - link "Anomaly":
-        - /url: https://betteromation.shahrear.site/encyclopedia/anomaly/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/anomaly/
         - heading "Anomaly" [level=2]
       - link "Anticipate":
-        - /url: https://betteromation.shahrear.site/encyclopedia/anticipate/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/anticipate/
         - heading "Anticipate" [level=2]
       - link "Apple":
-        - /url: https://betteromation.shahrear.site/encyclopedia/apple/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/apple/
         - heading "Apple" [level=2]
       - link "Arbitrary":
-        - /url: https://betteromation.shahrear.site/encyclopedia/arbitrary/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/arbitrary/
         - heading "Arbitrary" [level=2]
       - link "Ascend":
-        - /url: https://betteromation.shahrear.site/encyclopedia/ascend/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/ascend/
         - heading "Ascend" [level=2]
       - link "Explore 1 More Docs":
         - /url: "?encyclopedia_prefix=A"
@@ -133,19 +133,19 @@ test("Pedia B Classic - Snapshot", async ({ page }) => {
         - img
       - text: B
       - link "Ball":
-        - /url: https://betteromation.shahrear.site/encyclopedia/ball/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/ball/
         - heading "Ball" [level=2]
       - text: C
       - link "Cat":
-        - /url: https://betteromation.shahrear.site/encyclopedia/cat/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/cat/
         - heading "Cat" [level=2]
       - text: D
       - link "Dog":
-        - /url: https://betteromation.shahrear.site/encyclopedia/dog/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/dog/
         - heading "Dog" [level=2]
       - text: E
       - link "Egg":
-        - /url: https://betteromation.shahrear.site/encyclopedia/egg/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/egg/
         - heading "Egg" [level=2]
       - text: Load More
       - paragraph:
@@ -153,115 +153,115 @@ test("Pedia B Classic - Snapshot", async ({ page }) => {
       - list:
         - listitem:
           - link "All":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/
         - listitem:
           - link "A":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=A
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=A
         - listitem:
           - link "B":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=B
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=B
         - listitem:
           - link "C":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=C
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=C
         - listitem:
           - link "D":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=D
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=D
         - listitem:
           - link "E":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=E
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=E
         - listitem:
           - link "F":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=F
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=F
         - listitem:
           - link "G":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=G
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=G
         - listitem:
           - link "H":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=H
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=H
         - listitem:
           - link "I":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=I
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=I
         - listitem:
           - link "J":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=J
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=J
         - listitem:
           - link "K":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=K
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=K
         - listitem:
           - link "L":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=L
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=L
         - listitem:
           - link "M":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=M
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=M
         - listitem:
           - link "N":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=N
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=N
         - listitem:
           - link "O":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=O
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=O
         - listitem:
           - link "P":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=P
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=P
         - listitem:
           - link "Q":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=Q
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=Q
         - listitem:
           - link "R":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=R
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=R
         - listitem:
           - link "S":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=S
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=S
         - listitem:
           - link "T":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=T
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=T
         - listitem:
           - link "U":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=U
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=U
         - listitem:
           - link "V":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=V
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=V
         - listitem:
           - link "W":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=W
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=W
         - listitem:
           - link "X":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=X
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=X
         - listitem:
           - link "Y":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=Y
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=Y
         - listitem:
           - link "Z":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=Z
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=Z
       - text: A
       - link "Aesthetic":
-        - /url: https://betteromation.shahrear.site/encyclopedia/aesthetic/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/aesthetic/
         - heading "Aesthetic" [level=2]
       - link "Altruism":
-        - /url: https://betteromation.shahrear.site/encyclopedia/altruism/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/altruism/
         - heading "Altruism" [level=2]
       - link "Ambition":
-        - /url: https://betteromation.shahrear.site/encyclopedia/ambition/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/ambition/
         - heading "Ambition" [level=2]
       - link "Ample":
-        - /url: https://betteromation.shahrear.site/encyclopedia/ample/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/ample/
         - heading "Ample" [level=2]
       - link "Analogy":
-        - /url: https://betteromation.shahrear.site/encyclopedia/analogy/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/analogy/
         - heading "Analogy" [level=2]
       - link "Anomaly":
-        - /url: https://betteromation.shahrear.site/encyclopedia/anomaly/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/anomaly/
         - heading "Anomaly" [level=2]
       - link "Anticipate":
-        - /url: https://betteromation.shahrear.site/encyclopedia/anticipate/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/anticipate/
         - heading "Anticipate" [level=2]
       - link "Apple":
-        - /url: https://betteromation.shahrear.site/encyclopedia/apple/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/apple/
         - heading "Apple" [level=2]
       - link "Arbitrary":
-        - /url: https://betteromation.shahrear.site/encyclopedia/arbitrary/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/arbitrary/
         - heading "Arbitrary" [level=2]
       - link "Ascend":
-        - /url: https://betteromation.shahrear.site/encyclopedia/ascend/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/ascend/
         - heading "Ascend" [level=2]
       - link "Explore 1 More Docs":
         - /url: "?encyclopedia_prefix=A"
@@ -269,19 +269,19 @@ test("Pedia B Classic - Snapshot", async ({ page }) => {
         - img
       - text: B
       - link "Ball":
-        - /url: https://betteromation.shahrear.site/encyclopedia/ball/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/ball/
         - heading "Ball" [level=2]
       - text: C
       - link "Cat":
-        - /url: https://betteromation.shahrear.site/encyclopedia/cat/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/cat/
         - heading "Cat" [level=2]
       - text: D
       - link "Dog":
-        - /url: https://betteromation.shahrear.site/encyclopedia/dog/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/dog/
         - heading "Dog" [level=2]
       - text: E
       - link "Egg":
-        - /url: https://betteromation.shahrear.site/encyclopedia/egg/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/egg/
         - heading "Egg" [level=2]
       - text: Load More
       - heading "Custom – Exclude" [level=2]
@@ -289,82 +289,82 @@ test("Pedia B Classic - Snapshot", async ({ page }) => {
       - list:
         - listitem:
           - link "All":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/
         - listitem:
           - link "A":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=A
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=A
         - listitem:
           - link "E":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=E
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=E
         - listitem:
           - link "F":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=F
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=F
         - listitem:
           - link "G":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=G
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=G
         - listitem:
           - link "H":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=H
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=H
         - listitem:
           - link "I":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=I
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=I
         - listitem:
           - link "J":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=J
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=J
         - listitem:
           - link "K":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=K
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=K
         - listitem:
           - link "L":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=L
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=L
         - listitem:
           - link "M":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=M
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=M
         - listitem:
           - link "N":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=N
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=N
         - listitem:
           - link "O":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=O
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=O
         - listitem:
           - link "P":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=P
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=P
         - listitem:
           - link "Q":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=Q
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=Q
         - listitem:
           - link "R":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=R
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=R
         - listitem:
           - link "S":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=S
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=S
         - listitem:
           - link "T":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=T
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=T
         - listitem:
           - link "U":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=U
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=U
         - listitem:
           - link "V":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=V
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=V
         - listitem:
           - link "W":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=W
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=W
         - listitem:
           - link "X":
-            - /url: https://betteromation.shahrear.site/pedia-b-classic/?encyclopedia_prefix=X
+            - /url: https://betteromation.shahrear.msf.bd/pedia-b-classic/?encyclopedia_prefix=X
       - text: A
       - link "Aesthetic":
-        - /url: https://betteromation.shahrear.site/encyclopedia/aesthetic/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/aesthetic/
         - heading "Aesthetic" [level=2]
       - link "Altruism":
-        - /url: https://betteromation.shahrear.site/encyclopedia/altruism/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/altruism/
         - heading "Altruism" [level=2]
       - link "Ambition":
-        - /url: https://betteromation.shahrear.site/encyclopedia/ambition/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/ambition/
         - heading "Ambition" [level=2]
       - link "Ample":
-        - /url: https://betteromation.shahrear.site/encyclopedia/ample/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/ample/
         - heading "Ample" [level=2]
       - link "Explore 7 More Docs":
         - /url: "?encyclopedia_prefix=A"
@@ -372,11 +372,11 @@ test("Pedia B Classic - Snapshot", async ({ page }) => {
         - img
       - text: E
       - link "Egg":
-        - /url: https://betteromation.shahrear.site/encyclopedia/egg/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/egg/
         - heading "Egg" [level=2]
       - text: F
       - link "Fruits":
-        - /url: https://betteromation.shahrear.site/encyclopedia/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/encyclopedia/fruits/
         - heading "Fruits" [level=2]
       - text: Load More
   `);

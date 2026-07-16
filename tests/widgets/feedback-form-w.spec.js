@@ -28,19 +28,19 @@ test("Feedback Form W - Snapshot", async ({ page }) => {
       - list:
         - listitem:
           - link "Facebook":
-            - /url: https://www.facebook.com/sharer/sharer.php?u=https://betteromation.shahrear.site/feedback-form-w/
+            - /url: https://www.facebook.com/sharer/sharer.php?u=https://betteromation.shahrear.msf.bd/feedback-form-w/
             - img "Facebook"
         - listitem:
           - link "X":
-            - /url: https://twitter.com/intent/tweet?url=https://betteromation.shahrear.site/feedback-form-w/
+            - /url: https://twitter.com/intent/tweet?url=https://betteromation.shahrear.msf.bd/feedback-form-w/
             - img "X"
         - listitem:
           - link "LinkedIn":
-            - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://betteromation.shahrear.site/feedback-form-w/
+            - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://betteromation.shahrear.msf.bd/feedback-form-w/
             - img "LinkedIn"
         - listitem:
           - link "Pinterest":
-            - /url: https://pinterest.com/pin/create/button/?url=https://betteromation.shahrear.site/feedback-form-w/
+            - /url: https://pinterest.com/pin/create/button/?url=https://betteromation.shahrear.msf.bd/feedback-form-w/
             - img "Pinterest"
       - heading "What are your feelings" [level=5]
       - list:
@@ -60,16 +60,16 @@ test("Feedback Form W - Snapshot", async ({ page }) => {
         - list:
           - listitem:
             - link "Home":
-              - /url: https://betteromation.shahrear.site
+              - /url: https://betteromation.shahrear.msf.bd
           - listitem
           - listitem:
             - link "Docs":
-              - /url: https://betteromation.shahrear.site/docs/
+              - /url: https://betteromation.shahrear.msf.bd/docs/
       - paragraph:
         - img
         - text: < 1 min read
       - img
       - link "muammar-shahrear-famous Updated on February 18, 2026":
-        - /url: https://betteromation.shahrear.site/docs/authors/1/page/1
+        - /url: https://betteromation.shahrear.msf.bd/docs/authors/1/page/1
   `);
 });

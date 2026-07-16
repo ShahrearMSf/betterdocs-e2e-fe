@@ -15,33 +15,33 @@ test("Category Box B Box - Snapshot", async ({ page }) => {
       - paragraph:
         - strong: BetterDocs Order
       - link "betterdocs-category-icon Star 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: 1 Doc
       - paragraph:
         - strong: Name Based Order
       - link "betterdocs-category-icon MSF 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/qa/msf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
         - img "betterdocs-category-icon"
         - heading "MSF" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon Star 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: 1 Doc
       - paragraph:
         - strong: Include
       - link "betterdocs-category-icon Star 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: 1 Doc
       - paragraph:
         - strong: Exclude
       - link "betterdocs-category-icon MSF 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/qa/msf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
         - img "betterdocs-category-icon"
         - heading "MSF" [level=2]
         - text: 1 Doc

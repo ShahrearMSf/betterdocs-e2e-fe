@@ -8,7 +8,7 @@ const BASE_URL_4 = process.env.BASE_URL_4;
 /**
  * Multi Knowledge Base (MKB) navigation flow tests.
  *
- * Target site: https://aichatbotliveserver.shahrear.site (Gutenberg block environment)
+ * Target site: https://aichatbotliveserver.shahrear.msf.bd (Gutenberg block environment)
  *
  * Flow under test:
  *   1. Visit /docs/                → Multi KB block renders with the "Alpha" KB card

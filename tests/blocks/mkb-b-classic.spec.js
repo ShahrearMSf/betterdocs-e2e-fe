@@ -14,65 +14,65 @@ test("Mkb B Classic - Snapshot", async ({ page }) => {
       - heading "MKB B Classic" [level=1]
       - heading "Name Ascending" [level=2]
       - link "betterdocs-category-icon Company 2 Docs":
-        - /url: https://betteromation.shahrear.site/docs/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/
         - img "betterdocs-category-icon"
         - heading "Company" [level=2]
         - text: 2 Docs
       - link "betterdocs-category-icon Fruits 7 Docs":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/
         - img "betterdocs-category-icon"
         - heading "Fruits" [level=2]
         - text: 7 Docs
       - link "betterdocs-category-icon Sports 5 Docs":
-        - /url: https://betteromation.shahrear.site/docs/sports/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/
         - img "betterdocs-category-icon"
         - heading "Sports" [level=2]
         - text: 5 Docs
       - link "betterdocs-category-icon Team 6 Docs":
-        - /url: https://betteromation.shahrear.site/docs/team/
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/
         - img "betterdocs-category-icon"
         - heading "Team" [level=2]
         - text: 6 Docs
       - heading "Include Sports Fruits Descending Slug" [level=2]
       - link "betterdocs-category-icon Sports 5 Docs":
-        - /url: https://betteromation.shahrear.site/docs/sports/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/
         - img "betterdocs-category-icon"
         - heading "Sports" [level=2]
         - text: 5 Docs
       - link "betterdocs-category-icon Fruits 7 Docs":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/
         - img "betterdocs-category-icon"
         - heading "Fruits" [level=2]
         - text: 7 Docs
       - heading "Exclude Sports Fruits Knowledge Base Ascending" [level=2]
       - link "betterdocs-category-icon Team 6 Docs":
-        - /url: https://betteromation.shahrear.site/docs/team/
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/
         - img "betterdocs-category-icon"
         - heading "Team" [level=2]
         - text: 6 Docs
       - link "betterdocs-category-icon Company 2 Docs":
-        - /url: https://betteromation.shahrear.site/docs/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/
         - img "betterdocs-category-icon"
         - heading "Company" [level=2]
         - text: 2 Docs
       - heading "Custom Suffix Prefix" [level=2]
       - link "betterdocs-category-icon Company Shahrear 2 Blogs":
-        - /url: https://betteromation.shahrear.site/docs/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/
         - img "betterdocs-category-icon"
         - heading "Company" [level=2]
         - text: Shahrear 2 Blogs
       - link "betterdocs-category-icon Sports Shahrear 5 Blogs":
-        - /url: https://betteromation.shahrear.site/docs/sports/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/
         - img "betterdocs-category-icon"
         - heading "Sports" [level=2]
         - text: Shahrear 5 Blogs
       - link "betterdocs-category-icon Team Shahrear 6 Blogs":
-        - /url: https://betteromation.shahrear.site/docs/team/
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/
         - img "betterdocs-category-icon"
         - heading "Team" [level=2]
         - text: Shahrear 6 Blogs
       - link "betterdocs-category-icon Fruits Shahrear 7 Blogs":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/
         - img "betterdocs-category-icon"
         - heading "Fruits" [level=2]
         - text: Shahrear 7 Blogs

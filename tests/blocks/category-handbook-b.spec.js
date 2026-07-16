@@ -22,7 +22,7 @@ test("Category Handbook B - Snapshot", async ({ page }) => {
         - list:
           - listitem:
             - link "NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses":
-              - /url: https://betteromation.shahrear.site/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
+              - /url: https://betteromation.shahrear.msf.bd/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
               - text: NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses
               - img
       - article:
@@ -32,7 +32,7 @@ test("Category Handbook B - Snapshot", async ({ page }) => {
         - list:
           - listitem:
             - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-              - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+              - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
               - text: NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders
               - img
           - listitem:
@@ -56,7 +56,7 @@ test("Category Handbook B - Snapshot", async ({ page }) => {
         - list:
           - listitem:
             - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-              - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+              - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
               - text: NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders
               - img
       - article:
@@ -66,7 +66,7 @@ test("Category Handbook B - Snapshot", async ({ page }) => {
         - list:
           - listitem:
             - link "NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses":
-              - /url: https://betteromation.shahrear.site/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
+              - /url: https://betteromation.shahrear.msf.bd/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
               - text: NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses
               - img
       - paragraph:
@@ -79,7 +79,7 @@ test("Category Handbook B - Snapshot", async ({ page }) => {
         - list:
           - listitem:
             - link "NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses":
-              - /url: https://betteromation.shahrear.site/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
+              - /url: https://betteromation.shahrear.msf.bd/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
               - text: NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses
               - img
       - article:
@@ -89,7 +89,7 @@ test("Category Handbook B - Snapshot", async ({ page }) => {
         - list:
           - listitem:
             - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-              - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+              - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
               - text: NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders
               - img
       - paragraph:

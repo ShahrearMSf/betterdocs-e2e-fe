@@ -13,82 +13,82 @@ test("Mkb W Sleek - Snapshot", async ({ page }) => {
     - main:
       - heading "MKB W Sleek" [level=1]
       - 'link "Team 5 Categories | 6 Articles Last Modified: March 31, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/team/
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/
         - img
         - heading "Team" [level=2]
         - text: 5 Categories | 6 Articles
         - paragraph: "Last Modified: March 31, 2026"
       - 'link "Sports 5 Categories | 5 Articles Last Modified: January 27, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/sports/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/
         - img
         - heading "Sports" [level=2]
         - text: 5 Categories | 5 Articles
         - paragraph: "Last Modified: January 27, 2026"
       - 'link "Fruits 3 Categories | 7 Articles Last Modified: October 12, 2025"':
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/
         - img
         - heading "Fruits" [level=2]
         - text: 3 Categories | 7 Articles
         - paragraph: "Last Modified: October 12, 2025"
       - 'link "Company 3 Categories | 2 Articles Last Modified: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/
         - img
         - heading "Company" [level=2]
         - text: 3 Categories | 2 Articles
         - paragraph: "Last Modified: January 15, 2026"
       - heading "Include" [level=2]
       - 'link "5 Categories | 5 Articles Last Modified: January 27, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/sports/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/
         - img
         - text: 5 Categories | 5 Articles
         - paragraph: "Last Modified: January 27, 2026"
       - 'link "3 Categories | 7 Articles Last Modified: October 12, 2025"':
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/
         - img
         - text: 3 Categories | 7 Articles
         - paragraph: "Last Modified: October 12, 2025"
       - 'link "5 Categories | 6 Articles Last Modified: March 31, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/team/
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/
         - img
         - text: 5 Categories | 6 Articles
         - paragraph: "Last Modified: March 31, 2026"
       - heading "Exclude" [level=2]
       - 'link "Fruits 3 Categories | MSF 7 Blogs Updated: October 12, 2025"':
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/
         - heading "Fruits" [level=2]
         - text: 3 Categories | MSF 7 Blogs
         - paragraph: "Updated: October 12, 2025"
       - 'link "Team 5 Categories | MSF 6 Blogs Updated: March 31, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/team/
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/
         - heading "Team" [level=2]
         - text: 5 Categories | MSF 6 Blogs
         - paragraph: "Updated: March 31, 2026"
       - 'link "Company 3 Categories | MSF 2 Blogs Updated: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/
         - heading "Company" [level=2]
         - text: 3 Categories | MSF 2 Blogs
         - paragraph: "Updated: January 15, 2026"
       - heading "Custom" [level=2]
       - 'link "Team 5 Categories | MSF 6 Blogs Modified: March 31, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/team/
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/
         - img
         - heading "Team" [level=2]
         - text: 5 Categories | MSF 6 Blogs
         - paragraph: "Modified: March 31, 2026"
       - 'link "Sports 5 Categories | MSF 5 Blogs Modified: January 27, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/sports/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/
         - img
         - heading "Sports" [level=2]
         - text: 5 Categories | MSF 5 Blogs
         - paragraph: "Modified: January 27, 2026"
       - 'link "Company 3 Categories | MSF 2 Blogs Modified: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/
         - img
         - heading "Company" [level=2]
         - text: 3 Categories | MSF 2 Blogs
         - paragraph: "Modified: January 15, 2026"
       - 'link "Fruits 3 Categories | MSF 7 Blogs Modified: October 12, 2025"':
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/
         - img
         - heading "Fruits" [level=2]
         - text: 3 Categories | MSF 7 Blogs

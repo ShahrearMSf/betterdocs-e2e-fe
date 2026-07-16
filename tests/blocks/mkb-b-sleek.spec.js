@@ -13,19 +13,19 @@ test("Mkb B Sleek - Snapshot", async ({ page }) => {
     - main:
       - heading "MKB B Sleek" [level=1]
       - 'link "Company 3 Categories | 2 Docs Last Updated: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/
         - img
         - heading "Company" [level=2]
         - text: 3 Categories | 2 Docs
         - paragraph: "Last Updated: January 15, 2026"
       - 'link "Fruits 3 Categories | 7 Docs Last Updated: October 12, 2025"':
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/
         - img
         - heading "Fruits" [level=2]
         - text: 3 Categories | 7 Docs
         - paragraph: "Last Updated: October 12, 2025"
       - 'link "Sports 5 Categories | 5 Docs Last Updated: January 27, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/sports/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/
         - img
         - heading "Sports" [level=2]
         - text: 5 Categories | 5 Docs

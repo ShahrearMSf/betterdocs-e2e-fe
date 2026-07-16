@@ -26,9 +26,9 @@ const BASE_URL = process.env.BASE_URL;
  * live sites — no fixtures planted.
  *
  * Hosts in use:
- *   BASE_URL (betteromation.shahrear.site) — hierarchical doc_category archive
- *   betterdocs.msf.shahrear.site — hierarchical single-doc URLs (4-level deep)
- *   cbotai.shahrear.site — WPML active, Korean /ko/ language prefix
+ *   BASE_URL (betteromation.shahrear.msf.bd) — hierarchical doc_category archive
+ *   betterdocs.shahrear.msf.bd — hierarchical single-doc URLs (4-level deep)
+ *   cbotai.shahrear.msf.bd — WPML active, Korean /ko/ language prefix
  */
 
 test.describe("Permalink - Hierarchical doc_category archive", () => {
@@ -64,8 +64,8 @@ test.describe("Permalink - Hierarchical doc_category archive", () => {
   });
 });
 
-test.describe("Permalink - Hierarchical single-doc URL (betterdocs.msf.shahrear.site)", () => {
-  // betterdocs.msf.shahrear.site uses `/docs/%doc_category%/%postname%/` permalink
+test.describe("Permalink - Hierarchical single-doc URL (betterdocs.shahrear.msf.bd)", () => {
+  // betterdocs.shahrear.msf.bd uses `/docs/%doc_category%/%postname%/` permalink
   // with a deep hierarchy. Exercises the urldecode'd hierarchical-path check
   // added by FBS-81660 commit 256f116 (single-doc-permalink-non-latin-404).
 
@@ -90,7 +90,7 @@ test.describe("Permalink - Hierarchical single-doc URL (betterdocs.msf.shahrear.
   });
 });
 
-test.describe("Permalink - Non-Latin doc_category & post slugs (cbotai.shahrear.site)", () => {
+test.describe("Permalink - Non-Latin doc_category & post slugs (cbotai.shahrear.msf.bd)", () => {
   // Direct regression for FBS-81660 single-doc-permalink-non-latin-404
   // (commit 256f116). The fix compares hierarchical category paths in
   // urldecode'd form so non-Latin (Bengali, Arabic, CJK) slugs match.
@@ -150,7 +150,7 @@ test.describe("Permalink - Non-Latin doc_category & post slugs (cbotai.shahrear.
   });
 });
 
-test.describe("Permalink - WPML language-prefixed archive (cbotai.shahrear.site)", () => {
+test.describe("Permalink - WPML language-prefixed archive (cbotai.shahrear.msf.bd)", () => {
   test("/ko/docs/ - Korean docs archive resolves (FBS-81660 wpml-archive-slug-404)", async ({
     request,
   }) => {

@@ -14,27 +14,27 @@ test("Category Box W Box - Snapshot", async ({ page }) => {
       - heading "Category Box W Box" [level=1]
       - heading "Name ascending" [level=2]
       - link "betterdocs-category-icon Basketball 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/sports/basketball/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/basketball/
         - img "betterdocs-category-icon"
         - heading "Basketball" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon Cricket 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/sports/cricket/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/cricket/
         - img "betterdocs-category-icon"
         - heading "Cricket" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon Fencing 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/sports/fencing/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/fencing/
         - img "betterdocs-category-icon"
         - heading "Fencing" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon Football 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/sports/football/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/football/
         - img "betterdocs-category-icon"
         - heading "Football" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon Golf 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/sports/golf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/golf/
         - img "betterdocs-category-icon"
         - heading "Golf" [level=2]
         - text: 1 Doc
@@ -42,13 +42,13 @@ test("Category Box W Box - Snapshot", async ({ page }) => {
         - strong: Without Nested
       - heading "Exclude id descending" [level=2]
       - link "betterdocs-category-icon Star 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: 1 Doc
       - heading "Custom" [level=2]
       - link "betterdocs-category-icon Star 2 Docs":
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: 2 Docs
