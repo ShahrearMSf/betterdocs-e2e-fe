@@ -20,35 +20,35 @@ test("Category Grid W L3 - Snapshot", async ({ page }) => {
         - list:
           - listitem:
             - link "Fencing – The Beautiful Sport":
-              - /url: https://betteromation.shahrear.site/docs/fencing-the-beautiful-sport/
+              - /url: https://betteromation.shahrear.msf.bd/docs/fencing-the-beautiful-sport/
       - article:
         - img "betterdocs-category-icon"
         - heading "Golf" [level=2]
         - list:
           - listitem:
             - link "Golf – The Game of Patience and Dedication":
-              - /url: https://betteromation.shahrear.site/docs/golf-the-game-of-patience-and-dedication/
+              - /url: https://betteromation.shahrear.msf.bd/docs/golf-the-game-of-patience-and-dedication/
       - article:
         - img "betterdocs-category-icon"
         - heading "Basketball" [level=2]
         - list:
           - listitem:
             - link "Basketball – The Game of Sprit":
-              - /url: https://betteromation.shahrear.site/docs/basketball-the-game-of-sprit/
+              - /url: https://betteromation.shahrear.msf.bd/docs/basketball-the-game-of-sprit/
       - article:
         - img "betterdocs-category-icon"
         - heading "Football" [level=2]
         - list:
           - listitem:
             - link "Football World Cup 2014":
-              - /url: https://betteromation.shahrear.site/docs/football-world-cup-2014/
+              - /url: https://betteromation.shahrear.msf.bd/docs/football-world-cup-2014/
       - article:
         - img "betterdocs-category-icon"
         - heading "Cricket" [level=2]
         - list:
           - listitem:
             - link "Cricket – The Gentlemen’s Game":
-              - /url: https://betteromation.shahrear.site/docs/cricket-the-gentlemens-game/
+              - /url: https://betteromation.shahrear.msf.bd/docs/cricket-the-gentlemens-game/
       - paragraph:
         - strong: Fit to Screen – Include – Name – Ascending
       - article:
@@ -57,7 +57,7 @@ test("Category Grid W L3 - Snapshot", async ({ page }) => {
         - list:
           - listitem:
             - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-              - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+              - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
       - paragraph:
         - strong: Masonry
       - heading "Custom" [level=2]
@@ -65,10 +65,10 @@ test("Category Grid W L3 - Snapshot", async ({ page }) => {
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]:
           - link "Star":
-            - /url: https://betteromation.shahrear.site/docs/qa/star/
+            - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - list:
           - listitem:
             - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-              - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+              - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
   `);
 });

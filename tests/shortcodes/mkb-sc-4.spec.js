@@ -27,9 +27,9 @@ test("Mkb Sc 4 - Snapshot", async ({ page }) => {
           - listitem:
             - img
             - link "Cricket – The Gentlemen’s Game":
-              - /url: https://betteromation.shahrear.site/docs/cricket-the-gentlemens-game/
+              - /url: https://betteromation.shahrear.msf.bd/docs/cricket-the-gentlemens-game/
         - link "Explore More":
-          - /url: https://betteromation.shahrear.site/docs/sports/cricket/
+          - /url: https://betteromation.shahrear.msf.bd/docs/sports/cricket/
       - article:
         - img "betterdocs-category-icon"
         - heading "Football" [level=2]
@@ -37,9 +37,9 @@ test("Mkb Sc 4 - Snapshot", async ({ page }) => {
           - listitem:
             - img
             - link "Football World Cup 2014":
-              - /url: https://betteromation.shahrear.site/docs/football-world-cup-2014/
+              - /url: https://betteromation.shahrear.msf.bd/docs/football-world-cup-2014/
         - link "Explore More":
-          - /url: https://betteromation.shahrear.site/docs/sports/football/
+          - /url: https://betteromation.shahrear.msf.bd/docs/sports/football/
       - article:
         - img "betterdocs-category-icon"
         - heading "Basketball" [level=2]
@@ -47,9 +47,9 @@ test("Mkb Sc 4 - Snapshot", async ({ page }) => {
           - listitem:
             - img
             - link "Basketball – The Game of Sprit":
-              - /url: https://betteromation.shahrear.site/docs/basketball-the-game-of-sprit/
+              - /url: https://betteromation.shahrear.msf.bd/docs/basketball-the-game-of-sprit/
         - link "Explore More":
-          - /url: https://betteromation.shahrear.site/docs/sports/basketball/
+          - /url: https://betteromation.shahrear.msf.bd/docs/sports/basketball/
       - article:
         - img "betterdocs-category-icon"
         - heading "Golf" [level=2]
@@ -57,9 +57,9 @@ test("Mkb Sc 4 - Snapshot", async ({ page }) => {
           - listitem:
             - img
             - link "Golf – The Game of Patience and Dedication":
-              - /url: https://betteromation.shahrear.site/docs/golf-the-game-of-patience-and-dedication/
+              - /url: https://betteromation.shahrear.msf.bd/docs/golf-the-game-of-patience-and-dedication/
         - link "Explore More":
-          - /url: https://betteromation.shahrear.site/docs/sports/golf/
+          - /url: https://betteromation.shahrear.msf.bd/docs/sports/golf/
       - article:
         - img "betterdocs-category-icon"
         - heading "Fencing" [level=2]
@@ -67,9 +67,9 @@ test("Mkb Sc 4 - Snapshot", async ({ page }) => {
           - listitem:
             - img
             - link "Fencing – The Beautiful Sport":
-              - /url: https://betteromation.shahrear.site/docs/fencing-the-beautiful-sport/
+              - /url: https://betteromation.shahrear.msf.bd/docs/fencing-the-beautiful-sport/
         - link "Explore More":
-          - /url: https://betteromation.shahrear.site/docs/sports/fencing/
+          - /url: https://betteromation.shahrear.msf.bd/docs/sports/fencing/
       - paragraph:
         - strong: Customized
       - link "Team":
@@ -87,7 +87,7 @@ test("Mkb Sc 4 - Snapshot", async ({ page }) => {
             - link "Leads":
               - /url: "#"
         - link "Explore More":
-          - /url: https://betteromation.shahrear.site/docs/team/qa/
+          - /url: https://betteromation.shahrear.msf.bd/docs/team/qa/
       - article:
         - img "betterdocs-category-icon"
         - heading "Developer" [level=6]
@@ -95,8 +95,8 @@ test("Mkb Sc 4 - Snapshot", async ({ page }) => {
           - listitem:
             - img
             - link "Developers, QA, Support – the Engines of A Software Team":
-              - /url: https://betteromation.shahrear.site/docs/developers-qa-support-the-engines-of-a-software-team/
+              - /url: https://betteromation.shahrear.msf.bd/docs/developers-qa-support-the-engines-of-a-software-team/
         - link "Explore More":
-          - /url: https://betteromation.shahrear.site/docs/team/developer/
+          - /url: https://betteromation.shahrear.msf.bd/docs/team/developer/
   `);
 });

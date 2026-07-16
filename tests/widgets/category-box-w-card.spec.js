@@ -14,66 +14,66 @@ test("Category Box W Card - Snapshot", async ({ page }) => {
       - heading "Category Box W Card" [level=1]
       - heading "Include - Sports - name - ascending" [level=2]
       - link "betterdocs-category-icon Basketball 1":
-        - /url: https://betteromation.shahrear.site/docs/sports/basketball/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/basketball/
         - img "betterdocs-category-icon"
         - heading "Basketball" [level=2]
         - text: "1"
       - link "betterdocs-category-icon Cricket 1":
-        - /url: https://betteromation.shahrear.site/docs/sports/cricket/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/cricket/
         - img "betterdocs-category-icon"
         - heading "Cricket" [level=2]
         - text: "1"
       - link "betterdocs-category-icon Fencing 1":
-        - /url: https://betteromation.shahrear.site/docs/sports/fencing/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/fencing/
         - img "betterdocs-category-icon"
         - heading "Fencing" [level=2]
         - text: "1"
       - link "betterdocs-category-icon Football 1":
-        - /url: https://betteromation.shahrear.site/docs/sports/football/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/football/
         - img "betterdocs-category-icon"
         - heading "Football" [level=2]
         - text: "1"
       - link "betterdocs-category-icon Golf 1":
-        - /url: https://betteromation.shahrear.site/docs/sports/golf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/golf/
         - img "betterdocs-category-icon"
         - heading "Golf" [level=2]
         - text: "1"
       - paragraph:
         - strong: Without Nested
       - 'link "Star 1 Sub Category | 1 Doc Last Updated: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img
         - heading "Star" [level=2]
         - text: 1 Sub Category | 1 Doc
         - paragraph: "Last Updated: January 15, 2026"
       - 'link "MSF 1 Doc Last Updated: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/msf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
         - img
         - heading "MSF" [level=2]
         - text: 1 Doc
         - paragraph: "Last Updated: January 15, 2026"
       - heading "exclude" [level=2]
       - 'link "Star 1 Sub Section | 1 Article Updated Time: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img
         - heading "Star" [level=2]
         - text: 1 Sub Section | 1 Article
         - paragraph: "Updated Time: January 15, 2026"
       - 'link "MSF 1 Article Updated Time: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/msf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
         - img
         - heading "MSF" [level=2]
         - text: 1 Article
         - paragraph: "Updated Time: January 15, 2026"
       - heading "Custom" [level=2]
       - 'link "MSF 1 Article Updated Time: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/msf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
         - img
         - heading "MSF" [level=2]
         - text: 1 Article
         - paragraph: "Updated Time: January 15, 2026"
       - 'link "Star 1 Sub Section | 1 Article Updated Time: January 15, 2026"':
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img
         - heading "Star" [level=2]
         - text: 1 Sub Section | 1 Article

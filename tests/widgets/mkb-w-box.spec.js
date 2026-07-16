@@ -13,60 +13,60 @@ test("Mkb W Box - Snapshot", async ({ page }) => {
     - main:
       - heading "MKB W Box" [level=1]
       - link "betterdocs-category-icon Sports 5 Docs":
-        - /url: https://betteromation.shahrear.site/docs/sports/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/
         - img "betterdocs-category-icon"
         - heading "Sports" [level=2]
         - text: 5 Docs
       - link "betterdocs-category-icon Fruits 7 Docs":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/
         - img "betterdocs-category-icon"
         - heading "Fruits" [level=2]
         - text: 7 Docs
       - link "betterdocs-category-icon Team 6 Docs":
-        - /url: https://betteromation.shahrear.site/docs/team/
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/
         - img "betterdocs-category-icon"
         - heading "Team" [level=2]
         - text: 6 Docs
       - link "betterdocs-category-icon Company 2 Docs":
-        - /url: https://betteromation.shahrear.site/docs/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/
         - img "betterdocs-category-icon"
         - heading "Company" [level=2]
         - text: 2 Docs
       - heading "Include" [level=2]
       - link "betterdocs-category-icon Fruits MSF 7 Articles":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/
         - img "betterdocs-category-icon"
         - heading "Fruits" [level=2]
         - text: MSF 7 Articles
       - link "betterdocs-category-icon Sports MSF 5 Articles":
-        - /url: https://betteromation.shahrear.site/docs/sports/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/
         - img "betterdocs-category-icon"
         - heading "Sports" [level=2]
         - text: MSF 5 Articles
       - heading "Exclude" [level=2]
       - link "betterdocs-category-icon Company 2026 December 2 Docs":
-        - /url: https://betteromation.shahrear.site/docs/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/
         - img "betterdocs-category-icon"
         - heading "Company" [level=2]
         - text: 2026 December 2 Docs
       - link "betterdocs-category-icon Team 2026 December 6 Docs":
-        - /url: https://betteromation.shahrear.site/docs/team/
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/
         - img "betterdocs-category-icon"
         - heading "Team" [level=2]
         - text: 2026 December 6 Docs
       - heading "Custom" [level=2]
       - link "betterdocs-category-icon Company 2026 December 2 Docs":
-        - /url: https://betteromation.shahrear.site/docs/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/
         - img "betterdocs-category-icon"
         - heading "Company" [level=2]
         - text: 2026 December 2 Docs
       - link "betterdocs-category-icon Sports 2026 December 5 Docs":
-        - /url: https://betteromation.shahrear.site/docs/sports/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/
         - img "betterdocs-category-icon"
         - heading "Sports" [level=2]
         - text: 2026 December 5 Docs
       - link "betterdocs-category-icon Team 2026 December 6 Docs":
-        - /url: https://betteromation.shahrear.site/docs/team/
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/
         - img "betterdocs-category-icon"
         - heading "Team" [level=2]
         - text: 2026 December 6 Docs

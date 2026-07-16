@@ -8,7 +8,7 @@ const BASE_URL_4 = process.env.BASE_URL_4;
 /**
  * Encyclopedia routing tests for the AI Chatbot Live site (Gutenberg env).
  *
- * Target site: https://aichatbotliveserver.shahrear.site
+ * Target site: https://aichatbotliveserver.shahrear.msf.bd
  *
  * Covers:
  *   - /encyclopedia/ archive renders

@@ -21,7 +21,7 @@ test("Category Grid W L2 - Snapshot", async ({ page }) => {
           - listitem:
             - text: 
             - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-              - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+              - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
       - paragraph:
         - strong: Fit to Screen – include mkb – term id
       - article:
@@ -31,7 +31,7 @@ test("Category Grid W L2 - Snapshot", async ({ page }) => {
           - listitem:
             - text: 
             - link "Fencing – The Beautiful Sport":
-              - /url: https://betteromation.shahrear.site/docs/fencing-the-beautiful-sport/
+              - /url: https://betteromation.shahrear.msf.bd/docs/fencing-the-beautiful-sport/
       - article:
         - text: "1"
         - heading "Golf" [level=2]
@@ -39,7 +39,7 @@ test("Category Grid W L2 - Snapshot", async ({ page }) => {
           - listitem:
             - text: 
             - link "Golf – The Game of Patience and Dedication":
-              - /url: https://betteromation.shahrear.site/docs/golf-the-game-of-patience-and-dedication/
+              - /url: https://betteromation.shahrear.msf.bd/docs/golf-the-game-of-patience-and-dedication/
       - article:
         - text: "1"
         - heading "Basketball" [level=2]
@@ -47,7 +47,7 @@ test("Category Grid W L2 - Snapshot", async ({ page }) => {
           - listitem:
             - text: 
             - link "Basketball – The Game of Sprit":
-              - /url: https://betteromation.shahrear.site/docs/basketball-the-game-of-sprit/
+              - /url: https://betteromation.shahrear.msf.bd/docs/basketball-the-game-of-sprit/
       - article:
         - text: "1"
         - heading "Football" [level=2]
@@ -55,7 +55,7 @@ test("Category Grid W L2 - Snapshot", async ({ page }) => {
           - listitem:
             - text: 
             - link "Football World Cup 2014":
-              - /url: https://betteromation.shahrear.site/docs/football-world-cup-2014/
+              - /url: https://betteromation.shahrear.msf.bd/docs/football-world-cup-2014/
       - article:
         - text: "1"
         - heading "Cricket" [level=2]
@@ -63,7 +63,7 @@ test("Category Grid W L2 - Snapshot", async ({ page }) => {
           - listitem:
             - text: 
             - link "Cricket – The Gentlemen’s Game":
-              - /url: https://betteromation.shahrear.site/docs/cricket-the-gentlemens-game/
+              - /url: https://betteromation.shahrear.msf.bd/docs/cricket-the-gentlemens-game/
       - paragraph:
         - strong: Masonry – include – name ascending
       - heading "Custom" [level=2]

@@ -15,12 +15,12 @@ test("Category Box B Classic - Snapshot", async ({ page }) => {
       - paragraph:
         - strong: BetterDocs Order
       - link "betterdocs-category-icon Star 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon MSF 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/qa/msf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
         - img "betterdocs-category-icon"
         - heading "MSF" [level=2]
         - text: 1 Doc
@@ -28,12 +28,12 @@ test("Category Box B Classic - Snapshot", async ({ page }) => {
         - strong: Name Based Order
         - text: Descending
       - link "betterdocs-category-icon Star 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon MSF 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/qa/msf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
         - img "betterdocs-category-icon"
         - heading "MSF" [level=2]
         - text: 1 Doc
@@ -48,12 +48,12 @@ test("Category Box B Classic - Snapshot", async ({ page }) => {
         - strong: Exclude
         - text: – BetterDocs Order
       - link "betterdocs-category-icon Star 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon MSF 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/qa/msf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
         - img "betterdocs-category-icon"
         - heading "MSF" [level=2]
         - text: 1 Doc

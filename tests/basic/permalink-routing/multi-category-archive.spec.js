@@ -29,7 +29,7 @@ const BASE_URL = process.env.BASE_URL;
  *   When the fix ships, the file should turn fully green automatically.
  *
  * Site-specific context:
- *   betteromation.shahrear.site uses `/docs/` as the doc-category permalink
+ *   betteromation.shahrear.msf.bd uses `/docs/` as the doc-category permalink
  *   base (not the BetterDocs default `/docs-category/`). The bug applies to
  *   whichever base the site uses, since the root cause is in
  *   `validate_single_docs_category_redirect()` in `includes/Core/Request.php`.

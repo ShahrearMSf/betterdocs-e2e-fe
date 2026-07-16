@@ -13,34 +13,34 @@ test("Mkb Sc 2 - Snapshot", async ({ page }) => {
     - main:
       - heading "MKB SC 2" [level=1]
       - link "betterdocs-category-icon Fruits 7 Docs":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/
         - img "betterdocs-category-icon"
         - heading "Fruits" [level=2]
         - text: 7 Docs
       - link "betterdocs-category-icon Company 2 Docs":
-        - /url: https://betteromation.shahrear.site/docs/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/
         - img "betterdocs-category-icon"
         - heading "Company" [level=2]
         - text: 2 Docs
       - link "betterdocs-category-icon Sports 5 Docs":
-        - /url: https://betteromation.shahrear.site/docs/sports/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/
         - img "betterdocs-category-icon"
         - heading "Sports" [level=2]
         - text: 5 Docs
       - paragraph:
         - strong: Customized
       - link "betterdocs-category-icon Sports 5 Docs":
-        - /url: https://betteromation.shahrear.site/docs/sports/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/
         - img "betterdocs-category-icon"
         - heading "Sports" [level=6]
         - text: 5 Docs
       - link "betterdocs-category-icon Fruits 7 Docs":
-        - /url: https://betteromation.shahrear.site/docs/fruits/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/
         - img "betterdocs-category-icon"
         - heading "Fruits" [level=6]
         - text: 7 Docs
       - link "betterdocs-category-icon Company 2 Docs":
-        - /url: https://betteromation.shahrear.site/docs/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/
         - img "betterdocs-category-icon"
         - heading "Company" [level=6]
         - text: 2 Docs

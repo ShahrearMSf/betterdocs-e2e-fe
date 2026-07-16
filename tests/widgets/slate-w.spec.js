@@ -19,33 +19,33 @@ test("Slate W - Snapshot", async ({ page }) => {
         - list:
           - listitem:
             - link "Sejuti – The Leader of QA Team":
-              - /url: https://betteromation.shahrear.site/docs/sejuti-the-leader-of-qa-team/
+              - /url: https://betteromation.shahrear.msf.bd/docs/sejuti-the-leader-of-qa-team/
       - article:
         - img
         - heading "JuniorQA" [level=2]
         - list:
           - listitem:
             - link "Junior QA – The Sprit House":
-              - /url: https://betteromation.shahrear.site/docs/junior-qa-the-sprit-house/
+              - /url: https://betteromation.shahrear.msf.bd/docs/junior-qa-the-sprit-house/
           - listitem:
             - link "QA Glossary Test for BetterDocs":
-              - /url: https://betteromation.shahrear.site/docs/qa-glossary-test-for-betterdocs/
+              - /url: https://betteromation.shahrear.msf.bd/docs/qa-glossary-test-for-betterdocs/
       - article:
         - img
         - heading "Developer" [level=2]
         - list:
           - listitem:
             - link "Developers, QA, Support – the Engines of A Software Team":
-              - /url: https://betteromation.shahrear.site/docs/developers-qa-support-the-engines-of-a-software-team/
+              - /url: https://betteromation.shahrear.msf.bd/docs/developers-qa-support-the-engines-of-a-software-team/
       - article:
         - heading "Coleads" [level=2]
         - list:
           - listitem:
             - link "Hurram – The Co Lead of Security Team":
-              - /url: https://betteromation.shahrear.site/docs/hurram-the-co-lead-of-security-team/
+              - /url: https://betteromation.shahrear.msf.bd/docs/hurram-the-co-lead-of-security-team/
           - listitem:
             - link "Ovi – The Co Lead of QA Team":
-              - /url: https://betteromation.shahrear.site/docs/ovi-the-co-lead-of-qa-team/
+              - /url: https://betteromation.shahrear.msf.bd/docs/ovi-the-co-lead-of-qa-team/
       - heading "Include - ID Ascending" [level=2]
       - heading "Exclude - Parent Ascending - Menu Order Descending" [level=2]
       - heading "Custom" [level=2]

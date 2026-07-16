@@ -13,67 +13,67 @@ test("Category Box Sc 2 - Snapshot", async ({ page }) => {
     - main:
       - heading "Category Box SC 2" [level=1]
       - link "betterdocs-category-icon Cricket 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/sports/cricket/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/cricket/
         - img "betterdocs-category-icon"
         - heading "Cricket" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon Football 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/sports/football/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/football/
         - img "betterdocs-category-icon"
         - heading "Football" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon Basketball 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/sports/basketball/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/basketball/
         - img "betterdocs-category-icon"
         - heading "Basketball" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon Golf 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/sports/golf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/golf/
         - img "betterdocs-category-icon"
         - heading "Golf" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon Fencing 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/sports/fencing/
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/fencing/
         - img "betterdocs-category-icon"
         - heading "Fencing" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon Apple 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/fruits/apple/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/apple/
         - img "betterdocs-category-icon"
         - heading "Apple" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon Orange 3 Docs":
-        - /url: https://betteromation.shahrear.site/docs/fruits/orange/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/orange/
         - img "betterdocs-category-icon"
         - heading "Orange" [level=2]
         - text: 3 Docs
       - link "betterdocs-category-icon Watermelon 3 Docs":
-        - /url: https://betteromation.shahrear.site/docs/fruits/watermelon/
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/watermelon/
         - img "betterdocs-category-icon"
         - heading "Watermelon" [level=2]
         - text: 3 Docs
       - link "betterdocs-category-icon Developer 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/team/developer/
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/developer/
         - img "betterdocs-category-icon"
         - heading "Developer" [level=2]
         - text: 1 Doc
       - link "QA 5 Docs":
-        - /url: https://betteromation.shahrear.site/docs/team/qa/
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/qa/
         - heading "QA" [level=2]
         - text: 5 Docs
       - link "betterdocs-category-icon Star 2 Docs":
-        - /url: https://betteromation.shahrear.site/docs/qa/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: 2 Docs
       - paragraph: Customized
       - link "betterdocs-category-icon Star 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/QA/star/
+        - /url: https://betteromation.shahrear.msf.bd/docs/QA/star/
         - img "betterdocs-category-icon"
         - heading "Star" [level=2]
         - text: 1 Doc
       - link "betterdocs-category-icon MSF 1 Doc":
-        - /url: https://betteromation.shahrear.site/docs/QA/msf/
+        - /url: https://betteromation.shahrear.msf.bd/docs/QA/msf/
         - img "betterdocs-category-icon"
         - heading "MSF" [level=2]
         - text: 1 Doc

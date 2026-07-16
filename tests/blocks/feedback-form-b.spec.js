@@ -45,19 +45,19 @@ test("Feedback Form B - Snapshot", async ({ page }) => {
       - list:
         - listitem:
           - link "Facebook":
-            - /url: https://www.facebook.com/sharer/sharer.php?u=https://betteromation.shahrear.site/feedback-form-b/
+            - /url: https://www.facebook.com/sharer/sharer.php?u=https://betteromation.shahrear.msf.bd/feedback-form-b/
             - img "Facebook"
         - listitem:
           - link "X":
-            - /url: https://twitter.com/intent/tweet?url=https://betteromation.shahrear.site/feedback-form-b/
+            - /url: https://twitter.com/intent/tweet?url=https://betteromation.shahrear.msf.bd/feedback-form-b/
             - img "X"
         - listitem:
           - link "LinkedIn":
-            - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://betteromation.shahrear.site/feedback-form-b/
+            - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://betteromation.shahrear.msf.bd/feedback-form-b/
             - img "LinkedIn"
         - listitem:
           - link "Pinterest":
-            - /url: https://pinterest.com/pin/create/button/?url=https://betteromation.shahrear.site/feedback-form-b/
+            - /url: https://pinterest.com/pin/create/button/?url=https://betteromation.shahrear.msf.bd/feedback-form-b/
             - img "Pinterest"
       - paragraph
   `);

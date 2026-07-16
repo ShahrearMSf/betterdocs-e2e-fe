@@ -18,7 +18,7 @@ test("Sidebar W L2 - Snapshot", async ({ page }) => {
           - list:
             - listitem:
               - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-                - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+                - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
             - listitem:
               - link "WPD":
                 - /url: "#"
@@ -30,13 +30,13 @@ test("Sidebar W L2 - Snapshot", async ({ page }) => {
           - list:
             - listitem:
               - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-                - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+                - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
         - article:
           - heading "MSF" [level=2]
           - list:
             - listitem:
               - link "NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses":
-                - /url: https://betteromation.shahrear.site/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
+                - /url: https://betteromation.shahrear.msf.bd/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
       - heading "include mkb" [level=2]
       - complementary:
         - article:
@@ -44,31 +44,31 @@ test("Sidebar W L2 - Snapshot", async ({ page }) => {
           - list:
             - listitem:
               - link "Watermelon – A Juicy Fruit":
-                - /url: https://betteromation.shahrear.site/docs/watermelon-a-juicy-fruit/
+                - /url: https://betteromation.shahrear.msf.bd/docs/watermelon-a-juicy-fruit/
             - listitem:
               - link "Juice vs Direct Fruit":
-                - /url: https://betteromation.shahrear.site/docs/juice-vs-direct-fruit/
+                - /url: https://betteromation.shahrear.msf.bd/docs/juice-vs-direct-fruit/
             - listitem:
               - link "Importance of Multi Vitamin in Life":
-                - /url: https://betteromation.shahrear.site/docs/importance-of-multi-vitamin-in-life/
+                - /url: https://betteromation.shahrear.msf.bd/docs/importance-of-multi-vitamin-in-life/
         - article:
           - heading "Orange" [level=2]
           - list:
             - listitem:
               - link "Orange – The Source of Vitamin C":
-                - /url: https://betteromation.shahrear.site/docs/orange-the-source-of-vitamin-c/
+                - /url: https://betteromation.shahrear.msf.bd/docs/orange-the-source-of-vitamin-c/
             - listitem:
               - link "Orange – A Favorite Fruit of Children":
-                - /url: https://betteromation.shahrear.site/docs/orange-a-favorite-fruit-of-children/
+                - /url: https://betteromation.shahrear.msf.bd/docs/orange-a-favorite-fruit-of-children/
             - listitem:
               - link "The Fruit that Named after Color":
-                - /url: https://betteromation.shahrear.site/docs/the-fruit-that-named-after-color/
+                - /url: https://betteromation.shahrear.msf.bd/docs/the-fruit-that-named-after-color/
         - article:
           - heading "Apple" [level=2]
           - list:
             - listitem:
               - link "Apple – A Daily Fruit":
-                - /url: https://betteromation.shahrear.site/docs/apple-a-daily-fruit/
+                - /url: https://betteromation.shahrear.msf.bd/docs/apple-a-daily-fruit/
       - heading "Include - category" [level=2]
       - complementary:
         - article:
@@ -76,13 +76,13 @@ test("Sidebar W L2 - Snapshot", async ({ page }) => {
           - list:
             - listitem:
               - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-                - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+                - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
         - article:
           - heading "MSF" [level=2]
           - list:
             - listitem:
               - link "NBR Chairman signals possible VAT, turnover tax reforms for jewellery businesses":
-                - /url: https://betteromation.shahrear.site/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
+                - /url: https://betteromation.shahrear.msf.bd/docs/nbr-chairman-signals-possible-vat-turnover-tax-reforms-for-jewellery-businesses/
       - heading "exclude" [level=2]
       - complementary:
         - article:
@@ -90,7 +90,7 @@ test("Sidebar W L2 - Snapshot", async ({ page }) => {
           - list:
             - listitem:
               - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-                - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+                - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
             - listitem:
               - link "WPD":
                 - /url: "#"
@@ -101,7 +101,7 @@ test("Sidebar W L2 - Snapshot", async ({ page }) => {
           - list:
             - listitem:
               - link "NBR says most gold entering country is illegal; Bajus urges licenses for genuine traders":
-                - /url: https://betteromation.shahrear.site/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
+                - /url: https://betteromation.shahrear.msf.bd/docs/nbr-says-most-gold-entering-country-is-illegal-bajus-urges-licenses-for-genuine-traders/
             - listitem:
               - link "WPD":
                 - /url: "#"
