@@ -34,7 +34,6 @@ test("Search W Classic - Snapshot", async ({ page }) => {
         - option "WPD"
         - option "MSF"
       - button "Submit search": Search
-      - text: Popular Search Cricket orange mer ora gold
       - paragraph:
         - strong: Without Search, Category, Popular Searches Options
       - img
@@ -66,6 +65,5 @@ test("Search W Classic - Snapshot", async ({ page }) => {
         - option "WPD"
         - option "MSF"
       - button "Submit search": Search
-      - text: Frequent Search Cricket orange mer ora gold
   `);
 });

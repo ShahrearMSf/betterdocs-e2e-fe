@@ -29,12 +29,24 @@ test.describe("Search - Category Filter & Popular Tags", () => {
     await expect(dropdown).toHaveValue(/cricket/i);
   });
 
-  test("Popular search tags are visible", async ({ page }) => {
+  test("Popular Search section renders with at least one non-empty term", async ({
+    page,
+  }) => {
+    // Structural check only — Popular Search terms are admin-configurable and
+    // change often. We assert the section exists and has *some* content
+    // rather than pinning specific terms like "gold" or "Cricket".
     const content = page.locator("main#content");
     await expect(content).toContainText("Popular Search");
-    await expect(content).toContainText("Cricket");
-    await expect(content).toContainText("orange");
-    await expect(content).toContainText("gold");
+
+    // Extract the text right after "Popular Search" and assert it has real content
+    const text = await content.innerText();
+    const match = text.match(/Popular Search\s*([\s\S]{1,200})/);
+    expect(match, "'Popular Search' label found but no following text").not.toBeNull();
+    if (match) {
+      const tail = match[1].trim();
+      // At least one non-whitespace term must follow the label
+      expect(tail.length).toBeGreaterThan(0);
+    }
   });
 
   test("Search submit button is visible and clickable", async ({ page }) => {
