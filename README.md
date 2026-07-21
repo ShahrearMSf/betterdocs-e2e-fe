@@ -112,6 +112,7 @@ tests/
 │   │   ├── legacy-permalinks    # ?p= / ?page_id= redirect, /page/2/ multi-page, ?paged=
 │   │   ├── feed-api             # Docs RSS feed, wp-json docs & doc_category
 │   │   ├── feed-permalinks      # Main /feed/, atom, rss2, category feeds
+│   │   ├── rss-feed-content     # Feed bodies contain valid <rss><channel><title> and XML Content-Type
 │   │   ├── betterdocs-rest-api  # /wp-json/betterdocs/v1, search, doc_category, knowledge_base
 │   │   └── multi-category-archive # Regression test for BetterDocs issue #57 (multi-cat URLs return 200)
 │   ├── card-based/              # Frontend regression tests (39)
@@ -145,21 +146,24 @@ tests/
 │   ├── seo/                     # SEO, meta tag & HTML structure tests (15)
 │   │   ├── meta-tags            # Title, canonical, H1, viewport meta
 │   │   └── html-structure       # HTML5 doctype, <html lang>, UTF-8 charset
-│   ├── security/                # Security headers, access control & vuln guards (20)
+│   ├── security/                # Security headers, access control & vuln guards (22)
 │   │   ├── security-headers     # X-Frame-Options, X-Content-Type-Options, wp-admin redirect, REST API, comments feed
 │   │   ├── secret-leak-scan     # No API keys/tokens (OpenAI, Claude sk-ant, Gemini AIza, Google OAuth, api_key, license_key, AWS) leaked in HTML or inline scripts
 │   │   ├── xss-reflection       # Search/404-slug injections HTML-escaped, no raw <script> reflected, no DB/PHP internals leaked
-│   │   └── sql-error-leak       # WP search + BetterDocs REST resilient to injection markers, no SQL/PHP error signatures
-│   ├── accessibility/           # Accessibility & error-leak tests (20)
+│   │   ├── sql-error-leak       # WP search + BetterDocs REST resilient to injection markers, no SQL/PHP error signatures
+│   │   └── rest-auth            # /betterdocs/v1/overview unauth → 401 (no data leak); feedback POST without nonce → 4xx (SM-09, SM-10)
+│   ├── accessibility/           # Accessibility & error-leak tests (23)
 │   │   ├── console-errors       # No JS console errors on 5 key pages
 │   │   ├── image-alt-text       # All images have alt attributes
 │   │   ├── broken-image-scan    # HEAD-check every <img src> on key pages, none return 404
-│   │   └── php-error-scan       # HTML body of 7 page types contains no "Fatal error", "Warning:", "Notice:", stack traces, etc.
-│   ├── site-chrome/             # Header, footer, responsive, menu (15)
+│   │   ├── php-error-scan       # HTML body of 7 page types contains no "Fatal error", "Warning:", "Notice:", stack traces, etc.
+│   │   └── heading-hierarchy    # Single doc has exactly one <h1>, ≥1 <h2>, and <h1> is not empty
+│   ├── site-chrome/             # Header, footer, responsive, menu (19)
 │   │   ├── header-footer-nav    # Footer, logo home, main menu, skip link
 │   │   ├── mobile-viewport      # Mobile viewport rendering (375×812)
 │   │   ├── main-menu-links      # All top-level menu links resolve (no 4xx/5xx)
-│   │   └── theme-footer         # FSE chrome-leak sweep across 5 page types (no "Proudly powered by WordPress")
+│   │   ├── theme-footer         # FSE chrome-leak sweep across 5 page types (no "Proudly powered by WordPress")
+│   │   └── http-compression     # Key HTML pages ship gzip/brotli/deflate (perf/CDN regression guard)
 │   └── page-snapshots/          # Full-page aria snapshots (2)
 │       ├── docs                 # Docs page full aria snapshot
 │       └── encyclopedia         # Encyclopedia page full aria snapshot
@@ -168,16 +172,17 @@ tests/
 │   ├── chatbot-tab              # Welcome message, email/guest login
 │   ├── ask-tab                  # Query form: email, name, subject, upload
 │   └── resources-tab            # Doc categories, Q&A section
-├── chatbot/                     # AI chatbot interaction tests (23)
+├── chatbot/                     # AI chatbot interaction tests (25)
 │   ├── chatbot-ui               # Panel title, response time, tabs
 │   ├── guest-search             # Guest login, message, AI response + links
 │   ├── email-search             # Email login, search, response + links
 │   ├── chatbot-input            # Empty/whitespace send is no-op, Enter/button send, input clears after send, AI reply never leaks provider-error strings
-│   └── transcript-menu          # Kebab menu 3 options: Download Transcript, Send Transcript, Start a New Chat (cbotai)
+│   ├── transcript-menu          # Kebab menu 3 options: Download Transcript, Send Transcript, Start a New Chat (cbotai)
+│   └── wiring                   # CORS preflight on /betterdocs-pro/v1/query-post + docs page ships betterdocsAIChatbot config (cbotai) (SM-12, SM-13)
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 480 tests across 163 files**
+**Total: 497 tests across 168 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
