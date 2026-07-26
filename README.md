@@ -106,6 +106,7 @@ tests/
 │   │   ├── sitemap-robots       # sitemap.xml & robots.txt availability
 │   │   ├── sitemap-structure    # XML root tag valid, ≥5 <loc> entries
 │   │   ├── wp-sitemaps          # All WP sitemap sub-files (post, page, doc_category, users)
+│   │   ├── sitemap-live-parity  # Sample URLs from each sub-sitemap actually resolve 200 (stale sitemap guard)
 │   │   ├── robots-content       # robots.txt User-agent, Disallow, Sitemap directives
 │   │   ├── canonical-urls       # Canonical URL consistency (strips UTM, multi-doc)
 │   │   ├── permalink-structure  # Trailing-slash redirect, double-slash, UTM, category & encyclopedia
@@ -152,12 +153,13 @@ tests/
 │   │   ├── xss-reflection       # Search/404-slug injections HTML-escaped, no raw <script> reflected, no DB/PHP internals leaked
 │   │   ├── sql-error-leak       # WP search + BetterDocs REST resilient to injection markers, no SQL/PHP error signatures
 │   │   └── rest-auth            # /betterdocs/v1/overview unauth → 401 (no data leak); feedback POST without nonce → 4xx (SM-09, SM-10)
-│   ├── accessibility/           # Accessibility & error-leak tests (23)
+│   ├── accessibility/           # Accessibility & error-leak tests (31)
 │   │   ├── console-errors       # No JS console errors on 5 key pages
 │   │   ├── image-alt-text       # All images have alt attributes
 │   │   ├── broken-image-scan    # HEAD-check every <img src> on key pages, none return 404
 │   │   ├── php-error-scan       # HTML body of 7 page types contains no "Fatal error", "Warning:", "Notice:", stack traces, etc.
-│   │   └── heading-hierarchy    # Single doc has exactly one <h1>, ≥1 <h2>, and <h1> is not empty
+│   │   ├── heading-hierarchy    # Single doc has exactly one <h1>, ≥1 <h2>, and <h1> is not empty
+│   │   └── subresource-health   # 8 key pages: no pageerror (uncaught JS) + no same-origin subresource ≥500 (broken enqueues, dead REST, failed admin-ajax)
 │   ├── site-chrome/             # Header, footer, responsive, menu (19)
 │   │   ├── header-footer-nav    # Footer, logo home, main menu, skip link
 │   │   ├── mobile-viewport      # Mobile viewport rendering (375×812)
@@ -182,7 +184,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 497 tests across 168 files**
+**Total: 506 tests across 170 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
