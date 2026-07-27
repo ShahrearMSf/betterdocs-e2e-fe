@@ -113,8 +113,8 @@ tests/
 │   │   ├── legacy-permalinks    # ?p= / ?page_id= redirect, /page/2/ multi-page, ?paged=
 │   │   ├── feed-api             # Docs RSS feed, wp-json docs & doc_category
 │   │   ├── feed-permalinks      # Main /feed/, atom, rss2, category feeds
-│   │   ├── rss-feed-content     # Feed bodies contain valid <rss><channel><title> and XML Content-Type
-│   │   ├── betterdocs-rest-api  # /wp-json/betterdocs/v1, search, doc_category, knowledge_base
+│   │   ├── rss-feed-content     # Feed bodies contain valid <rss><channel><title>, XML Content-Type, and ≥1 <item> (non-empty feed guard)
+│   │   ├── betterdocs-rest-api  # /wp-json/betterdocs/v1, search, doc_category, knowledge_base + wp/v2/docs pagination headers (X-WP-Total, X-WP-TotalPages)
 │   │   └── multi-category-archive # Regression test for BetterDocs issue #57 (multi-cat URLs return 200)
 │   ├── card-based/              # Frontend regression tests (39)
 │   │   ├── chatbot-style        # Launcher styling, color, hover, click
@@ -184,7 +184,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 506 tests across 170 files**
+**Total: 508 tests across 170 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
