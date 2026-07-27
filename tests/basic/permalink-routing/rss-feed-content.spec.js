@@ -36,4 +36,15 @@ test.describe("Permalink - RSS Feed Body Content", () => {
       expect(ct).toMatch(/xml/i);
     });
   }
+
+  test("Main site feed contains at least one <item> (not empty)", async ({
+    request,
+  }) => {
+    // Catches an empty-feed regression — a feed that returns 200 XML but
+    // ships zero items breaks every RSS reader / aggregator silently.
+    const res = await request.get(`${BASE_URL}/feed/`);
+    const body = await res.text();
+    const itemCount = (body.match(/<item>/g) || []).length;
+    expect(itemCount).toBeGreaterThanOrEqual(1);
+  });
 });

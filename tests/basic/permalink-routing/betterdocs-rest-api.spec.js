@@ -33,4 +33,19 @@ test.describe("Permalink - BetterDocs REST API Endpoints", () => {
     // The discovery JSON should mention the BetterDocs namespace
     expect(body.toLowerCase()).toContain("betterdocs");
   });
+
+  test("WP REST /wp/v2/docs exposes pagination headers (X-WP-Total, X-WP-TotalPages)", async ({
+    request,
+  }) => {
+    // API-contract check for consumers that paginate over the docs list.
+    const res = await request.get(`${BASE_URL}/wp-json/wp/v2/docs?per_page=5`);
+    expect(res.status()).toBe(200);
+    const total = res.headers()["x-wp-total"];
+    const totalPages = res.headers()["x-wp-totalpages"];
+    expect(total, "missing X-WP-Total header").toBeTruthy();
+    expect(totalPages, "missing X-WP-TotalPages header").toBeTruthy();
+    // Values must be numeric strings
+    expect(Number(total)).toBeGreaterThanOrEqual(1);
+    expect(Number(totalPages)).toBeGreaterThanOrEqual(1);
+  });
 });
