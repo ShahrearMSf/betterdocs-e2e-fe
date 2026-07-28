@@ -41,4 +41,24 @@ test.describe("Security - Headers & Access Control", () => {
     });
     expect(response.status()).toBe(200);
   });
+
+  test("JavaScript source-map files are NOT exposed publicly", async ({
+    request,
+  }) => {
+    // .js.map files can leak minified→original source paths, plugin
+    // internals, and sometimes secrets. Production must not serve them.
+    const maps = [
+      "/wp-content/plugins/betterdocs/assets/js/betterdocs.min.js.map",
+      "/wp-includes/js/wp-embed.min.js.map",
+    ];
+    for (const mapUrl of maps) {
+      const res = await request.get(`${BASE_URL}${mapUrl}`, {
+        failOnStatusCode: false,
+      });
+      expect(
+        res.status(),
+        `${mapUrl} should not be reachable (got ${res.status()})`
+      ).toBe(404);
+    }
+  });
 });
