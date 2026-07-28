@@ -146,9 +146,9 @@ tests/
 │   │   └── encyclopedia-routing # Encyclopedia archive, single entry, alphabet filter, invalid path 404, FSE template & chrome integrity
 │   ├── seo/                     # SEO, meta tag & HTML structure tests (15)
 │   │   ├── meta-tags            # Title, canonical, H1, viewport meta
-│   │   └── html-structure       # HTML5 doctype, <html lang>, UTF-8 charset
+│   │   └── html-structure       # HTML5 doctype, <html lang>, UTF-8 charset, WP REST bootstrap <link rel="https://api.w.org/">
 │   ├── security/                # Security headers, access control & vuln guards (22)
-│   │   ├── security-headers     # X-Frame-Options, X-Content-Type-Options, wp-admin redirect, REST API, comments feed
+│   │   ├── security-headers     # X-Frame-Options, X-Content-Type-Options, wp-admin redirect, REST API, comments feed, .js.map source maps NOT exposed
 │   │   ├── secret-leak-scan     # No API keys/tokens (OpenAI, Claude sk-ant, Gemini AIza, Google OAuth, api_key, license_key, AWS) leaked in HTML or inline scripts
 │   │   ├── xss-reflection       # Search/404-slug injections HTML-escaped, no raw <script> reflected, no DB/PHP internals leaked
 │   │   ├── sql-error-leak       # WP search + BetterDocs REST resilient to injection markers, no SQL/PHP error signatures
@@ -184,7 +184,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 508 tests across 170 files**
+**Total: 510 tests across 170 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

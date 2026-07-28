@@ -41,4 +41,16 @@ test.describe("SEO - HTML Structure & Document Validity", () => {
     expect(charset).toBeTruthy();
     if (charset) expect(charset.toUpperCase()).toBe("UTF-8");
   });
+
+  test("Homepage advertises WP REST bootstrap link <link rel='https://api.w.org/'>", async ({
+    page,
+  }) => {
+    // Discovery link used by WP clients / SDKs to auto-locate the REST root.
+    // Missing means REST discovery breaks (Gutenberg embed, external tools).
+    await safeGoto(page, `${BASE_URL}/`);
+    const restLink = page.locator('link[rel="https://api.w.org/"]');
+    const href = await restLink.getAttribute("href");
+    expect(href).toBeTruthy();
+    if (href) expect(href).toContain("/wp-json");
+  });
 });
