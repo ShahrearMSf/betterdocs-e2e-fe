@@ -140,13 +140,16 @@ tests/
 │   │   ├── encyclopedia-single  # Entry title, alphabet list, URL match, body class, FSE chrome guard
 │   │   ├── doc-summary          # AI-powered Doc Summary — header, title, arrow, loading resolves + AI-degradation guard (no provider errors leaked) + content safety (no script/iframe/onerror, balanced tags)
 │   │   ├── related-docs         # Related Docs list: ≥1 link, first link resolves, no ".undefined" corruption rows
-│   │   └── print-view           # Print button present, print media renders doc heading (CSS not hiding content)
+│   │   ├── print-view           # Print button present, print media renders doc heading (CSS not hiding content)
+│   │   ├── reading-time         # "X min read" label renders with a positive number
+│   │   └── social-share         # Facebook/Twitter/LinkedIn share links use correct intent URLs with encoded doc URL
 │   ├── multi-kb/                # Multi Knowledge Base flow on aichatbotliveserver (32)
 │   │   ├── mkb-flow             # MKB block → KB archive → category grid → single doc end-to-end (Gutenberg) + template/body-class integrity checks
 │   │   └── encyclopedia-routing # Encyclopedia archive, single entry, alphabet filter, invalid path 404, FSE template & chrome integrity
 │   ├── seo/                     # SEO, meta tag & HTML structure tests (15)
 │   │   ├── meta-tags            # Title, canonical, H1, viewport meta
-│   │   └── html-structure       # HTML5 doctype, <html lang>, UTF-8 charset, WP REST bootstrap <link rel="https://api.w.org/">
+│   │   ├── html-structure       # HTML5 doctype, <html lang>, UTF-8 charset, WP REST bootstrap <link rel="https://api.w.org/">
+│   │   └── structured-data      # JSON-LD FAQPage schema on faq-b-classic + parseable JSON
 │   ├── security/                # Security headers, access control & vuln guards (22)
 │   │   ├── security-headers     # X-Frame-Options, X-Content-Type-Options, wp-admin redirect, REST API, comments feed, .js.map source maps NOT exposed
 │   │   ├── secret-leak-scan     # No API keys/tokens (OpenAI, Claude sk-ant, Gemini AIza, Google OAuth, api_key, license_key, AWS) leaked in HTML or inline scripts
@@ -165,7 +168,8 @@ tests/
 │   │   ├── mobile-viewport      # Mobile viewport rendering (375×812)
 │   │   ├── main-menu-links      # All top-level menu links resolve (no 4xx/5xx)
 │   │   ├── theme-footer         # FSE chrome-leak sweep across 5 page types (no "Proudly powered by WordPress")
-│   │   └── http-compression     # Key HTML pages ship gzip/brotli/deflate (perf/CDN regression guard)
+│   │   ├── http-compression     # Key HTML pages ship gzip/brotli/deflate (perf/CDN regression guard)
+│   │   └── mobile-menu-toggle   # Hamburger visible + dropdown appears after click at mobile viewport (375×812)
 │   └── page-snapshots/          # Full-page aria snapshots (2)
 │       ├── docs                 # Docs page full aria snapshot
 │       └── encyclopedia         # Encyclopedia page full aria snapshot
@@ -184,7 +188,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 510 tests across 170 files**
+**Total: 519 tests across 174 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
