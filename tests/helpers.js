@@ -137,4 +137,34 @@ async function checkChatbotResponseLinks(page, context) {
   }
 }
 
-module.exports = { safeGoto, sendChatbotMessage, checkChatbotResponseLinks };
+/**
+ * Run axe-core against the current page and return the list of unique
+ * violation rule IDs. Uses WCAG 2 A/AA tags — enough to catch real,
+ * shippable accessibility regressions without noise from wcag2aaa.
+ *
+ * NOTE: sites tend to accumulate a stable set of "known" violations. Rather
+ * than asserting zero (unrealistic for existing sites), tests should assert
+ * that no NEW rule ID appears — this is the useful regression signal.
+ */
+async function getA11yViolationIds(page) {
+  const { AxeBuilder } = require("@axe-core/playwright");
+  const results = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa"])
+    .analyze();
+  return {
+    ids: [...new Set(results.violations.map((v) => v.id))].sort(),
+    details: results.violations.map((v) => ({
+      id: v.id,
+      impact: v.impact,
+      help: v.help,
+      nodeCount: v.nodes.length,
+    })),
+  };
+}
+
+module.exports = {
+  safeGoto,
+  sendChatbotMessage,
+  checkChatbotResponseLinks,
+  getA11yViolationIds,
+};
