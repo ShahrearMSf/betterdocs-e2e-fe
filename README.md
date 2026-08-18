@@ -162,7 +162,8 @@ tests/
 │   │   ├── broken-image-scan    # HEAD-check every <img src> on key pages, none return 404
 │   │   ├── php-error-scan       # HTML body of 7 page types contains no "Fatal error", "Warning:", "Notice:", stack traces, etc.
 │   │   ├── heading-hierarchy    # Single doc has exactly one <h1>, ≥1 <h2>, and <h1> is not empty
-│   │   └── subresource-health   # 8 key pages: no pageerror (uncaught JS) + no same-origin subresource ≥500 (broken enqueues, dead REST, failed admin-ajax)
+│   │   ├── subresource-health   # 8 key pages: no pageerror (uncaught JS) + no same-origin subresource ≥500 (broken enqueues, dead REST, failed admin-ajax)
+│   │   └── wcag-scan            # axe-core WCAG 2 A/AA scan on 5 key pages — allowlist mode, fails only on NEW violation rule IDs (regression guard, not zero-violations)
 │   ├── site-chrome/             # Header, footer, responsive, menu (19)
 │   │   ├── header-footer-nav    # Footer, logo home, main menu, skip link
 │   │   ├── mobile-viewport      # Mobile viewport rendering (375×812)
@@ -188,7 +189,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 519 tests across 174 files**
+**Total: 524 tests across 175 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
