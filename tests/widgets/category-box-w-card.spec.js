@@ -40,11 +40,17 @@ test("Category Box W Card - Snapshot", async ({ page }) => {
         - text: "1"
       - paragraph:
         - strong: Without Nested
-      - 'link "Star 1 Sub Category | 1 Doc Last Updated: January 15, 2026"':
+      - 'link "Watermelon 3 Docs Last Updated: October 12, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/watermelon/
+        - img
+        - heading "Watermelon" [level=2]
+        - text: 3 Docs
+        - paragraph: "Last Updated: October 12, 2025"
+      - 'link "Star 2 Sub Categories | 1 Doc Last Updated: January 15, 2026"':
         - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img
         - heading "Star" [level=2]
-        - text: 1 Sub Category | 1 Doc
+        - text: 2 Sub Categories | 1 Doc
         - paragraph: "Last Updated: January 15, 2026"
       - 'link "MSF 1 Doc Last Updated: January 15, 2026"':
         - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
@@ -52,19 +58,73 @@ test("Category Box W Card - Snapshot", async ({ page }) => {
         - heading "MSF" [level=2]
         - text: 1 Doc
         - paragraph: "Last Updated: January 15, 2026"
+      - 'link "Fencing 1 Doc Last Updated: December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/fencing/
+        - img
+        - heading "Fencing" [level=2]
+        - text: 1 Doc
+        - paragraph: "Last Updated: December 15, 2025"
+      - 'link "Cricket 1 Doc Last Updated: December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/cricket/
+        - img
+        - heading "Cricket" [level=2]
+        - text: 1 Doc
+        - paragraph: "Last Updated: December 15, 2025"
+      - 'link "Basketball 1 Doc Last Updated: December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/basketball/
+        - img
+        - heading "Basketball" [level=2]
+        - text: 1 Doc
+        - paragraph: "Last Updated: December 15, 2025"
       - heading "exclude" [level=2]
-      - 'link "Star 1 Sub Section | 1 Article Updated Time: January 15, 2026"':
+      - 'link "Watermelon 3 Articles Updated Time: October 12, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/watermelon/
+        - img
+        - heading "Watermelon" [level=2]
+        - text: 3 Articles
+        - paragraph: "Updated Time: October 12, 2025"
+      - 'link "Star 2 Sub Section | 1 Article Updated Time: January 15, 2026"':
         - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img
         - heading "Star" [level=2]
-        - text: 1 Sub Section | 1 Article
+        - text: 2 Sub Section | 1 Article
         - paragraph: "Updated Time: January 15, 2026"
+      - 'link "Orange 3 Articles Updated Time: October 12, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/orange/
+        - img
+        - heading "Orange" [level=2]
+        - text: 3 Articles
+        - paragraph: "Updated Time: October 12, 2025"
       - 'link "MSF 1 Article Updated Time: January 15, 2026"':
         - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
         - img
         - heading "MSF" [level=2]
         - text: 1 Article
         - paragraph: "Updated Time: January 15, 2026"
+      - 'link "Leads 2 Sub Section | 1 Article Updated Time: March 31, 2026"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/lead/
+        - img
+        - heading "Leads" [level=2]
+        - text: 2 Sub Section | 1 Article
+        - paragraph: "Updated Time: March 31, 2026"
+      - 'link "JuniorQA 2 Articles Updated Time: March 31, 2026"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/juniorqa/
+        - img
+        - heading "JuniorQA" [level=2]
+        - text: 2 Articles
+        - paragraph: "Updated Time: March 31, 2026"
+      - 'link "Golf 1 Article Updated Time: December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/golf/
+        - img
+        - heading "Golf" [level=2]
+        - text: 1 Article
+        - paragraph: "Updated Time: December 15, 2025"
+      - 'link "Football 1 Article Updated Time: January 27, 2026"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/football/
+        - img
+        - heading "Football" [level=2]
+        - text: 1 Article
+        - paragraph: "Updated Time: January 27, 2026"
       - heading "Custom" [level=2]
       - 'link "MSF 1 Article Updated Time: January 15, 2026"':
         - /url: https://betteromation.shahrear.msf.bd/docs/qa/msf/
@@ -72,11 +132,46 @@ test("Category Box W Card - Snapshot", async ({ page }) => {
         - heading "MSF" [level=2]
         - text: 1 Article
         - paragraph: "Updated Time: January 15, 2026"
-      - 'link "Star 1 Sub Section | 1 Article Updated Time: January 15, 2026"':
+      - 'link "Star 2 Sub Section | 1 Article Updated Time: January 15, 2026"':
         - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - img
         - heading "Star" [level=2]
-        - text: 1 Sub Section | 1 Article
+        - text: 2 Sub Section | 1 Article
         - paragraph: "Updated Time: January 15, 2026"
+      - 'link "JuniorQA 2 Articles Updated Time: March 31, 2026"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/juniorqa/
+        - img
+        - heading "JuniorQA" [level=2]
+        - text: 2 Articles
+        - paragraph: "Updated Time: March 31, 2026"
+      - 'link "Developer 1 Article Updated Time: October 12, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/developer/
+        - img
+        - heading "Developer" [level=2]
+        - text: 1 Article
+        - paragraph: "Updated Time: October 12, 2025"
+      - 'link "Coleads 1 Sub Section | 2 Articles Updated Time: March 31, 2026"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/coleads/
+        - heading "Coleads" [level=2]
+        - text: 1 Sub Section | 2 Articles
+        - paragraph: "Updated Time: March 31, 2026"
+      - 'link "Leads 2 Sub Section | 1 Article Updated Time: March 31, 2026"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/lead/
+        - img
+        - heading "Leads" [level=2]
+        - text: 2 Sub Section | 1 Article
+        - paragraph: "Updated Time: March 31, 2026"
+      - 'link "Watermelon 3 Articles Updated Time: October 12, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/watermelon/
+        - img
+        - heading "Watermelon" [level=2]
+        - text: 3 Articles
+        - paragraph: "Updated Time: October 12, 2025"
+      - 'link "Orange 3 Articles Updated Time: October 12, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/orange/
+        - img
+        - heading "Orange" [level=2]
+        - text: 3 Articles
+        - paragraph: "Updated Time: October 12, 2025"
   `);
 });
