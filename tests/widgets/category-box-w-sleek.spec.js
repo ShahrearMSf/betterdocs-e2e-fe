@@ -39,12 +39,119 @@ test("Category Box W Sleek - Snapshot", async ({ page }) => {
         - paragraph: "Last Updated: December 15, 2025"
       - paragraph:
         - strong: Without Nested – Id Descending
+      - 'link "Fencing 1 Doc Last Updated: December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/fencing/
+        - img
+        - heading "Fencing" [level=2]
+        - text: 1 Doc
+        - paragraph: "Last Updated: December 15, 2025"
+      - 'link "Basketball 1 Doc Last Updated: December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/basketball/
+        - img
+        - heading "Basketball" [level=2]
+        - text: 1 Doc
+        - paragraph: "Last Updated: December 15, 2025"
+      - 'link "Football 1 Doc Last Updated: January 27, 2026"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/football/
+        - img
+        - heading "Football" [level=2]
+        - text: 1 Doc
+        - paragraph: "Last Updated: January 27, 2026"
+      - 'link "Cricket 1 Doc Last Updated: December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/cricket/
+        - img
+        - heading "Cricket" [level=2]
+        - text: 1 Doc
+        - paragraph: "Last Updated: December 15, 2025"
       - heading "Excluding - without icon" [level=2]
-      - 'link "Star 1 Sub Section | MSF 2 Articles Updated : January 15, 2026"':
+      - 'link "Watermelon MSF 3 Articles Updated : October 12, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/watermelon/
+        - heading "Watermelon" [level=2]
+        - text: MSF 3 Articles
+        - paragraph: "Updated : October 12, 2025"
+      - 'link "Star 2 Sub Section | MSF 2 Articles Updated : January 15, 2026"':
         - /url: https://betteromation.shahrear.msf.bd/docs/qa/star/
         - heading "Star" [level=2]
-        - text: 1 Sub Section | MSF 2 Articles
+        - text: 2 Sub Section | MSF 2 Articles
         - paragraph: "Updated : January 15, 2026"
+      - 'link "Orange MSF 3 Articles Updated : October 12, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/orange/
+        - heading "Orange" [level=2]
+        - text: MSF 3 Articles
+        - paragraph: "Updated : October 12, 2025"
+      - 'link "Golf MSF 1 Article Updated : December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/golf/
+        - heading "Golf" [level=2]
+        - text: MSF 1 Article
+        - paragraph: "Updated : December 15, 2025"
+      - 'link "Football MSF 1 Article Updated : January 27, 2026"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/football/
+        - heading "Football" [level=2]
+        - text: MSF 1 Article
+        - paragraph: "Updated : January 27, 2026"
+      - 'link "Developer MSF 1 Article Updated : October 12, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/team/developer/
+        - heading "Developer" [level=2]
+        - text: MSF 1 Article
+        - paragraph: "Updated : October 12, 2025"
+      - 'link "Cricket MSF 1 Article Updated : December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/cricket/
+        - heading "Cricket" [level=2]
+        - text: MSF 1 Article
+        - paragraph: "Updated : December 15, 2025"
+      - 'link "Basketball MSF 1 Article Updated : December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/basketball/
+        - heading "Basketball" [level=2]
+        - text: MSF 1 Article
+        - paragraph: "Updated : December 15, 2025"
       - heading "Custom" [level=2]
+      - 'link "Cricket MSF 1 Article Updated : December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/cricket/
+        - img
+        - heading "Cricket" [level=2]
+        - text: MSF 1 Article
+        - paragraph: "Updated : December 15, 2025"
+      - 'link "Football MSF 1 Article Updated : January 27, 2026"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/football/
+        - img
+        - heading "Football" [level=2]
+        - text: MSF 1 Article
+        - paragraph: "Updated : January 27, 2026"
+      - 'link "Basketball MSF 1 Article Updated : December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/basketball/
+        - img
+        - heading "Basketball" [level=2]
+        - text: MSF 1 Article
+        - paragraph: "Updated : December 15, 2025"
+      - 'link "Golf MSF 1 Article Updated : December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/golf/
+        - img
+        - heading "Golf" [level=2]
+        - text: MSF 1 Article
+        - paragraph: "Updated : December 15, 2025"
+      - 'link "Fencing MSF 1 Article Updated : December 15, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/sports/fencing/
+        - img
+        - heading "Fencing" [level=2]
+        - text: MSF 1 Article
+        - paragraph: "Updated : December 15, 2025"
+      - 'link "Apple MSF 1 Article Updated : October 12, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/apple/
+        - img
+        - heading "Apple" [level=2]
+        - text: MSF 1 Article
+        - paragraph: "Updated : October 12, 2025"
+      - 'link "Orange MSF 3 Articles Updated : October 12, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/orange/
+        - img
+        - heading "Orange" [level=2]
+        - text: MSF 3 Articles
+        - paragraph: "Updated : October 12, 2025"
+      - 'link "Watermelon MSF 3 Articles Updated : October 12, 2025"':
+        - /url: https://betteromation.shahrear.msf.bd/docs/fruits/watermelon/
+        - img
+        - heading "Watermelon" [level=2]
+        - text: MSF 3 Articles
+        - paragraph: "Updated : October 12, 2025"
   `);
 });
