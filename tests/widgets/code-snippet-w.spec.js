@@ -9,21 +9,18 @@ test("Code Snippet W - Snapshot", async ({ page }) => {
   await safeGoto(page, `${BASE_URL}/code-snippet-w/`);
   const content = page.locator("main#content");
   await expect(content).toBeVisible({ timeout: 10000 });
-  // Structural-only snapshot — the code text contains ${...} and backticks
-  // that would break the JS template literal here; we assert on wrapper
-  // elements and skip the code content with a bare `- code` matcher.
   await expect(content).toMatchAriaSnapshot(`
     - main:
       - heading "Code Snippet W" [level=1]
       - img "File icon"
       - text: msf.js
-      - button "Copy code to clipboard"
-      - code
+      - button "Copy code to clipboard":
+        - img
       - heading "Custom" [level=2]
       - img "File icon"
       - text: msf.py
-      - button "Copy code to clipboard"
-      - code
+      - button "Copy code to clipboard":
+        - img
       - heading "Leave a Reply" [level=2]
       - paragraph: Your email address will not be published. Required fields are marked *
       - paragraph:
