@@ -96,7 +96,7 @@ tests/
 │   │   ├── cross-domain         # Cross-domain parity (cbotai, msf, main)
 │   │   ├── cross-domain-smoke   # Homepage 200 + non-empty title across all 4 sites (BASE_URL_1-4)
 │   │   ├── 404-page-usability   # 404 URL still renders theme header/nav/footer (no blank error page)
-│   │   └── intentional-404      # Verify 404 renders for invalid URLs
+│   │   └── intentional-404      # Verify 404 renders for invalid URLs + regression guard for #169 (missing doc under valid category must return hard 404, not soft-200)
 │   ├── permalink-routing/       # URL routing, SEO, structure, feeds & API (62)
 │   │   ├── trailing-slash       # /docs vs /docs/ consistency
 │   │   ├── pagination           # /docs/page/1/, out-of-range pages
@@ -132,6 +132,7 @@ tests/
 │   │   ├── search-modal-behaviors # Escape closes, result click navigates, no-result query
 │   │   ├── search-filter        # Category dropdown, popular tags
 │   │   ├── ai-search-suggestion # AI-powered search-to-chatbot connection block (sparkle, label, query echo)
+│   │   ├── search-config-origin # Regression guard for #84512 — betterdocsSearchConfig.ajax_url must be same-origin (root-relative or same host) on betteromation + cbotai
 │   │   ├── sidebar-navigation   # Sidebar categories, icons, doc counts
 │   │   └── language-switcher    # WPML language switcher on cbotai — presence, current-lang, locale-prefixed URLs
 │   ├── single-doc/              # Single doc & encyclopedia entry features (27)
@@ -189,7 +190,7 @@ tests/
 └── helpers.js                   # Shared utilities (safeGoto, sendChatbotMessage, etc.)
 ```
 
-**Total: 524 tests across 175 files**
+**Total: 529 tests across 176 files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
