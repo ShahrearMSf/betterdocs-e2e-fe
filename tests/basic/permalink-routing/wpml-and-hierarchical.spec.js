@@ -68,6 +68,14 @@ test.describe("Permalink - Hierarchical single-doc URL (betterdocs.shahrear.msf.
   // betterdocs.shahrear.msf.bd uses `/docs/%doc_category%/%postname%/` permalink
   // with a deep hierarchy. Exercises the urldecode'd hierarchical-path check
   // added by FBS-81660 commit 256f116 (single-doc-permalink-non-latin-404).
+  //
+  // Note on URL shapes:
+  //   - Category archives are `/<kb>/<category>/` (e.g. /docs/team/coleads/).
+  //     `team` is the knowledge base; `coleads` is the category directly under
+  //     it. Deeper nesting under the KB is NOT how BetterDocs routes archives.
+  //   - Hierarchical segments like /team/lead/coleads/… only appear inside a
+  //     doc URL — `/<kb>/<cat>/<subcat>/<subsubcat>/<post>/` — never as an
+  //     archive endpoint on their own.
 
   test("4-level hierarchical category + single doc returns 200 directly", async ({
     request,
@@ -79,14 +87,28 @@ test.describe("Permalink - Hierarchical single-doc URL (betterdocs.shahrear.msf.
     expect(res.status()).toBe(200);
   });
 
-  test("3-level hierarchical category archive returns 200 directly", async ({
+  test("3-level category's archive (canonical /kb/category/) returns 200 directly", async ({
     request,
   }) => {
+    const res = await request.get(
+      `${BASE_URL_3}/index.php/docs/team/coleads/`,
+      { maxRedirects: 0 }
+    );
+    expect(res.status()).toBe(200);
+  });
+
+  test("hierarchical path that is not a doc returns 404 (no soft-404)", async ({
+    request,
+  }) => {
+    // Guards the Free 4.9.3 fix: /<kb>/<cat>/<subcat>/ is a doc shape, not
+    // an archive. When no such doc exists, the response must be a hard 404.
+    // Pre-4.9.3 this returned an empty 200 (soft-404) which hid real misses
+    // from search engines and from this suite.
     const res = await request.get(
       `${BASE_URL_3}/index.php/docs/team/lead/coleads/`,
       { maxRedirects: 0 }
     );
-    expect(res.status()).toBe(200);
+    expect(res.status()).toBe(404);
   });
 });
 
