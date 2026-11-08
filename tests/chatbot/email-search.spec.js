@@ -49,7 +49,7 @@ test.describe("Chatbot - Email Login Search", () => {
     await emailInput.press("Enter");
     await page.waitForTimeout(1500);
 
-    const msgInput = page.locator('input[placeholder="Type a message..."]');
+    const msgInput = page.locator('#betterdocs-ia textarea.composer-textarea');
     await msgInput.fill("Fencing");
     await msgInput.press("Enter");
 

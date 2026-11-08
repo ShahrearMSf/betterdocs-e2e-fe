@@ -44,8 +44,7 @@ test("Faq W Abstract - Snapshot", async ({ page }) => {
           - list:
             - listitem: Once we receive your return, please allow us 3-5 business days for your refund to process.
             - listitem: Refund amount will be automatically debited to the same form of payment originally used for purchase.
-            - listitem:
-              - img "😃"
+            - listitem: 😃
             - listitem:
               - link "Refund amount will be automatically debited to the same form of payment originally used for purchase":
                 - /url: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP

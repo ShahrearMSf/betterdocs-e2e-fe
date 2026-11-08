@@ -11,12 +11,12 @@ test.describe("Instant Answer - Assets Tab", () => {
     await page.waitForTimeout(2000);
     await page.locator(".betterdocs-ia-launcher").click({ force: true });
     await page.waitForTimeout(1000);
-    await page.locator(".betterdocs-ia-tabs li").nth(3).click();
+    await page.locator(".betterdocs-ia-faq").click();
     await page.waitForTimeout(1000);
   });
 
   test("Assets tab becomes active on click", async ({ page }) => {
-    const assetsTab = page.locator(".betterdocs-ia-tabs li").nth(3);
+    const assetsTab = page.locator(".betterdocs-ia-faq");
     await expect(assetsTab).toHaveClass(/active/);
   });
 

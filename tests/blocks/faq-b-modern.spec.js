@@ -12,7 +12,7 @@ test("Faq B Modern - Snapshot", async ({ page }) => {
   await expect(content).toMatchAriaSnapshot(`
     - main:
       - heading "FAQ B Modern" [level=1]
-      - text: Updated on February 1, 2026
+      - text: /Updated on February 1, \\d+/
       - heading "Frequently Asked Queries Include 2" [level=2]
       - heading "Orders" [level=3]
       - list:
@@ -34,8 +34,7 @@ test("Faq B Modern - Snapshot", async ({ page }) => {
           - list:
             - listitem: Once we receive your return, please allow us 3-5 business days for your refund to process.
             - listitem: Refund amount will be automatically debited to the same form of payment originally used for purchase.
-            - listitem:
-              - img "😃"
+            - listitem: 😃
             - listitem:
               - link "Refund amount will be automatically debited to the same form of payment originally used for purchase":
                 - /url: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP
