@@ -69,7 +69,7 @@ async function sendChatbotMessage(page, message, options = {}) {
     }
 
     // Send message
-    const msgInput = page.locator('input[placeholder="Type a message..."]');
+    const msgInput = page.locator('#betterdocs-ia textarea.composer-textarea');
     await expect(msgInput).toBeVisible({ timeout: 5000 });
     await msgInput.fill(message);
     await msgInput.press("Enter");

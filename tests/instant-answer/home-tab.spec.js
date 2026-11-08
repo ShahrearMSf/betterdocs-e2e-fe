@@ -48,8 +48,8 @@ test.describe("Instant Answer - Home Tab", () => {
     await expect(tabs).toHaveCount(4);
 
     await expect(tabs.nth(0)).toContainText("Home");
-    await expect(tabs.nth(1)).toContainText("Chatbot");
-    await expect(tabs.nth(2)).toContainText("Query");
-    await expect(tabs.nth(3)).toContainText("Assets");
+    await expect(tabs.nth(1)).toContainText("Chat");
+    await expect(tabs.nth(2)).toContainText("Assets");
+    await expect(tabs.nth(3)).toContainText("Query");
   });
 });

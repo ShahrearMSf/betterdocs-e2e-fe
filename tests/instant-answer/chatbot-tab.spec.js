@@ -16,8 +16,10 @@ test.describe("Instant Answer - Chatbot Tab", () => {
   });
 
   test("Chatbot tab becomes active on click", async ({ page }) => {
-    const chatbotTab = page.locator(".betterdocs-ia-chatbot");
-    await expect(chatbotTab).toHaveClass(/active/);
+    // Tab bar is hidden when chat is open in Chatbot 2.0 full-panel mode;
+    // assert the chat composer is visible instead.
+    const chatInput = page.locator('#betterdocs-ia textarea.composer-textarea');
+    await expect(chatInput).toBeVisible();
   });
 
   test("Response time info is displayed", async ({ page }) => {
@@ -48,7 +50,7 @@ test.describe("Instant Answer - Chatbot Tab", () => {
   });
 
   test("Message input field is visible", async ({ page }) => {
-    const msgInput = page.locator('input[placeholder="Type a message..."]');
+    const msgInput = page.locator('#betterdocs-ia textarea.composer-textarea');
     await expect(msgInput).toBeVisible();
   });
 

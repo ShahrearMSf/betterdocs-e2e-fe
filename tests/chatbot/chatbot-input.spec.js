@@ -27,7 +27,7 @@ async function openChatbotAsGuest(page) {
     await guest.click();
     await page.waitForTimeout(800);
   }
-  const input = page.locator('input[placeholder="Type a message..."]');
+  const input = page.locator('#betterdocs-ia textarea.composer-textarea');
   await expect(input).toBeVisible({ timeout: 5000 });
   return input;
 }
@@ -62,7 +62,7 @@ test.describe("Chatbot Input - Send Behaviors", () => {
 
   test("Send button click also sends the typed message", async ({ page }) => {
     const input = await openChatbotAsGuest(page);
-    const sendBtn = page.locator(".message-input button").first();
+    const sendBtn = page.locator('#betterdocs-ia .composer-send');
     await expect(sendBtn).toBeVisible();
     await input.fill("hello via button");
     await sendBtn.click();

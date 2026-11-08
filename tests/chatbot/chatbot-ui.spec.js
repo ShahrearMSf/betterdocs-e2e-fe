@@ -37,8 +37,9 @@ test.describe("Chatbot - UI Elements", () => {
   });
 
   test("Message input placeholder is correct", async ({ page }) => {
-    const msgInput = page.locator('input[placeholder="Type a message..."]');
+    const msgInput = page.locator('#betterdocs-ia textarea.composer-textarea');
     await expect(msgInput).toBeVisible();
+    await expect(msgInput).toHaveAttribute('placeholder', /Ask a question/i);
   });
 
   test("Send button is present in chatbot", async ({ page }) => {
@@ -47,9 +48,10 @@ test.describe("Chatbot - UI Elements", () => {
   });
 
   test("Switching back to Home tab from Chatbot works", async ({ page }) => {
-    await page.locator(".betterdocs-ia-home").click();
+    // Tab bar is hidden during chat; use the header back button to exit.
+    const backBtn = page.locator('#betterdocs-ia button[aria-label*="Back"]');
+    await backBtn.click();
     await page.waitForTimeout(500);
-    await expect(page.locator(".betterdocs-ia-home")).toHaveClass(/active/);
     await expect(page.locator(".betterdocs-ia-header-group")).toContainText("Get Instant Help");
   });
 });

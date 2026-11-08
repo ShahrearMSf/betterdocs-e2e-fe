@@ -5,7 +5,9 @@ const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../../../.env") });
 
 const BASE_URL = process.env.BASE_URL;
-const DOC_URL = `${BASE_URL}/docs/cricket-the-gentlemens-game/`;
+// Use a doc from the 'fruits' category (multiple siblings) so that
+// prev/next navigation renders (since 4.9.6 lone docs no longer self-link).
+const DOC_URL = `${BASE_URL}/docs/orange-the-source-of-vitamin-c/`;
 
 test.describe("Single Doc Page - Core Features", () => {
   test.beforeEach(async ({ page }) => {

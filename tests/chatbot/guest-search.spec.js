@@ -17,7 +17,7 @@ test.describe("Chatbot - Guest Mode", () => {
     await page.locator("a.continue-guest").click();
     await page.waitForTimeout(1000);
 
-    const msgInput = page.locator('input[placeholder="Type a message..."]');
+    const msgInput = page.locator('#betterdocs-ia textarea.composer-textarea');
     await msgInput.fill("Orange");
     await msgInput.press("Enter");
 

@@ -11,7 +11,7 @@ test.describe("Instant Answer - Query Tab", () => {
     await page.waitForTimeout(2000);
     await page.locator(".betterdocs-ia-launcher").click({ force: true });
     await page.waitForTimeout(1000);
-    await page.locator(".betterdocs-ia-tabs li").nth(2).click();
+    await page.locator(".betterdocs-ia-message").click();
     await page.waitForTimeout(1000);
   });
 
